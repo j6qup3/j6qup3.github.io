@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-28T22:55:02.423Z</updated>
+  <updated>2016-07-28T23:16:13.777Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,80 +16,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>13</title>
-    <link href="http://yoursite.com/2016/07/29/13-3/"/>
-    <id>http://yoursite.com/2016/07/29/13-3/</id>
-    <published>2016-07-28T22:55:02.000Z</published>
-    <updated>2016-07-28T22:55:02.423Z</updated>
+    <title>發文囉</title>
+    <link href="http://yoursite.com/2016/07/29/%E7%99%BC%E6%96%87%E5%9B%89/"/>
+    <id>http://yoursite.com/2016/07/29/發文囉/</id>
+    <published>2016-07-28T23:15:54.000Z</published>
+    <updated>2016-07-28T23:16:13.777Z</updated>
     
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>13</title>
-    <link href="http://yoursite.com/2016/07/29/13-2/"/>
-    <id>http://yoursite.com/2016/07/29/13-2/</id>
-    <published>2016-07-28T22:53:41.000Z</published>
-    <updated>2016-07-28T22:53:42.018Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>13</title>
-    <link href="http://yoursite.com/2016/07/29/13-1/"/>
-    <id>http://yoursite.com/2016/07/29/13-1/</id>
-    <published>2016-07-28T22:52:17.000Z</published>
-    <updated>2016-07-28T22:52:17.597Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>13</title>
-    <link href="http://yoursite.com/2016/07/29/13/"/>
-    <id>http://yoursite.com/2016/07/29/13/</id>
-    <published>2016-07-28T22:51:33.000Z</published>
-    <updated>2016-07-28T22:53:49.722Z</updated>
-    
-    <content type="html"><![CDATA[<p>13</p>
+    <content type="html"><![CDATA[<p>AAA</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;13&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>123</title>
-    <link href="http://yoursite.com/2016/07/29/123/"/>
-    <id>http://yoursite.com/2016/07/29/123/</id>
-    <published>2016-07-28T21:50:59.000Z</published>
-    <updated>2016-07-28T22:24:33.954Z</updated>
-    
-    <content type="html"><![CDATA[<p>123</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;123&lt;/p&gt;
+      &lt;p&gt;AAA&lt;/p&gt;
 
     
     </summary>
