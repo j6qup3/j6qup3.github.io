@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>初雪的中二 &amp; 爆肝工程師之路</title>
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-28T21:16:40.819Z</updated>
+  <updated>2016-07-28T22:24:33.954Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Jacky Wu (Hatsuyuki Wu)</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>123</title>
+    <link href="http://yoursite.com/2016/07/29/123/"/>
+    <id>http://yoursite.com/2016/07/29/123/</id>
+    <published>2016-07-28T21:50:59.000Z</published>
+    <updated>2016-07-28T22:24:33.954Z</updated>
+    
+    <content type="html"><![CDATA[<p>123</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;123&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
