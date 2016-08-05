@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://j6qup3.github.io/"/>
-  <updated>2016-08-05T02:15:07.598Z</updated>
+  <updated>2016-08-05T09:05:24.440Z</updated>
   <id>https://j6qup3.github.io/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://j6qup3.github.io/2016/08/05/week3%20%E4%B8%8A%E8%AA%B2%E5%BF%83%E5%BE%97/"/>
+    <id>https://j6qup3.github.io/2016/08/05/week3 上課心得/</id>
+    <published>2016-08-05T09:05:24.440Z</published>
+    <updated>2016-08-05T09:05:24.440Z</updated>
+    
+    <content type="html"><![CDATA[<p>�������J React JS</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;�������J React JS&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>week3</title>
+    <link href="https://j6qup3.github.io/2016/08/05/week3/"/>
+    <id>https://j6qup3.github.io/2016/08/05/week3/</id>
+    <published>2016-08-05T03:50:24.000Z</published>
+    <updated>2016-08-05T09:07:36.258Z</updated>
+    
+    <content type="html"><![CDATA[<p>#正式突入 React JS<br>‘’’ 潮 ‘’’</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#正式突入 React JS&lt;br&gt;‘’’ 潮 ‘’’&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="心得" scheme="https://j6qup3.github.io/categories/%E5%BF%83%E5%BE%97/"/>
+    
+    
+      <category term="心得" scheme="https://j6qup3.github.io/tags/%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
   
   <entry>
     <title>week3 上課心得</title>
