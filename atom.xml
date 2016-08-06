@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://j6qup3.github.io/"/>
-  <updated>2016-08-05T09:05:24.440Z</updated>
+  <updated>2016-08-06T08:48:29.364Z</updated>
   <id>https://j6qup3.github.io/</id>
   
   <author>
@@ -16,60 +16,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://j6qup3.github.io/2016/08/05/week3%20%E4%B8%8A%E8%AA%B2%E5%BF%83%E5%BE%97/"/>
-    <id>https://j6qup3.github.io/2016/08/05/week3 上課心得/</id>
-    <published>2016-08-05T09:05:24.440Z</published>
-    <updated>2016-08-05T09:05:24.440Z</updated>
-    
-    <content type="html"><![CDATA[<p>�������J React JS</p>
-]]></content>
+    <title>猴子也能看懂的 React 教學 - 1</title>
+    <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
+    <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
+    <published>2016-08-06T08:44:42.000Z</published>
+    <updated>2016-08-06T08:48:29.364Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;�������J React JS&lt;/p&gt;
-
-    
     </summary>
     
+      <category term="教學" scheme="https://j6qup3.github.io/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    
+      <category term="React" scheme="https://j6qup3.github.io/tags/React/"/>
+    
+      <category term="教學" scheme="https://j6qup3.github.io/tags/%E6%95%99%E5%AD%B8/"/>
     
   </entry>
   
   <entry>
     <title>week3</title>
-    <link href="https://j6qup3.github.io/2016/08/05/week3/"/>
-    <id>https://j6qup3.github.io/2016/08/05/week3/</id>
+    <link href="https://j6qup3.github.io/2016/08/05/week3%20%E4%B8%8A%E8%AA%B2%E5%BF%83%E5%BE%97/"/>
+    <id>https://j6qup3.github.io/2016/08/05/week3 上課心得/</id>
     <published>2016-08-05T03:50:24.000Z</published>
-    <updated>2016-08-05T09:07:36.258Z</updated>
+    <updated>2016-08-05T09:13:30.346Z</updated>
     
-    <content type="html"><![CDATA[<p>#正式突入 React JS<br>‘’’ 潮 ‘’’</p>
+    <content type="html"><![CDATA[<p>#�������J React JS<br>‘’’ �� ‘’’</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;#正式突入 React JS&lt;br&gt;‘’’ 潮 ‘’’&lt;/p&gt;
+      &lt;p&gt;#�������J React JS&lt;br&gt;‘’’ �� ‘’’&lt;/p&gt;
 
     
     </summary>
     
-      <category term="心得" scheme="https://j6qup3.github.io/categories/%E5%BF%83%E5%BE%97/"/>
+      <category term="�߱o" scheme="https://j6qup3.github.io/categories/%EF%BF%BD%DF%B1o/"/>
     
     
-      <category term="心得" scheme="https://j6qup3.github.io/tags/%E5%BF%83%E5%BE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>week3 上課心得</title>
-    <link href="https://j6qup3.github.io/2016/08/05/week3-%E4%B8%8A%E8%AA%B2%E5%BF%83%E5%BE%97/"/>
-    <id>https://j6qup3.github.io/2016/08/05/week3-上課心得/</id>
-    <published>2016-08-05T02:15:07.000Z</published>
-    <updated>2016-08-05T02:15:07.598Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
+      <category term="�߱o" scheme="https://j6qup3.github.io/tags/%EF%BF%BD%DF%B1o/"/>
     
   </entry>
   
