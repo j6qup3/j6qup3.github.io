@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://j6qup3.github.io/"/>
-  <updated>2016-08-06T08:48:29.364Z</updated>
+  <updated>2016-08-07T23:17:24.786Z</updated>
   <id>https://j6qup3.github.io/</id>
   
   <author>
@@ -20,9 +20,30 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-06T08:48:29.364Z</updated>
+    <updated>2016-08-07T23:17:24.786Z</updated>
+    
+    <content type="html"><![CDATA[<p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>所以看不懂就別怪我囉~ （X</p>
+<p>那我們就開始吧~</p>
+<p>首先，到 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React 官網</a> 下載 <a href="https://facebook.github.io/react/downloads.html" target="_blank" rel="external">React 最新版</a>。<br>在等待下載的同時來說明一下何為 React。</p>
+<p>##什麼是 React？<br>React 是一個 JS 函式庫，負責產生與管理前端的 UI 。它<strong>並不是框架</strong>。</p>
+<p>##React 特色 – 為什麼我要用它？</p>
+<ol>
+<li>用純 JS 在前端產生 HTML （一般來說是在後端產生 HTML 送到前端）</li>
+<li>使用虛擬 DOM，重繪時效率高</li>
+<li>自定義 <strong>Component</strong>，方便開發</li>
+<li>父子 <strong>Component</strong> 可透過 <strong>props</strong> 和 <strong>callback</strong> 通訊</li>
+<li>只負責 MVC 的 View 部份，所以不算框架，彈性高</li>
+<li>因為完全是 JS 操作 UI 的關係，使得它可以跟後端分離，達到即時互動的效果</li>
+</ol>
+<p>對 React 有沒有比較明白了呢？</p>
+<h2 id="為什麼要用-JSX？"><a href="#為什麼要用-JSX？" class="headerlink" title="為什麼要用 JSX？"></a>為什麼要用 JSX？</h2><p>前面說過，React 是用純 JS 在前端產生 HTML 的，用原生 JS 寫起來會很麻煩，因此，我們可以使用 <strong>JSX</strong>，它是 JS 對 XML 的擴充語法，以 XML-like 的語法表達 JS 產生元件的函數，使用的話有助於精簡程式碼，而且對於大多數前端工程師來說這個比較直觀，易於閱讀。</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;&lt;del&gt;其實標題打錯了，是猴子&lt;strong&gt;才&lt;/strong&gt;能看懂。&lt;/del&gt;&lt;br&gt;所以看不懂就別怪我囉~ （X&lt;/p&gt;
+&lt;p&gt;那我們就開始吧~&lt;/p&gt;
+&lt;p&gt;首先，到 &lt;a href=&quot;https://facebook.github.io/react/&quot; ta
     
     </summary>
     
