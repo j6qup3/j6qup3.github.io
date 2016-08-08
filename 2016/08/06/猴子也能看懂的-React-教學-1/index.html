@@ -31,7 +31,7 @@ React 特色 – 為什麼我要用它？
 什麼是 React？React 是一個 JS 函式庫，負責產生與管理前端的 UI 。它並不是框架。
 React 特色 – 為什麼我要用它？
 用純 JS 在前端產生 HTML （一般來說是在後端產生 HTML">
-<meta property="og:updated_time" content="2016-08-08T09:43:37.119Z">
+<meta property="og:updated_time" content="2016-08-08T13:47:19.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猴子也能看懂的 React 教學 - 1">
 <meta name="twitter:description" content="其實標題打錯了，是猴子才能看懂。所以看不懂就別怪我囉~(X
@@ -258,10 +258,15 @@ React 特色 – 為什麼我要用它？
 </ol>
 <p>這樣對 React 有沒有比較明白了呢？<br>那我們首先來看看一個例子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;meta charset="UTF-8" /&gt;</div><div class="line">    &lt;title&gt;Hello React!&lt;/title&gt;</div><div class="line">    &lt;script src="build/react.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script src="build/react-dom.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"&gt;&lt;/script&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;div id="example"&gt;&lt;/div&gt;</div><div class="line">    &lt;script type="text/babel"&gt;</div><div class="line">      ReactDOM.render(</div><div class="line">        &lt;h1&gt;Hello, world!&lt;/h1&gt;,</div><div class="line">        document.getElementById('example')</div><div class="line">      );</div><div class="line">    &lt;/script&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>這是官網的例子，被我仁了(X<br>我假設各位都知道 HTML 的語法，這裡不再贅述。<br>首先，要用 React 的話，必須先引入 React 函式庫。如第 6 行、第 7 行。<br>第 8 行引入的是 <strong>babel</strong> 函式庫，用來編譯 JSX 成 JS，至於什麼是 JSX 稍後會解釋。<br>12 行 ~ 17 行是<strong>重點</strong>，用 React 在 id example 內渲染出 h1 tag。</p>
+<p>這是官網的例子，被我仁了(X<br>我假設各位都知道 HTML 的語法，這裡不再贅述。<br>首先，要用 React 的話，必須先引入 React 函式庫。如第 6 行、第 7 行。<br>第 8 行引入的是 <strong>babel</strong> 函式庫，用來編譯 JSX 成 JS，至於什麼是 JSX 稍後會解釋。<br>12 行 ~ 17 行是<strong>重點</strong>，用 React 在 id 為 example 的元件內渲染出 h1 tag。</p>
+<p>JSX 是 React 推薦使用的語言，你可以不用 JSX，然而那將使程式碼難以閱讀和維護。<br>那我們在講 React 之前先說說 JSX 吧。若已經會或者不想用 JSX 的朋友可以先跳到<a href="#nex">下一段</a>。</p>
 <h2 id="為什麼要用-JSX？"><a href="#為什麼要用-JSX？" class="headerlink" title="為什麼要用 JSX？"></a>為什麼要用 JSX？</h2><p>前面說過，React 是用純 JS 在前端產生 HTML 的，用原生 JS 寫起來會很麻煩 （一堆 createElement），因此，我們可以使用 <strong>JSX</strong>，它是 JS 對 XML 的擴充語法，以 XML-like 的語法表達 JS 產生元件的函數，使用的話有助於精簡程式碼，而且對於大多數前端工程師來說 XML 的格式比較直觀，易於閱讀。</p>
-<p>舉一個例子：<br>JSX<br><code>&lt;h1&gt;Hello, world!&lt;/h1&gt;</code><br>JS<br><code>var h = document.createElement(&quot;h1&quot;); h.innerText=&quot;Hello, world!&quot;</code></p>
-
+<p>舉一個例子：</p>
+<p>JSX<br><code>&lt;h1&gt;Hello, world!&lt;/h1&gt;</code></p>
+<p>等同於</p>
+<p>JS<br><code>var h = document.createElement(&quot;h1&quot;); h.innerText=&quot;Hello, world!&quot;</code></p>
+<h2 id="怎麼編譯-JSX？"><a href="#怎麼編譯-JSX？" class="headerlink" title="怎麼編譯 JSX？"></a>怎麼編譯 JSX？</h2><p>JSX 可以像上面的例子一樣被包在 HTML 的 <code>&lt;script type=&quot;text/babel&quot;&gt;&lt;/script&gt;</code> 中，引入 JSX 編譯器 babel 來編譯，但我們一般會將 JSX 分成獨立檔案以便維護。</p>
+<h2 id="JSX-怎麼寫？"><a href="#JSX-怎麼寫？" class="headerlink" title="JSX 怎麼寫？"></a>JSX 怎麼寫？</h2><div id="nex"></div>
             
         </div>
     </div>
