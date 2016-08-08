@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://j6qup3.github.io/"/>
-  <updated>2016-08-08T19:50:59.219Z</updated>
+  <updated>2016-08-08T19:54:18.499Z</updated>
   <id>https://j6qup3.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-08T19:50:59.219Z</updated>
+    <updated>2016-08-08T19:54:18.499Z</updated>
     
     <content type="html"><![CDATA[<p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
 <p>那我們就開始吧~</p>
@@ -54,7 +54,8 @@
 <li>HTML 的 for 屬性在 JSX 須寫為 htmlFor (for 為 JSX 保留字)</li>
 <li>所有 tag 都須被閉合 (XML 的特性)<br>EX：HTML <code>&lt;br&gt;</code> =&gt; JSX <code>&lt;br /&gt;</code></li>
 <li>同 JS，註解可以用 <code>/* */</code> 或 <code>//</code>，在 tag 中使用的話則須用大括號 <strong>{}</strong> 包住</li>
-<li>style 屬性要以 JS 物件的格式設定。別忘記外面要再加上一層大括號。</li>
+<li>style 屬性要以 JS 物件的格式設定。別忘記外面要再加上一層大括號。<br>EX：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a style=&#123;&#123; fontSize: &apos;16px&apos;, color: &apos;#FF0&apos; &#125;&#125;&gt;87&lt;/a&gt;</div></pre></td></tr></table></figure>
+</li>
 </ol>
 <p>JSX 除了 HTML 外還可以用其他的寫法，例：</p>
 <ol>
