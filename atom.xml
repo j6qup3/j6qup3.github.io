@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://j6qup3.github.io/"/>
-  <updated>2016-08-08T20:00:08.160Z</updated>
+  <updated>2016-08-09T08:47:17.466Z</updated>
   <id>https://j6qup3.github.io/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-08T20:00:08.160Z</updated>
+    <updated>2016-08-09T08:47:17.466Z</updated>
     
     <content type="html"><![CDATA[<p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
 <p>那我們就開始吧~</p>
 <h2 id="下載-React"><a href="#下載-React" class="headerlink" title="下載 React"></a>下載 React</h2><p>首先，到 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React 官網</a> 下載 <a href="https://facebook.github.io/react/downloads.html" target="_blank" rel="external">React 最新版</a>。<br>在等待下載的同時來說明一下何為 React。</p>
-<h2 id="什麼是-React？"><a href="#什麼是-React？" class="headerlink" title="什麼是 React？"></a>什麼是 React？</h2><p>React 是一個 JS 函式庫，負責產生與管理前端的 UI 。它<strong>並不是框架</strong>。</p>
+<h2 id="什麼是-React？"><a href="#什麼是-React？" class="headerlink" title="什麼是 React？"></a>什麼是 React？</h2><p>React 是 facebook 開發的一個 JS 函式庫，負責產生與管理前端的 UI 。它<strong>並不是框架</strong>。</p>
 <h2 id="React-特色-–-為什麼我要用它？"><a href="#React-特色-–-為什麼我要用它？" class="headerlink" title="React 特色 – 為什麼我要用它？"></a>React 特色 – 為什麼我要用它？</h2><ol>
 <li>用純 JS 在前端產生 HTML （一般來說是在後端產生 HTML 送到前端）</li>
 <li>使用虛擬 DOM，重繪時效率高</li>
@@ -38,7 +38,7 @@
 <p>這樣對 React 有沒有比較明白了呢？<br>那我們首先來看看一個例子：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello React!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/babel-core@5.8.38/browser.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span><span class="xml"></span></div><div class="line">      ReactDOM.render(</div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>,</div><div class="line">        document.getElementById('example')</div><div class="line">      );</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>這是官網的例子，被我仁了(X<br>我假設各位都知道 HTML 的語法，這裡不再贅述。<br>首先，要用 React 的話，必須先引入 React 函式庫。如第 6 行、第 7 行。<br>第 8 行引入的是 <strong>babel</strong> 函式庫，用來編譯 JSX 成 JS，至於什麼是 JSX 稍後會解釋。<br>12 行 ~ 17 行是<strong>重點</strong>，用 React 在 id 為 example 的元件內渲染出 h1 tag。</p>
-<p>那我們在講 React 之前先說說 JSX 吧。若已經會或者不想用 JSX 的話可以先跳到<a href="#nex">下一段</a>。</p>
+<p>那我們在講 React 之前先說說 JSX 吧。若已經會或者不想用 JSX 的話可以先跳到<a href="#Virtual DOM">下一段</a>。不過之後的範例會以 JSX 為主。</p>
 <h2 id="為什麼要用-JSX？"><a href="#為什麼要用-JSX？" class="headerlink" title="為什麼要用 JSX？"></a>為什麼要用 JSX？</h2><p>前面說過，React 是用純 JS 在前端產生 HTML 的，用原生 JS 寫起來會很麻煩 （一堆 createElement），因此，我們可以使用 <strong>JSX</strong>，它是 JS / ECMAScript 對 XML 的擴充語法，以 XML-like 的語法表達 JS 產生元件的函數，簡單來說就是語法糖 (Syntatic Sugar)。使用的話有助於精簡程式碼，而且對於大多數前端工程師來說 XML 的格式比較直觀，易於閱讀。</p>
 <p>JSX<br><code>&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;Hello!&lt;/a&gt;</code></p>
 <p>等同於</p>
@@ -64,7 +64,21 @@
 </ol>
 <p>另外，JSX 是將 tag 轉換成函數，因此一個頂端 tag 對應一個函數。在 retuen 時只能回傳一個頂端 tag，可以在最外層套一個 div 或 Component 解決這個問題。</p>
 <p>以上講的很簡略，如果想知道更多資訊，可以看一下<a href="http://blog.techbridge.cc/2016/04/21/react-jsx-introduction/#%E4%BA%8C%E3%80%81JSX-%E7%94%A8%E6%B3%95%E6%91%98%E8%A6%81" target="_blank" rel="external">這裡</a>。</p>
-<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2>]]></content>
+<h2 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h2><p>熟悉前端的工程師應該會知道 DOM，如果不知道也沒關係，<del>你總會知道的</del></p>
+<p>但我的手業障重，不想打字 QQ，只好請教萬能的維基大神。</p>
+<blockquote>
+<p>文件物件模型（英語：Document Object Model，縮寫DOM），是W3C組織推薦的處理可延伸標示語言的標準程式介面。 </p>
+<p>– 仁自 <a href="https://zh.wikipedia.org/wiki/%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B" target="_blank" rel="external">維基</a></p>
+</blockquote>
+<p>什麼？看不懂？沒關係，我也看不懂。你不是一個人(X<br>這麼簡陋真的是維基而不是偽基嗎？<br>看來只好請教開源大溼 mozilla。</p>
+<blockquote>
+<p>文件物件模型（Document Object Model, DOM）是 HTML、XML 和 SVG 文件的程式介面。它提供了一個文件（樹）的結構化表示法，並定義讓程式可以存取並改變文件架構、風格和內容的方法。DOM 提供了文件以擁有屬性與函式的節點與物件組成的結構化表示。節點也可以附加事件處理程序，一旦觸發事件就會執行處理程序。 本質上，它將網頁與腳本或程式語言連結在一起。 </p>
+<p>– 仁自 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document_Object_Model" target="_blank" rel="external">MDN</a></p>
+</blockquote>
+<p>簡單來說 DOM 就是<del><strong>狂</strong></del>用以定義 HTML、XML 和 SVG 的規範，使得各瀏覽器依此進行實作。這樣一來，標準就統一了，<del>工程師又能繼續爆肝了</del></p>
+<p>那什麼是 Virtual DOM？<br>從字面上看，是虛擬 DOM。<br>而實際上，就是虛擬 DOM！</p>
+<p>首先先來說說 DOM 的問題。<br>它<strong>很慢</strong>。實在是太慢了，慢到 JS 都<del>笑他</del>比他快很多倍。如果要用 JS 在前端即時改變 UI 的話，哪怕只是增加了一點小東西，重繪時也要將整個 DOM 打掉重練！<br>所以為了解決這個問題，React 做了一個 Virtual DOM。<br>Virtual DOM 是用 JS 打造的<strong>虛擬中界層</strong>，每當重繪時，就會先在 Virtual DOM 中重繪，再比對它跟實際的 DOM 有什麼不同，只要修改不同的地方就好。<br>因為 JS 速度遠比實際 DOM 快，在 Virtual DOM 中重繪的時間跟 DOM 操作的時間相比可以忽略不計。</p>
+]]></content>
     
     <summary type="html">
     
