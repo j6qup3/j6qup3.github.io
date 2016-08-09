@@ -339,7 +339,7 @@
 <p>JS 中有個類似的東西叫 DocumentFragment，是一個用 JS 打造的虛擬元件，用以合併處理 DOM，像上面的範例就可以改成：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> frag = <span class="built_in">document</span>.createDocumentFragment();</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">  a.innerHTML = arr[i];</div><div class="line">  frag.appendChild(a);</div><div class="line">&#125;</div><div class="line"></div><div class="line">div.appendChild(frag);</div></pre></td></tr></table></figure></p>
 <p>這樣就只要重繪一次！<br>但是這是手動的方式，何況若改變的元件不在同個父元件底下的話還是得重繪多次。<br>但 Virtual DOM 是全自動，而且沒有以上的限制！</p>
 <p>所以 JSX 描述的那些元件都不是實際的 DOM，React 會先在 Virtual DOM 上模擬後再改動實際的 DOM，也就是說，你不可能，也不應該去操作實體 DOM。</p>
-<p>這篇講的以概念居多，<a href="../猴子也能看懂的-React-教學-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續看喔~</p>
+<p>這篇講的以概念居多，<a href="../../10/猴子也能看懂的-React-教學-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續看喔~</p>
 <p>那我們下次再見~</p>
 
                     
