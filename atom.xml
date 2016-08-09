@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://j6qup3.github.io/"/>
-  <updated>2016-08-09T16:27:23.751Z</updated>
+  <updated>2016-08-09T17:28:24.353Z</updated>
   <id>https://j6qup3.github.io/</id>
   
   <author>
@@ -16,11 +16,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>猴子也能看懂的 React 教學 - 1  React 簡介 &amp; JSX &amp; Virtual DOM</title>
+    <title>猴子也能看懂的 React 教學 - 2</title>
+    <link href="https://j6qup3.github.io/2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/"/>
+    <id>https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/</id>
+    <published>2016-08-09T17:14:20.000Z</published>
+    <updated>2016-08-09T17:28:24.353Z</updated>
+    
+    <content type="html"><![CDATA[<p>這篇就會開始打 code 囉。</p>
+<h2 id="Component-Lifecycle"><a href="#Component-Lifecycle" class="headerlink" title="Component Lifecycle"></a>Component Lifecycle</h2><p>Component 以中文來說就是元件，<br>圖片就仁一下 <a href="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react" target="_blank" rel="external">IBM</a> 的：<br><img src="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;這篇就會開始打 code 囉。&lt;/p&gt;
+&lt;h2 id=&quot;Component-Lifecycle&quot;&gt;&lt;a href=&quot;#Component-Lifecycle&quot; class=&quot;headerlink&quot; title=&quot;Component Lifecycle&quot;&gt;&lt;/a&gt;Compon
+    
+    </summary>
+    
+      <category term="教學" scheme="https://j6qup3.github.io/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    
+      <category term="React" scheme="https://j6qup3.github.io/tags/React/"/>
+    
+      <category term="教學" scheme="https://j6qup3.github.io/tags/%E6%95%99%E5%AD%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>猴子也能看懂的 React 教學 - 1 - React 簡介 &amp; 概念</title>
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-09T16:27:23.751Z</updated>
+    <updated>2016-08-09T17:11:10.939Z</updated>
     
     <content type="html"><![CDATA[<p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
 <p>那我們就開始吧~</p>
@@ -76,13 +103,15 @@
 <p>– 仁自 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document_Object_Model" target="_blank" rel="external">MDN</a></p>
 </blockquote>
 <p>簡單來說 DOM 就是用以定義 HTML、XML 和 SVG 的規範，使得各瀏覽器依此進行實作。這樣一來，標準就統一了，<del>工程師又能繼續爆肝了</del>。</p>
-<p>那什麼是 Virtual DOM？<br>從字面上看，是虛擬 DOM。<br>而實際上，就是虛擬 DOM！<br>沒錯，就是<strong>假的</strong>。<del>DOM 業障重</del></p>
+<p>那什麼是 Virtual DOM？<br>從字面上看，是虛擬 DOM。<br>而實際上，就是虛擬 DOM！<br>沒錯，就是<strong>假的</strong>。<del>DOM 業障重</del><br><img src="https://app.kxg.io/images/jiade/fb.jpg" alt="假的"></p>
 <p>首先先來說說 DOM 的問題。<br>它<strong>很慢</strong>。實在是太慢了，慢到 JS 比他快很多倍。如果要用 JS 在前端即時改變 UI 的話，哪怕只是增加了一點小東西，也要重繪！加三個元件就要重繪三次，如果大量操作元件的話效能很不好。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">  a.innerHTML = arr[i];</div><div class="line">  div.appendChild(a);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>上面的範例每次 appendChild 時就會重繪一次，總共重繪了 10 次。</p>
-<p>為了解決這個問題，React 做了一個 Virtual DOM。<br>Virtual DOM 是用 JS 打造的<strong>虛擬中界層</strong>，每當重繪時，就會先在 Virtual DOM 中重繪，再用 diff 演算法比對它跟實際的 DOM 有什麼不同，只要修改不同的地方就好，而且只重繪一次。<br>因為 JS 速度遠比實際 DOM 快，在 Virtual DOM 中重繪的時間跟 DOM 操作的時間相比可以忽略不計。</p>
+<p>為了解決這個問題，React 做了一個 Virtual DOM。<br>Virtual DOM 是用 JS 打造的<strong>虛擬中界層</strong>，每當重繪時，就會先在 Virtual DOM 中重繪，再用 diff 演算法比對它跟實際的 DOM 有什麼不同，只要修改不同的地方就好，而且只重繪一次。<br>因為 JS 速度遠比實際 DOM 快，在 Virtual DOM 中重繪的時間跟 DOM 操作的時間相比可以忽略不計。<br>關於 diff 演算法和 Virtual DOM 內部結構可以看看<a href="https://github.com/livoras/blog/issues/13" target="_blank" rel="external">這理</a>。</p>
 <p>JS 中有個類似的東西叫 DocumentFragment，是一個用 JS 打造的虛擬元件，用以合併處理 DOM，像上面的範例就可以改成：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> frag = <span class="built_in">document</span>.createDocumentFragment();</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">  a.innerHTML = arr[i];</div><div class="line">  frag.appendChild(a);</div><div class="line">&#125;</div><div class="line"></div><div class="line">div.appendChild(frag);</div></pre></td></tr></table></figure></p>
 <p>這樣就只要重繪一次！<br>但是這是手動的方式，何況若改變的元件不在同個父元件底下的話還是得重繪多次。<br>但 Virtual DOM 是全自動，而且沒有以上的限制！</p>
-<p>所以 JSX 描述的那些元件都不是實際的 DOM，React 會先在 Virtual DOM 上模擬</p>
+<p>所以 JSX 描述的那些元件都不是實際的 DOM，React 會先在 Virtual DOM 上模擬後再改動實際的 DOM，也就是說，你不可能，也不應該去操作實體 DOM。</p>
+<p>這篇講的以概念居多，<a href="../猴子也能看懂的-React-教學-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續看喔~</p>
+<p>那我們下次再見~</p>
 ]]></content>
     
     <summary type="html">
