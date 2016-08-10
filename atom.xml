@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://j6qup3.github.io/"/>
-  <updated>2016-08-10T01:09:55.556Z</updated>
+  <updated>2016-08-10T17:38:08.410Z</updated>
   <id>https://j6qup3.github.io/</id>
   
   <author>
@@ -20,23 +20,23 @@
     <link href="https://j6qup3.github.io/2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/"/>
     <id>https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/</id>
     <published>2016-08-09T17:14:20.000Z</published>
-    <updated>2016-08-10T01:09:55.556Z</updated>
+    <updated>2016-08-10T17:38:08.410Z</updated>
     
     <content type="html"><![CDATA[<p>這篇就會開始打 code 囉。<br>不過首先先補充一些重要的概念。</p>
 <h2 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h2><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
 <ul>
-<li>props：React 父子元件間溝通的橋樑。靜態（唯讀）。<br>父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。<br><strong>父元件傳入的 props 改變將造成子元件重繪。</strong><br>EX：<br>父元件內<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">Fuck</span> <span class="attr">fuck</span>=<span class="string">"?"</span>/&gt;</span></div><div class="line">...</div></pre></td></tr></table></figure>
-</li>
+<li>props：React 父子元件間溝通的橋樑。靜態（唯讀）。<br>父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。<br><strong>父元件傳入的 props 改變將造成子元件重繪。</strong></li>
 </ul>
+<p>EX：<br>父元件內<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">Fuck</span> <span class="attr">fuck</span>=<span class="string">"?"</span>/&gt;</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
 <p>子元件<code>Fuck</code>內<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>&#123;this.props.fuck&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
 <p>因為父元件傳入<code>?</code>，所以這裡會顯示<code>?</code></p>
 <ul>
-<li>states：元件內部狀態。動態（可用 <strong>setState</strong> 改值）。<br>與一般變數不同的是，它無法直接修改（初始化例外），只能用 this.setState() 修改。<br><strong>每次使用 this.setState() 修改 state 都會造成元件重繪。</strong><br>EX：<br>state 初始化<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.state = &#123;</div><div class="line">  users: []</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
+<li>states：元件內部狀態。動態（可用 <strong>setState</strong> 改值）。<br>與一般變數不同的是，它無法直接修改（初始化例外），只能用 this.setState() 修改。<br><strong>每次使用 this.setState() 修改 state 都會造成元件重繪。</strong></li>
 </ul>
+<p>EX：<br>state 初始化<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.state = &#123;</div><div class="line">  users: []</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>setState<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(&#123;</div><div class="line">  users: list</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>state 初始化<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">UserList</span> <span class="attr">users</span>=<span class="string">&#123;this.state.users&#125;/</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>這兩個都是很常用到的東西。<del>不管黑貓白貓，能讓頁面重繪的就是好貓</del></p>
+<p>這兩個都是很常用到的東西。<del>不管黑貓白貓，能讓頁面重繪的就是好貓</del><br>能讓頁面重繪的其實還有一個函數：<code>this.forceUpdate()</code>，強制重繪，不過一般是 debug 才會用到，不推薦在其他情況使用。</p>
 <h2 id="Component-Lifecycle-元件的生命周期"><a href="#Component-Lifecycle-元件的生命周期" class="headerlink" title="Component Lifecycle - 元件的生命周期"></a>Component Lifecycle - 元件的生命周期</h2><p>這裡比較複雜，先來張圖片。<br>圖片就仁一下 <a href="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react" target="_blank" rel="external">IBM</a> 的：<br><img src="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png" alt=""><br>先看看右下角的三個生命周期說明。</p>
 <ul>
 <li>Mounting: 元件初始化</li>
@@ -50,7 +50,7 @@
 <ol>
 <li><p>getDefaultProps()</p>
 <ul>
-<li>React.createClass 時觸發（早於 constructor）</li>
+<li><code>React.createClass</code>時觸發（早於 constructor）</li>
 <li>只會在 Mounting 時呼叫一次</li>
 <li>不能使用 setState() （尚未初始化）</li>
 <li>回傳的值將設為 props 的<strong>預設值</strong> （若回傳物件，是傳址）</li>
@@ -58,10 +58,10 @@
 </li>
 <li><p>getInitialState()</p>
 <ul>
-<li>React.createElement 時觸發 （渲染前觸發）</li>
+<li><code>React.createElement</code>時觸發 （渲染前觸發）</li>
 <li>只會在 Mounting 時呼叫一次</li>
 <li>不能使用 setState() （尚未初始化）</li>
-<li>回傳的值將設為 state 的<strong>初始值</strong> （回傳物件或 null）</li>
+<li>回傳的值將設為 state 的<strong>初始值</strong> （回傳物件或<code>null</code>）</li>
 </ul>
 </li>
 <li><p>componentWillMount()</p>
@@ -81,6 +81,7 @@
 <ul>
 <li>只會在 Mounting 時呼叫一次</li>
 <li>子元件 Mounting 完後才觸發</li>
+<li>適合存取 DOM</li>
 </ul>
 </li>
 </ol>
@@ -97,7 +98,7 @@
 <li><p>shouldComponentUpdate(nextProps, nextState)</p>
 <ul>
 <li>不能使用 setState() （無限遞迴）</li>
-<li>回傳 false 的話這次更新直接結束</li>
+<li>回傳<code>false</code>的話這次更新直接結束</li>
 <li>優化效能用的</li>
 </ul>
 </li>
@@ -136,13 +137,33 @@
 </li>
 <li><p>Unmount：元件卸載時 </p>
 <ol>
-<li>componentWillUnmount()<ul>
-<li>1</li>
-</ul>
-</li>
+<li>componentWillUnmount()</li>
 </ol>
 </li>
 </ul>
+<p>上面的資料太多，可能一時間難以消化，沒關係，目前記住 render() 就夠了。<br>我下面再做一些整理：</p>
+<ul>
+<li><p>使用 setState 不會再觸發一次 render，會立即更新</p>
+<ol>
+<li>componentWillMount()</li>
+<li>componentWillReceiveProps()</li>
+</ol>
+</li>
+<li><p>有回傳值</p>
+<ol>
+<li>getDefaultProps()：props 的預設值</li>
+<li>getInitialState()：state 的初始值</li>
+<li>render()：一個頂層 JSX Component 或是 <code>null</code>/<code>false</code> （不渲染）</li>
+<li>shouldComponentUpdate()：<code>true</code>/<code>false</code>，<code>false</code>則這次更新直接結束</li>
+</ol>
+</li>
+</ul>
+<p>看到這裡先冷靜一下，喝口水，千萬不要一時激動關掉網站啊~ 接下來真的要教 code 了，真心不騙</p>
+<p>## </p>
+<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p>雖說不建議直接操作實體 DOM，但有時候仍會碰到需要直接操作的情況。<br>這時可以設定<code>ref</code>屬性來存取實體 DOM：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">React.findDOMNode(<span class="keyword">this</span>.refs.theInput).focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=<span class="string">"theInput"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>若 ref 的值為字串，則可以透過<code>this.refs.字串值</code> 存取<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.input.focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=&#123;(input) =&gt; <span class="keyword">this</span>.input = input&#125;&gt;</div></pre></td></tr></table></figure></p>
+<p>若 ref 的值為函數，則傳入的參數值為該元件本身。</p>
+<p>由於 React.findDOMNode() 傳回的是實體 DOM，所以必須確保實體 DOM 已經被渲染出來才能使用 (componentDidMount() 後面的才能用)</p>
 ]]></content>
     
     <summary type="html">
