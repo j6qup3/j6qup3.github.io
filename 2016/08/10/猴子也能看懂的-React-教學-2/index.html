@@ -15,20 +15,26 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="這篇就會開始打 code 囉。
-Component LifecycleComponent 以中文來說就是元件，圖片就仁一下 IBM 的：">
+    <meta name="description" content="這篇就會開始打 code 囉。不過首先先補充一些重要的概念。
+props &amp;amp; states在前一篇有稍微提到過 props。沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~
+
+props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。父元件傳入的 props">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="猴子也能看懂的 React 教學 - 2">
 <meta property="og:url" content="https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/index.html">
 <meta property="og:site_name" content="初雪的中二 & 爆肝工程師之路">
-<meta property="og:description" content="這篇就會開始打 code 囉。
-Component LifecycleComponent 以中文來說就是元件，圖片就仁一下 IBM 的：">
+<meta property="og:description" content="這篇就會開始打 code 囉。不過首先先補充一些重要的概念。
+props &amp;amp; states在前一篇有稍微提到過 props。沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~
+
+props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。父元件傳入的 props">
 <meta property="og:image" content="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png">
-<meta property="og:updated_time" content="2016-08-09T17:28:24.353Z">
+<meta property="og:updated_time" content="2016-08-10T01:09:55.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猴子也能看懂的 React 教學 - 2">
-<meta name="twitter:description" content="這篇就會開始打 code 囉。
-Component LifecycleComponent 以中文來說就是元件，圖片就仁一下 IBM 的：">
+<meta name="twitter:description" content="這篇就會開始打 code 囉。不過首先先補充一些重要的概念。
+props &amp;amp; states在前一篇有稍微提到過 props。沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~
+
+props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。父元件傳入的 props">
 <meta name="twitter:image" content="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png">
     
     
@@ -233,8 +239,127 @@ Component LifecycleComponent 以中文來說就是元件，圖片就仁一下 IB
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>這篇就會開始打 code 囉。</p>
-<h2 id="Component-Lifecycle"><a href="#Component-Lifecycle" class="headerlink" title="Component Lifecycle"></a>Component Lifecycle</h2><p>Component 以中文來說就是元件，<br>圖片就仁一下 <a href="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react" target="_blank" rel="external">IBM</a> 的：<br><img src="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png" alt=""></p>
+            <p>這篇就會開始打 code 囉。<br>不過首先先補充一些重要的概念。</p>
+<h2 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h2><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
+<ul>
+<li>props：React 父子元件間溝通的橋樑。靜態（唯讀）。<br>父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。<br><strong>父元件傳入的 props 改變將造成子元件重繪。</strong><br>EX：<br>父元件內<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">Fuck</span> <span class="attr">fuck</span>=<span class="string">"?"</span>/&gt;</span></div><div class="line">...</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>子元件<code>Fuck</code>內<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>&#123;this.props.fuck&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>因為父元件傳入<code>?</code>，所以這裡會顯示<code>?</code></p>
+<ul>
+<li>states：元件內部狀態。動態（可用 <strong>setState</strong> 改值）。<br>與一般變數不同的是，它無法直接修改（初始化例外），只能用 this.setState() 修改。<br><strong>每次使用 this.setState() 修改 state 都會造成元件重繪。</strong><br>EX：<br>state 初始化<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.state = &#123;</div><div class="line">  users: []</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>setState<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(&#123;</div><div class="line">  users: list</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>state 初始化<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">UserList</span> <span class="attr">users</span>=<span class="string">&#123;this.state.users&#125;/</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>這兩個都是很常用到的東西。<del>不管黑貓白貓，能讓頁面重繪的就是好貓</del></p>
+<h2 id="Component-Lifecycle-元件的生命周期"><a href="#Component-Lifecycle-元件的生命周期" class="headerlink" title="Component Lifecycle - 元件的生命周期"></a>Component Lifecycle - 元件的生命周期</h2><p>這裡比較複雜，先來張圖片。<br>圖片就仁一下 <a href="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react" target="_blank" rel="external">IBM</a> 的：<br><img src="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png" alt=""><br>先看看右下角的三個生命周期說明。</p>
+<ul>
+<li>Mounting: 元件初始化</li>
+<li>Updating: 元件更新</li>
+<li>Unmounting: 元件卸載</li>
+</ul>
+<p>Mounting 跟 Updating 都會觸發元件內的函數 render()<br>componentWill 和 componentDid 分別是 render 前和後會觸發的函數。<br>Unmounting 不會觸發 render，也沒有 componentDid 函數，但有 componentWill 函數。</p>
+<p>如果要細講的話，可以分成五種情況詳細討論：</p>
+<ul>
+<li><p>Mounting：元件初始化 (React.createClass)</p>
+<ol>
+<li><p>getDefaultProps()</p>
+<ul>
+<li>React.createClass 時觸發（早於 constructor）</li>
+<li>只會在 Mounting 時呼叫一次</li>
+<li>不能使用 setState() （尚未初始化）</li>
+<li>回傳的值將設為 props 的<strong>預設值</strong> （若回傳物件，是傳址）</li>
+</ul>
+</li>
+<li><p>getInitialState()</p>
+<ul>
+<li>React.createElement 時觸發 （渲染前觸發）</li>
+<li>只會在 Mounting 時呼叫一次</li>
+<li>不能使用 setState() （尚未初始化）</li>
+<li>回傳的值將設為 state 的<strong>初始值</strong> （回傳物件或 null）</li>
+</ul>
+</li>
+<li><p>componentWillMount()</p>
+<ul>
+<li>只會在 Mounting 時呼叫一次</li>
+<li>使用 setState 不會再觸發一次 render，會立即更新</li>
+</ul>
+</li>
+<li><p>render()</p>
+<ul>
+<li>不能使用 setState() （無限遞迴）</li>
+<li>一定要改寫，必須且只能回傳一個頂層 JSX Component 或是 <code>null</code>/<code>false</code> （不渲染）</li>
+<li>結束後會造成子元件的 Mounting，意即，子元件的生命周期由此開始</li>
+</ul>
+</li>
+<li><p>componentDidMount()</p>
+<ul>
+<li>只會在 Mounting 時呼叫一次</li>
+<li>子元件 Mounting 完後才觸發</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Updating：元件接收的 props 改變時</p>
+<ol>
+<li><p>componentWillReceiveProps(nextProps)</p>
+<ul>
+<li>使用 setState 不會再觸發一次 render，會立即更新</li>
+<li>若該元件有傳入的 props，則父元件 Updating-render 時會觸發（因為會重傳 props）</li>
+<li>若沒有 props，此函數將不會被觸發</li>
+</ul>
+</li>
+<li><p>shouldComponentUpdate(nextProps, nextState)</p>
+<ul>
+<li>不能使用 setState() （無限遞迴）</li>
+<li>回傳 false 的話這次更新直接結束</li>
+<li>優化效能用的</li>
+</ul>
+</li>
+<li><p>componentWillUpdate(nextProps, nextState)</p>
+<ul>
+<li>不能使用 setState() （無限遞迴）</li>
+</ul>
+</li>
+<li><p>render()</p>
+<ul>
+<li>詳見 Mounting - 4.</li>
+<li>結束後會造成子元件的 Mounting、Updating、Unmounting</li>
+</ul>
+</li>
+<li><p>componentDidUpdate(prevProps, prevState)</p>
+<ul>
+<li>子元件 Mounting、Updating、Unmounting 完後才觸發</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Updating：元件內部的 state 改變時 (setState) (在這裡任何地方使用 setState 都會造成無限遞迴，除了 componentDidUpdate)<br>同 Update-props 之 2 ~ 5，不再贅述</p>
+<ol>
+<li>shouldComponentUpdate(nextProps, nextState)</li>
+<li>componentWillUpdate(nextProps, nextState)</li>
+<li>render()</li>
+<li>componentDidUpdate(prevProps, prevState)</li>
+</ol>
+</li>
+<li><p>Updating：使用 forceUpdate 時 (setState)<br>同 Update-props 之 3 ~ 5，不再贅述</p>
+<ol>
+<li>componentWillUpdate(nextProps, nextState)</li>
+<li>render()</li>
+<li>componentDidUpdate(prevProps, prevState)</li>
+</ol>
+</li>
+<li><p>Unmount：元件卸載時 </p>
+<ol>
+<li>componentWillUnmount()<ul>
+<li>1</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
 
             
         </div>
