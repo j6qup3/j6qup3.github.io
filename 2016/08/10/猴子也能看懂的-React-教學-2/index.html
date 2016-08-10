@@ -28,7 +28,7 @@ props &amp;amp; states在前一篇有稍微提到過 props。沒錯，只有提�
 
 props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。父元件傳入的 props">
 <meta property="og:image" content="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png">
-<meta property="og:updated_time" content="2016-08-10T17:38:08.410Z">
+<meta property="og:updated_time" content="2016-08-10T18:51:41.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猴子也能看懂的 React 教學 - 2">
 <meta name="twitter:description" content="這篇就會開始打 code 囉。不過首先先補充一些重要的概念。
@@ -358,7 +358,7 @@ props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用
 </ol>
 </li>
 </ul>
-<p>上面的資料太多，可能一時間難以消化，沒關係，目前記住 render() 就夠了。<br>我下面再做一些整理：</p>
+<p>上面的資料太多，可能一時間難以消化，沒關係，目前記住 render() 就夠了。<br>下面我再做一些整理：</p>
 <ul>
 <li><p>使用 setState 不會再觸發一次 render，會立即更新</p>
 <ol>
@@ -376,10 +376,10 @@ props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用
 </li>
 </ul>
 <p>看到這裡先冷靜一下，喝口水，千萬不要一時激動關掉網站啊~ 接下來真的要教 code 了，真心不騙</p>
-<p>## </p>
-<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p>雖說不建議直接操作實體 DOM，但有時候仍會碰到需要直接操作的情況。<br>這時可以設定<code>ref</code>屬性來存取實體 DOM：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">React.findDOMNode(<span class="keyword">this</span>.refs.theInput).focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=<span class="string">"theInput"</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>若 ref 的值為字串，則可以透過<code>this.refs.字串值</code> 存取<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.input.focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=&#123;(input) =&gt; <span class="keyword">this</span>.input = input&#125;&gt;</div></pre></td></tr></table></figure></p>
-<p>若 ref 的值為函數，則傳入的參數值為該元件本身。</p>
+<h2 id="開始打-code-啦"><a href="#開始打-code-啦" class="headerlink" title="開始打 code 啦"></a>開始打 code 啦</h2><p>首先，我們來看個範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">UserPage</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
+<p>雖然只有短短兩行，不過還是有些東西要講</p>
+<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p>雖說不建議直接操作實體 DOM，但有時候仍會碰到需要直接操作的情況。<br>這時可以設定<code>ref</code>屬性來存取實體 DOM：<br>若 ref 的值為字串，則可以透過<code>this.refs.字串值</code> 存取。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">React.findDOMNode(<span class="keyword">this</span>.refs.theInput).focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=<span class="string">"theInput"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>若 ref 的值為函數，則傳入的參數值為該元件本身。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.input.focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=&#123;(input) =&gt; <span class="keyword">this</span>.input = input&#125;&gt;</div></pre></td></tr></table></figure></p>
 <p>由於 React.findDOMNode() 傳回的是實體 DOM，所以必須確保實體 DOM 已經被渲染出來才能使用 (componentDidMount() 後面的才能用)</p>
 
             
