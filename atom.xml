@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://j6qup3.github.io/"/>
-  <updated>2016-08-10T18:51:41.132Z</updated>
+  <updated>2016-08-14T20:18:01.847Z</updated>
   <id>https://j6qup3.github.io/</id>
   
   <author>
@@ -16,11 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>猴子也能看懂的 React 教學 - 3 - 從前端走向後端</title>
+    <link href="https://j6qup3.github.io/2016/08/15/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-3/"/>
+    <id>https://j6qup3.github.io/2016/08/15/猴子也能看懂的-React-教學-3/</id>
+    <published>2016-08-14T20:13:23.000Z</published>
+    <updated>2016-08-14T20:18:01.847Z</updated>
+    
+    <content type="html"><![CDATA[<p>這篇會講</p>
+<h2 id="React-Router"><a href="#React-Router" class="headerlink" title="React Router"></a>React Router</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;這篇會講&lt;/p&gt;
+&lt;h2 id=&quot;React-Router&quot;&gt;&lt;a href=&quot;#React-Router&quot; class=&quot;headerlink&quot; title=&quot;React Router&quot;&gt;&lt;/a&gt;React Router&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="教學" scheme="https://j6qup3.github.io/categories/%E6%95%99%E5%AD%B8/"/>
+    
+    
+      <category term="React" scheme="https://j6qup3.github.io/tags/React/"/>
+    
+      <category term="教學" scheme="https://j6qup3.github.io/tags/%E6%95%99%E5%AD%B8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>猴子也能看懂的 React 教學 - 2</title>
     <link href="https://j6qup3.github.io/2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/"/>
     <id>https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/</id>
     <published>2016-08-09T17:14:20.000Z</published>
-    <updated>2016-08-10T18:51:41.132Z</updated>
+    <updated>2016-08-14T20:11:37.980Z</updated>
     
     <content type="html"><![CDATA[<p>這篇就會開始打 code 囉。<br>不過首先先補充一些重要的概念。</p>
 <h2 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h2><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
@@ -187,10 +213,37 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-10T21:21:30.167Z</updated>
+    <updated>2016-08-15T00:58:23.502Z</updated>
     
     <content type="html"><![CDATA[<p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
+<p>先聲明一下，本文所引用的資源和圖片會儘量以中文為主<del>（因為我英文很爛）</del>，有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~</p>
 <p>那我們就開始吧~</p>
+<h1 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h1><ul>
+<li><a href="#React-簡介">React 簡介</a><ul>
+<li><a href="#下載-React">下載 React</a></li>
+<li><a href="#什麼是-React？">什麼是 React？</a></li>
+<li><a href="#React-特色----為什麼我要用它">React 特色 – 為什麼我要用它</a></li>
+<li><a href="#NPM-環境建置">NPM 環境建置</a></li>
+</ul>
+</li>
+<li><a href="#JSX">JSX</a><ul>
+<li><a href="#為什麼要用-JSX？">為什麼要用 JSX？</a></li>
+<li><a href="#JSX-怎麼寫？">JSX 怎麼寫？</a></li>
+<li><a href="#怎麼編譯 JSX？">怎麼編譯 JSX？</a></li>
+</ul>
+</li>
+<li><a href="#Webpack">Webpack</a><ul>
+<li><a href="#安裝-Webpack">安裝 Webpack</a></li>
+<li><a href="#為什麼要用-Webpack？">為什麼要用 Webpack？</a></li>
+</ul>
+</li>
+<li><a href="#Virtual-DOM">Virtual DOM</a><ul>
+<li><a href="#DOM-是什麼？">DOM 是什麼？</a></li>
+<li><a href="#為什麼要用-Virtual-DOM？">為什麼要用 Virtual DOM？</a></li>
+<li><a href="#下載-React">下載 React</a></li>
+</ul>
+</li>
+</ul>
 <hr>
 <h2 id="React-簡介"><a href="#React-簡介" class="headerlink" title="React 簡介"></a>React 簡介</h2><h3 id="下載-React"><a href="#下載-React" class="headerlink" title="下載 React"></a>下載 React</h3><p>首先，到 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React 官網</a> 下載 <a href="https://facebook.github.io/react/downloads.html" target="_blank" rel="external">React 最新版</a>。<br>在等待下載的同時來說明一下何為 React。</p>
 <h3 id="什麼是-React？"><a href="#什麼是-React？" class="headerlink" title="什麼是 React？"></a>什麼是 React？</h3><p>React 是 facebook 開發的一個 JS 函式庫，負責產生與管理前端的 UI 。它<strong>並不是框架</strong>。</p>
@@ -206,8 +259,9 @@
 <p>這樣對 React 有沒有比較明白了呢？<br>那我們首先來看看一個例子：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello React!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/babel-core@5.8.38/browser.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span><span class="xml"></span></div><div class="line">      ReactDOM.render(</div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>,</div><div class="line">        document.getElementById('example')</div><div class="line">      );</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>這是官網的例子，被我仁了(X<br>我假設各位都知道 HTML 的語法，這裡不再贅述。<br>首先，要用 React 的話，必須先引入 React 函式庫。如第 6 行、第 7 行。<br>第 8 行引入的是 <strong>babel</strong> 函式庫，用來編譯 JSX 成 JS，至於什麼是 JSX 稍後會解釋。<br>12 行 ~ 17 行是<strong>重點</strong>，用 React 在 id 為 example 的元件內渲染出 h1 tag。</p>
-<p>那我們在講 React 之前先說說 JSX 吧。若已經會或者不想用 JSX 的話可以先跳到<a href="#Virtual-DOM">下一段</a>。不過之後的範例會以 JSX 為主。</p>
+<h3 id="NPM-環境建置"><a href="#NPM-環境建置" class="headerlink" title="NPM 環境建置"></a>NPM 環境建置</h3><p>npm 是什麼我就不解釋了，不懂的可以請教萬能的 <a href="https://www.google.com.tw/search?q=npm" target="_blank" rel="external">Google</a> 大神，或是直接去 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js 官網</a>下載。</p>
 <hr>
+<p>那我們在講 React 之前先說說 JSX 吧。若已經會或者不想用 JSX 的話可以先跳到<a href="#Webpack">下一段</a>。不過之後的範例會以 JSX 為主。</p>
 <hr>
 <h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><h3 id="為什麼要用-JSX？"><a href="#為什麼要用-JSX？" class="headerlink" title="為什麼要用 JSX？"></a>為什麼要用 JSX？</h3><p>前面說過，React 是用純 JS 在前端產生 HTML 的，用原生 JS 寫起來會很麻煩 （一堆 createElement），因此，我們可以使用 <strong>JSX</strong>，它是 JS / ECMAScript 對 XML 的擴充語法，以 XML-like 的語法表達 JS 產生元件的函數，簡單來說就是語法糖 (Syntatic Sugar)。使用的話有助於精簡程式碼，而且對於大多數前端工程師來說 XML 的格式比較直觀，易於閱讀。</p>
 <p>JSX<br><code>&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;Hello!&lt;/a&gt;</code></p>
@@ -217,14 +271,17 @@
 <blockquote>
 <p>總結<br>JSX 是開發 React 推薦使用的語言，你可以不用 JSX，然而那將使程式碼難以閱讀和維護。</p>
 </blockquote>
-<h3 id="怎麼編譯-JSX？"><a href="#怎麼編譯-JSX？" class="headerlink" title="怎麼編譯 JSX？"></a>怎麼編譯 JSX？</h3><p>JSX 可以像上面的例子一樣被包在 HTML 的 <code>&lt;script type=&quot;text/babel&quot;&gt;&lt;/script&gt;</code> 中，引入 JSX 編譯器 babel，直接在 Client 端解析，但我們一般會將 JSX 分成獨立檔案以便維護以及增加載入效率，然後用 babel 編譯成 JS （現在幾乎都會使用 <strong>CommonJS bundler</strong>）。<br>EX：<code>&lt;script type=&quot;text/jsx&quot; src=&quot;main.jsx&quot;&gt;&lt;/script&gt;</code></p>
 <h3 id="JSX-怎麼寫？"><a href="#JSX-怎麼寫？" class="headerlink" title="JSX 怎麼寫？"></a>JSX 怎麼寫？</h3><p>HTML 大部份的寫法在 JSX 都可以通用，<strong>除了</strong>以下幾點限制：</p>
 <ol>
 <li>HTML 的 class 屬性在 JSX 須寫為 className (class 為 JSX 保留字)</li>
 <li>HTML 的 for 屬性在 JSX 須寫為 htmlFor (for 為 JSX 保留字)</li>
 <li>所有 tag 都須被閉合 (XML 的特性)<br>EX：HTML <code>&lt;br&gt;</code> =&gt; JSX <code>&lt;br /&gt;</code></li>
 <li>同 JS，註解可以用 <code>/* */</code> 或 <code>//</code>，在 tag 中使用的話則須用大括號 <strong>{}</strong> 包住</li>
-<li>style 屬性要以 JS 物件的格式設定，採用駝峰式命名法而非<code>-</code>。別忘記外面要再加上一層大括號。<br>EX：<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">fontSize:</span> '<span class="attr">16px</span>', <span class="attr">color:</span> '#<span class="attr">FF0</span>' &#125;&#125;&gt;</span>87<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<li><p>事件觸發是採用駝峰式命名法而不是全部小寫。<br>EX：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.c8763&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>style 屬性要以 JS 物件的格式設定 (JSON)，採用駝峰式命名法而非<code>-</code>。別忘記外面要再加上一層大括號。<br>EX：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">fontSize:</span> '<span class="attr">16px</span>', <span class="attr">color:</span> '#<span class="attr">FF0</span>' &#125;&#125;&gt;</span>87<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>JSX 除了 HTML 外還可以用其他的寫法，例：</p>
@@ -234,6 +291,21 @@
 </ol>
 <p>另外，JSX 是將 tag 轉換成函數，因此一個頂端 tag 對應一個函數。在 retuen 時只能回傳一個頂端 tag，可以在最外層套一個 div 或 Component 解決這個問題。</p>
 <p>以上講的很簡略，如果想知道更多資訊，可以看一下<a href="http://blog.techbridge.cc/2016/04/21/react-jsx-introduction/#%E4%BA%8C%E3%80%81JSX-%E7%94%A8%E6%B3%95%E6%91%98%E8%A6%81" target="_blank" rel="external">這裡</a>。</p>
+<h3 id="怎麼編譯-JSX？"><a href="#怎麼編譯-JSX？" class="headerlink" title="怎麼編譯 JSX？"></a>怎麼編譯 JSX？</h3><p>JSX 可以像上面的例子一樣被包在 HTML 的 <code>&lt;script type=&quot;text/babel&quot;&gt;&lt;/script&gt;</code> 中，引入 JSX 編譯器 babel，直接在 Client 端解析，但我們一般會將 JSX 分成獨立檔案以便維護以及增加載入效率，然後用 babel 編譯成 JS （現在幾乎都會使用 <strong>CommonJS bundler</strong>）。<br>EX：<code>&lt;script type=&quot;text/jsx&quot; src=&quot;main.jsx&quot;&gt;&lt;/script&gt;</code></p>
+<p>安裝 babel：<br><code>npm install --save-dev babel-cli</code><br>但是這樣的話要手動一個一個編譯，像我這種懶人只好用一些 bundle 工具了。<br>於是我找到了 <strong>Webpack</strong>。</p>
+<hr>
+<h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><h3 id="安裝-Webpack"><a href="#安裝-Webpack" class="headerlink" title="安裝 Webpack"></a>安裝 Webpack</h3><p>存於單一專案：<br><code>npm install webpack --save-dev</code></p>
+<p>全域，存於本機：<br><code>npm install webpack -g</code></p>
+<p>按照需求擇一安裝即可，等待安裝的同時，來說說什麼是 Webpack。</p>
+<h3 id="為什麼要用-Webpack？"><a href="#為什麼要用-Webpack？" class="headerlink" title="為什麼要用 Webpack？"></a>為什麼要用 Webpack？</h3><ul>
+<li>兼容 CommonJS &amp; AMD 模組規範</li>
+<li>JS 擴充語法的編譯自動化 (JSX, Coffee Script, TypeScript…)</li>
+<li>編譯 sass, less</li>
+<li>將資源 (css, img…) 包入 JS 內</li>
+<li>JS 程式碼分散封裝</li>
+<li>可用的擴充 plugin 很多</li>
+</ul>
+<hr>
 <h2 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h2><h3 id="DOM-是什麼？"><a href="#DOM-是什麼？" class="headerlink" title="DOM 是什麼？"></a>DOM 是什麼？</h3><p>熟悉前端的工程師應該會知道 DOM，如果不知道也沒關係，<del>你總會知道的</del></p>
 <p>但我的手業障重，不想打字 QQ，只好請教萬能的維基大神。</p>
 <blockquote>
@@ -261,9 +333,7 @@
     <summary type="html">
     
       &lt;p&gt;&lt;del&gt;其實標題打錯了，是猴子&lt;strong&gt;才&lt;/strong&gt;能看懂。&lt;/del&gt;&lt;br&gt;看不懂就別怪我囉，至少可以證明你不是猴子(X&lt;/p&gt;
-&lt;p&gt;那我們就開始吧~&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;React-簡介&quot;&gt;&lt;a href=&quot;#React-簡介&quot; cla
+&lt;p&gt;先聲明一下，本文所引用的資源和圖片會儘量以中文為主&lt;del&gt;（因為我英文很爛）&lt;/del&gt;，有些資源是簡體中文，看不習
     
     </summary>
     
