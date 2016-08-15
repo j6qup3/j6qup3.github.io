@@ -213,7 +213,7 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-15T01:09:02.316Z</updated>
+    <updated>2016-08-15T02:43:50.873Z</updated>
     
     <content type="html"><![CDATA[<p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
 <p>先聲明一下，本文所引用的資源和圖片會儘量以中文為主<del>（因為我英文很爛）</del>，有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~</p>
@@ -240,7 +240,6 @@
 <li><a href="#Virtual-DOM">Virtual DOM</a><ul>
 <li><a href="#DOM-是什麼？">DOM 是什麼？</a></li>
 <li><a href="#為什麼要用-Virtual-DOM？">為什麼要用 Virtual DOM？</a></li>
-<li><a href="#下載-React">下載 React</a></li>
 </ul>
 </li>
 </ul>
@@ -260,6 +259,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello React!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/babel-core@5.8.38/browser.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span><span class="xml"></span></div><div class="line">      ReactDOM.render(</div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>,</div><div class="line">        document.getElementById('example')</div><div class="line">      );</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>這是官網的例子，被我仁了(X<br>我假設各位都知道 HTML 的語法，這裡不再贅述。<br>首先，要用 React 的話，必須先引入 React 函式庫。如第 6 行、第 7 行。<br>第 8 行引入的是 <strong>babel</strong> 函式庫，用來編譯 JSX 成 JS，至於什麼是 JSX 稍後會解釋。<br>12 行 ~ 17 行是<strong>重點</strong>，用 React 在 id 為 example 的元件內渲染出 h1 tag。</p>
 <h3 id="NPM-環境建置"><a href="#NPM-環境建置" class="headerlink" title="NPM 環境建置"></a>NPM 環境建置</h3><p>npm 是什麼我就不解釋了，不懂的可以請教萬能的 <a href="https://www.google.com.tw/search?q=npm" target="_blank" rel="external">Google</a> 大神，或是直接去 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js 官網</a>下載。</p>
+<p><a href="#目錄">回目錄</a></p>
 <hr>
 <p>那我們在講 React 之前先說說 JSX 吧。若已經會或者不想用 JSX 的話可以先跳到<a href="#Webpack">下一段</a>。不過之後的範例會以 JSX 為主。</p>
 <hr>
@@ -293,6 +293,7 @@
 <p>以上講的很簡略，如果想知道更多資訊，可以看一下<a href="http://blog.techbridge.cc/2016/04/21/react-jsx-introduction/#%E4%BA%8C%E3%80%81JSX-%E7%94%A8%E6%B3%95%E6%91%98%E8%A6%81" target="_blank" rel="external">這裡</a>。</p>
 <h3 id="怎麼編譯-JSX？"><a href="#怎麼編譯-JSX？" class="headerlink" title="怎麼編譯 JSX？"></a>怎麼編譯 JSX？</h3><p>JSX 可以像上面的例子一樣被包在 HTML 的 <code>&lt;script type=&quot;text/babel&quot;&gt;&lt;/script&gt;</code> 中，引入 JSX 編譯器 babel，直接在 Client 端解析，但我們一般會將 JSX 分成獨立檔案以便維護以及增加載入效率，然後用 babel 編譯成 JS （現在幾乎都會使用 <strong>CommonJS bundler</strong>）。<br>EX：<code>&lt;script type=&quot;text/jsx&quot; src=&quot;main.jsx&quot;&gt;&lt;/script&gt;</code></p>
 <p>安裝 babel：<br><code>npm install --save-dev babel-cli</code><br>但是這樣的話要手動一個一個編譯，像我這種懶人只好用一些 bundle 工具了。<br>於是我找到了 <strong>Webpack</strong>。</p>
+<p><a href="#目錄">回目錄</a></p>
 <hr>
 <h1 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h1><h3 id="安裝-Webpack"><a href="#安裝-Webpack" class="headerlink" title="安裝 Webpack"></a>安裝 Webpack</h3><p>存於單一專案：<br><code>npm install webpack --save-dev</code></p>
 <p>全域，存於本機：<br><code>npm install webpack -g</code></p>
@@ -305,6 +306,7 @@
 <li>JS 程式碼分散封裝</li>
 <li>可用的擴充 plugin 很多</li>
 </ul>
+<p><a href="#目錄">回目錄</a></p>
 <hr>
 <h1 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h1><h3 id="DOM-是什麼？"><a href="#DOM-是什麼？" class="headerlink" title="DOM 是什麼？"></a>DOM 是什麼？</h3><p>熟悉前端的工程師應該會知道 DOM，如果不知道也沒關係，<del>你總會知道的</del></p>
 <p>但我的手業障重，不想打字 QQ，只好請教萬能的維基大神。</p>
@@ -325,6 +327,7 @@
 <p>JS 中有個類似的東西叫 DocumentFragment，是一個用 JS 打造的虛擬元件，用以合併處理 DOM，像上面的範例就可以改成：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> frag = <span class="built_in">document</span>.createDocumentFragment();</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">  a.innerHTML = arr[i];</div><div class="line">  frag.appendChild(a);</div><div class="line">&#125;</div><div class="line"></div><div class="line">div.appendChild(frag);</div></pre></td></tr></table></figure></p>
 <p>這樣就只要重繪一次！<br>但是這是手動的方式，何況若改變的元件不在同個父元件底下的話還是得重繪多次。<br>但 Virtual DOM 是全自動，而且沒有以上的限制！</p>
 <p>所以 JSX 描述的那些元件都不是實際的 DOM，React 會先在 Virtual DOM 上模擬後再改動實際的 DOM，也就是說，你不可能，也不應該去操作實體 DOM。</p>
+<p><a href="#目錄">回目錄</a></p>
 <hr>
 <p>先講到這，這篇講的以概念居多，<a href="2016/08/10/猴子也能看懂的-React-教學-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續看喔~</p>
 <p>那我們下次再見~</p>
