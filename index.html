@@ -15,12 +15,15 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta property="og:type" content="blog">
+    <meta name="description" content="我在巨人的肩膀上拋下這條繩索，爬上來吧！你將佇立在我的肩膀上。">
+<meta property="og:type" content="blog">
 <meta property="og:title" content="初雪的中二 & 爆肝工程師之路">
 <meta property="og:url" content="https://j6qup3.github.io/index.html">
 <meta property="og:site_name" content="初雪的中二 & 爆肝工程師之路">
+<meta property="og:description" content="我在巨人的肩膀上拋下這條繩索，爬上來吧！你將佇立在我的肩膀上。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初雪的中二 & 爆肝工程師之路">
+<meta name="twitter:description" content="我在巨人的肩膀上拋下這條繩索，爬上來吧！你將佇立在我的肩膀上。">
     
     
         
@@ -591,7 +594,7 @@
 </ul>
 <p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">resolve: &#123;</div><div class="line">  root: [path.join(__dirname, <span class="string">'src'</span>)],</div><div class="line">  extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.jsx'</span>,<span class="string">'css'</span>, <span class="string">'.scss'</span>],</div><div class="line">  ailas: &#123; a:<span class="string">'b'</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <ul>
-<li>module<br>說明：核心部份<br>格式：物件<br>屬性：<ul>
+<li>module<br>格式：物件<br>屬性：<ul>
 <li>loaders<br>說明：entry 及 require 到的檔都會依此轉換<br>格式：物件陣列（由下往上依序轉換）<br>屬性：<ul>
 <li>test<br>說明：指定目標檔案的檔名<br>格式：<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F#.E5.9F.BA.E6.9C.AC.E8.AF.AD.E6.B3.95" target="_blank" rel="external">正則表達式</a></li>
 <li>loader<br>說明：指定使用的 loader<br>格式：字串或字串陣列 （loader 語法）（由右往左依序轉換）</li>
@@ -601,7 +604,7 @@
 </ul>
 </li>
 </ul>
-<p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">loaders: [&#123;</div><div class="line">  <span class="comment">// '/' 是 JS 正則表達式標記，'.' 是正則表達式關鍵字，所以前面要加個 '\' 讓正則表達式以字元方式處理，'|' 是 '或' 的意思，'$' 是字串結束符號</span></div><div class="line">  <span class="comment">// 整體意思是找檔名末尾是 .js 或 .jsx 的</span></div><div class="line">  test: <span class="regexp">/\.(js|jsx)$/</span>,</div><div class="line">  <span class="comment">// '-loader' 可省略，即 'babel'</span></div><div class="line">  loader: <span class="string">'babel-loader'</span>,</div><div class="line">  exclude: <span class="regexp">/node_modules/</span></div><div class="line">&#125;, &#123;</div><div class="line">  test: <span class="regexp">/\.css$/</span>,</div><div class="line">  <span class="comment">// '-loader' 可省略，'!' 表示 loader 串聯順序（由右往左依序轉換），'？' 表示傳送請求參數（類似 get）來進階設定</span></div><div class="line">  <span class="comment">// loader 串聯亦可用陣列表示：</span></div><div class="line">  <span class="comment">// loader: [ 'style-loader' , 'css-loader?sourceMap' ]</span></div><div class="line">  loader: <span class="string">'style-loader!css-loader?sourceMap'</span></div><div class="line">&#125;]</div></pre></td></tr></table></figure></p>
+<p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">  loaders: [&#123;</div><div class="line">    <span class="comment">// '/' 是 JS 正則表達式標記，'.' 是正則表達式關鍵字，所以前面要加個 '\' 讓正則表達式以字元方式處理，'|' 是 '或' 的意思，'$' 是字串結束符號</span></div><div class="line">    <span class="comment">// 整體意思是找檔名末尾是 .js 或 .jsx 的</span></div><div class="line">    test: <span class="regexp">/\.(js|jsx)$/</span>,</div><div class="line">    <span class="comment">// '-loader' 可省略，即 'babel'</span></div><div class="line">    loader: <span class="string">'babel-loader'</span>,</div><div class="line">    exclude: <span class="regexp">/node_modules/</span></div><div class="line">  &#125;, &#123;</div><div class="line">    test: <span class="regexp">/\.css$/</span>,</div><div class="line">    <span class="comment">// '-loader' 可省略，'!' 表示 loader 串聯順序（由右往左依序轉換），'？' 表示傳送請求參數（類似 get）來進階設定</span></div><div class="line">    <span class="comment">// loader 串聯亦可用陣列表示：</span></div><div class="line">    <span class="comment">// loader: [ 'style-loader' , 'css-loader?sourceMap' ]</span></div><div class="line">    loader: <span class="string">'style-loader!css-loader?sourceMap'</span></div><div class="line">  &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <ul>
 <li>devtool：</li>
 <li>plugins：插件，物件或物件陣列，<code>new webpack.XXX()</code>，<code>new webpack.ProvidePlugin({a: &#39;b&#39;})</code> =&gt; 程式碼有 a 就載入 b module，省的 require</li>
