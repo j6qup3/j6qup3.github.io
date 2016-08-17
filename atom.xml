@@ -225,7 +225,7 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-17T05:56:03.567Z</updated>
+    <updated>2016-08-17T06:01:56.342Z</updated>
     
     <content type="html"><![CDATA[<!-- excerpt -->
 <p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
@@ -250,7 +250,7 @@
 <p>這是官網的例子，<del>被我仁了</del><br>我假設各位都知道 HTML 的語法，這裡不再贅述。<br>首先，要用 React 的話，必須先引入 React 函式庫。如第 6 行、第 7 行。<br>第 8 行引入的是 <strong>babel</strong> 函式庫，用來編譯 JSX 成 JS，至於什麼是 JSX 稍後會解釋。<br>12 行 ~ 17 行是<strong>重點</strong>，用 React 在 id 為 example 的元件內渲染出 h1 tag。</p>
 <h2 id="NPM-環境建置"><a href="#NPM-環境建置" class="headerlink" title="NPM 環境建置"></a>NPM 環境建置</h2><p>NPM 是 Node.js 套件管理器，至今已經變成前後端的開發利器，我就不多解釋了，想了解的可以請教萬能的 <a href="https://www.google.com.tw/search?q=npm" target="_blank" rel="external">Google 大神</a>。<br>沒 NPM 的可以去 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js 官網</a>下載。<br>首先先建個 <strong>package.json</strong><br><code>npm init</code><br>你執行時所在的目錄就是 <strong>NPM 專案的根目錄</strong></p>
 <p>填完配置之後裝個 React<br><code>npm install --save react react-dom</code><br>下載的就是你剛剛去 React 官網下載的東西，只不過使用套件管理系統比較方便開發及使用。<del>所以大家可以把官網下載的刪了</del></p>
-<p><a href="#目錄">回目錄</a></p>
+<p><a href="#table-of-contents">回目錄</a></p>
 <hr>
 <p>那我們在講 React 之前先說說 JSX 吧。若已經會或者不想用 JSX 的話可以先跳到<a href="#Webpack">下一段</a>。不過之後的範例會以 JSX 為主。</p>
 <hr>
@@ -291,7 +291,7 @@
 <p>然後 .babelrc 改一下設定：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"presets"</span>: [</div><div class="line">    <span class="string">"es2015"</span>,</div><div class="line">    <span class="string">"react"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>這樣就可以編譯<strong>使用 ES6 語法的 JSX</strong> 了。</p>
 <p>如果還有興趣可看<a href="https://github.com/thejameskyle/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md#toc-setting-up-babel" target="_blank" rel="external">這裡</a>。<br>但是這樣的話要手動一個一個編譯，像我這種懶人只好用一些 bundle 工具了。<br>於是我找到了 <strong>Webpack</strong>。</p>
-<p><a href="#目錄">回目錄</a></p>
+<p><a href="#table-of-contents">回目錄</a></p>
 <hr>
 <p>Webpack 的部份蠻長的，如果不想使用的話，可以<a href="#Webpack">跳過</a>。</p>
 <hr>
@@ -406,7 +406,7 @@
 </ul>
 </li>
 </ul>
-<p><a href="#目錄">回目錄</a></p>
+<p><a href="#table-of-contents">回目錄</a></p>
 <hr>
 <h1 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h1><h2 id="DOM-是什麼？"><a href="#DOM-是什麼？" class="headerlink" title="DOM 是什麼？"></a>DOM 是什麼？</h2><p>熟悉前端的工程師應該會知道 DOM，如果不知道也沒關係，<del>你總會知道的</del></p>
 <p>但我的手業障重，不想打字 QQ，只好請教萬能的維基大神。</p>
@@ -427,7 +427,7 @@
 <p>JS 中有個類似的東西叫 DocumentFragment，是一個用 JS 打造的虛擬元件，用以合併處理 DOM，像上面的範例就可以改成：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> frag = <span class="built_in">document</span>.createDocumentFragment();</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">  a.innerHTML = arr[i];</div><div class="line">  frag.appendChild(a);</div><div class="line">&#125;</div><div class="line"></div><div class="line">div.appendChild(frag);</div></pre></td></tr></table></figure></p>
 <p>這樣就只要重繪一次！<br>但是這是手動的方式，何況若改變的元件不在同個父元件底下的話還是得重繪多次。<br>但 Virtual DOM 是全自動，而且沒有以上的限制！</p>
 <p>所以 JSX 描述的那些元件都不是實際的 DOM，React 會先在 Virtual DOM 上模擬後再改動實際的 DOM，也就是說，你不可能，也不應該直接操作實體 DOM。</p>
-<p><a href="#目錄">回目錄</a></p>
+<p><a href="#table-of-contents">回目錄</a></p>
 <hr>
 <p>先講到這，這篇講的以概念居多，<a href="2016/08/10/猴子也能看懂的-React-教學-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續看喔~</p>
 <p>那我們下次再見~</p>]]></content>
