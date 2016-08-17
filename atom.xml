@@ -213,7 +213,7 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-16T21:39:30.122Z</updated>
+    <updated>2016-08-17T03:13:28.727Z</updated>
     
     <content type="html"><![CDATA[<p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
 <p>先聲明一下，本文所引用的資源和圖片會儘量以中文為主<del>（因為我英文很爛）</del>，有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~</p>
@@ -304,14 +304,17 @@
 <p>如果還有興趣可看<a href="https://github.com/thejameskyle/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md#toc-setting-up-babel" target="_blank" rel="external">這裡</a>。<br>但是這樣的話要手動一個一個編譯，像我這種懶人只好用一些 bundle 工具了。<br>於是我找到了 <strong>Webpack</strong>。</p>
 <p><a href="#目錄">回目錄</a></p>
 <hr>
+<p>Webpack 的部份蠻長的，如果不想使用的話，可以<a href="#Webpack">跳過</a>。</p>
+<hr>
 <h1 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h1><h3 id="安裝-Webpack"><a href="#安裝-Webpack" class="headerlink" title="安裝 Webpack"></a>安裝 Webpack</h3><p>存於單一專案：<br><code>npm install --save-dev webpack</code></p>
 <p>全域，存於本機：<br><code>npm install -g webpack</code></p>
 <p>按照需求擇一安裝即可，等待安裝的同時，來說說什麼是 Webpack。</p>
 <h3 id="為什麼要用-Webpack？"><a href="#為什麼要用-Webpack？" class="headerlink" title="為什麼要用 Webpack？"></a>為什麼要用 Webpack？</h3><ul>
-<li>兼容 CommonJS &amp; AMD 模組規範</li>
+<li>兼容 CommonJS &amp; AMD &amp; ES6 模組規範</li>
+<li>Bundle 效率高</li>
 <li>JS 擴充語法的編譯自動化 (JSX, Coffee Script, TypeScript…)</li>
 <li>編譯 sass, less</li>
-<li>將資源 (css, img…) 包入 JS 內</li>
+<li>將資源 (css, img, font…) 包入 JS 內</li>
 <li>JS 程式碼分散封裝</li>
 <li>可用的擴充 plugin 很多</li>
 </ul>
@@ -329,7 +332,7 @@
 </ul>
 </li>
 </ul>
-<p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">  path: path.join(__dirname, <span class="string">'dist'</span>),</div><div class="line">  filename: <span class="string">'bundle.js'</span>,</div><div class="line">  publicPath: <span class="string">'/dist/'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">  <span class="comment">// path.join =&gt; 兩個參數，依當前的作業系統幫你在中間加 '/' 或 '\'，然後串接</span></div><div class="line">  path: path.join(__dirname, <span class="string">'dist'</span>),</div><div class="line">  filename: <span class="string">'bundle.js'</span>,</div><div class="line">  publicPath: <span class="string">'/dist/'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <ul>
 <li>resolve<br>說明：require 相關設置。<br>格式：物件<br>屬性：<ul>
 <li>root<br>說明：require 的根目錄 (模組的引用不受影響)<br>格式：字串或字串陣列</li>
@@ -338,33 +341,82 @@
 </ul>
 </li>
 </ul>
-<p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">resolve: &#123;</div><div class="line">  root: [path.join(__dirname, <span class="string">'src'</span>)],</div><div class="line">  extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.jsx'</span>,<span class="string">'css'</span>, <span class="string">'.scss'</span>],</div><div class="line">  ailas: &#123; a:<span class="string">'b'</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">resolve: &#123;</div><div class="line">  <span class="comment">// path.resolve 可以傳入任意數量的字串，會將他們以類似 cd 的方式一一執行，並回傳最後的絕對路徑</span></div><div class="line">  root: [path.resolve(__dirname, <span class="string">'src'</span>)],</div><div class="line">  extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.jsx'</span>,<span class="string">'css'</span>, <span class="string">'.scss'</span>],</div><div class="line">  ailas: &#123; a:<span class="string">'b'</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <ul>
 <li>module<br>格式：物件<br>屬性：<ul>
-<li>loaders<br>說明：entry 及 require 到的檔都會依此轉換<br>格式：物件陣列（由下往上依序轉換）<br>屬性：<ul>
+<li>loaders<br>說明：entry 及 require 到的檔都會依此轉換成 JS，anything to JS<br>格式：物件陣列（由下往上依序轉換）<br>屬性：<ul>
 <li>test<br>說明：指定目標檔案的檔名<br>格式：<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F#.E5.9F.BA.E6.9C.AC.E8.AF.AD.E6.B3.95" target="_blank" rel="external">正則表達式</a></li>
 <li>loader<br>說明：指定使用的 loader<br>格式：字串或字串陣列 （loader 語法）（由右往左依序轉換）</li>
-<li>exclude<br>說明：<br>格式：</li>
+<li>include<br>說明：白名單，只處理的目錄<br>格式：字串或字串陣列</li>
+<li>exclude<br>說明：黑名單，忽略、不處理的目錄<br>格式：字串或字串陣列</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">  loaders: [&#123;</div><div class="line">    <span class="comment">// '/' 是 JS 正則表達式標記，'.' 是正則表達式關鍵字，所以前面要加個 '\' 讓正則表達式以字元方式處理，'|' 是 '或' 的意思，'$' 是字串結束符號</span></div><div class="line">    <span class="comment">// 整體意思是找檔名末尾是 .js 或 .jsx 的</span></div><div class="line">    test: <span class="regexp">/\.(js|jsx)$/</span>,</div><div class="line">    <span class="comment">// '-loader' 可省略，即 'babel'</span></div><div class="line">    loader: <span class="string">'babel-loader'</span>,</div><div class="line">    exclude: <span class="regexp">/node_modules/</span></div><div class="line">  &#125;, &#123;</div><div class="line">    test: <span class="regexp">/\.css$/</span>,</div><div class="line">    <span class="comment">// '-loader' 可省略，'!' 表示 loader 串聯順序（由右往左依序轉換），'？' 表示傳送請求參數（類似 get）來進階設定</span></div><div class="line">    <span class="comment">// loader 串聯亦可用陣列表示：</span></div><div class="line">    <span class="comment">// loader: [ 'style-loader' , 'css-loader?sourceMap' ]</span></div><div class="line">    loader: <span class="string">'style-loader!css-loader?sourceMap'</span></div><div class="line">  &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">  loaders: [&#123;</div><div class="line">    <span class="comment">// '/' 是 JS 正則表達式標記，'.' 是正則表達式關鍵字，所以前面要加個 '\' 讓正則表達式以字元方式處理，'|' 是 '或' 的意思，'$' 是字串結束符號</span></div><div class="line">    <span class="comment">// 整體意思是找檔名末尾是 .js 或 .jsx 的</span></div><div class="line">    test: <span class="regexp">/\.(js|jsx)$/</span>,</div><div class="line">    <span class="comment">// '-loader' 可省略，即 'babel'</span></div><div class="line">    loader: <span class="string">'babel-loader'</span>,</div><div class="line">	<span class="comment">// node_modules 的 JS 檔必定是瀏覽器原本就能吃的 ES5，不需要經過編譯，所以忽略以增加效率和避免錯誤</span></div><div class="line">    exclude: <span class="regexp">/node_modules/</span></div><div class="line">  &#125;, &#123;</div><div class="line">    test: <span class="regexp">/\.css$/</span>,</div><div class="line">    <span class="comment">// '-loader' 可省略，'!' 表示 loader 串聯順序（由右往左依序轉換），'？' 表示傳送請求參數（類似 get）來進階設定</span></div><div class="line">    <span class="comment">// loader 串聯亦可用陣列表示：</span></div><div class="line">    <span class="comment">// loader: [ 'style-loader' , 'css-loader?sourceMap' ]</span></div><div class="line">    loader: <span class="string">'style-loader!css-loader?sourceMap'</span></div><div class="line">  &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <ul>
-<li>devtool：</li>
-<li>plugins：插件，物件或物件陣列，<code>new webpack.XXX()</code>，<code>new webpack.ProvidePlugin({a: &#39;b&#39;})</code> =&gt; 程式碼有 a 就載入 b module，省的 require</li>
-</ul>
-<p><code>npm install --save-dev babel-preset-react-hmre</code></p>
-<h3 id="推薦"><a href="#推薦" class="headerlink" title="推薦"></a>推薦</h3><ul>
-<li>loader<ul>
-<li><strong>babel-loader</strong>：自動編譯 JSX 或 JS 檔 （require 可載入 JSX 了）</li>
-<li><strong>style-loader</strong>：自動將 CSS 檔的內容插入到頁面有 require CSS 的地方，並用 style 包住 （require 可載入 CSS 了）</li>
-<li><strong>css-loader</strong>：自動處理 CSS 內的 <code>url</code> 和 <code>@import</code></li>
+<li>devtool<br>說明：設置 eval 或 SourceMap 屬性，debug 用<br>格式：字串<br>種類：<ul>
+<li><code>&#39;eval&#39;</code></li>
+<li><code>&#39;source-map&#39;</code></li>
+<li><code>&#39;hidden-source-map&#39;</code></li>
+<li><code>&#39;inline-source-map&#39;</code></li>
+<li><code>&#39;eval-source-map&#39;</code></li>
+<li><code>&#39;cheap-source-map&#39;</code></li>
+<li><code>&#39;cheap-module-source-map&#39;</code></li>
 </ul>
 </li>
 </ul>
-<p>如果還有興趣可看<a href="http://www.jianshu.com/p/271f93b8c051" target="_blank" rel="external">這裡</a>。</p>
+<p>可以混著用，個別的介紹請看<a href="https://segmentfault.com/a/1190000004280859" target="_blank" rel="external">這裡</a>，<del>我懶的打字</del><br>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devtool: <span class="string">'cheap-module-eval-source-map'</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>plugins<br>說明：插件配置<br>格式：物件或物件陣列，通常以 <code>new webpack.XXXPlugin()</code> 產生物件</li>
+</ul>
+<p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">plugins: [</div><div class="line">  <span class="keyword">new</span> webpack.HotModuleReplacementPlugin(),</div><div class="line">  <span class="keyword">new</span> webpack.ProvidePlugin(&#123;</div><div class="line">    React: <span class="string">'react'</span>,</div><div class="line">    ReactDOM:<span class="string">'react-dom'</span></div><div class="line">  &#125;)</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p>嘛，大致上是這樣，如果對 Webpack 配置有興趣可看<a href="http://www.jianshu.com/p/271f93b8c051" target="_blank" rel="external">這裡</a>。</p>
+<h3 id="推薦配置"><a href="#推薦配置" class="headerlink" title="推薦配置"></a>推薦配置</h3><ul>
+<li><p>loaders<br>懶人包，<del>全裝下去 94 狂</del><br><code>npm install --save-dev babel-loader style-loader css-loader sass-loader less-loader url-loader</code></p>
+<ul>
+<li><p><strong>babel-loader</strong><br>功能：自動編譯 JSX 或 JS 檔 （require 可載入 JSX 了）<br>安裝：<code>npm install --save-dev babel-loader</code><br>示範：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: <span class="regexp">/\.(js|jsx)$/</span>,</div><div class="line">  loader: <span class="string">'babel'</span>,</div><div class="line">  exclude: <span class="regexp">/node_modules/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>style-loader</strong><br>功能：自動將 CSS 檔的內容插入到頁面有 require CSS 的地方，並用 style 包住 （require 可載入 CSS 了）<br>安裝：<code>npm install --save-dev style-loader</code><br>示範：見下面 css-loader 的示範</p>
+</li>
+<li><p><strong>css-loader</strong><br>功能：自動處理 CSS 內的 <code>url</code> 和 <code>@import</code> 的路徑轉換，可以傳入 sourceMap 參數以便 debug<br>安裝：<code>npm install --save-dev css-loader</code><br>示範：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: <span class="regexp">/\.css$/</span>,</div><div class="line">  loader: <span class="string">'style!css?sourceMap'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>sass-loader</strong><br>功能：自動編譯 sass 檔成 CSS （require 可載入 sass 了），可以傳入 sourceMap 參數以便 debug<br>安裝：<code>npm install --save-dev sass-loader</code><br>示範：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: <span class="regexp">/\.scss$/</span>,</div><div class="line">  loader: <span class="string">'style!css?sourceMap!sass?sourceMap'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>less-loader</strong><br>功能：自動編譯 less 檔成 CSS （require 可載入 less 了），可以傳入 sourceMap 參數以便 debug<br>安裝：<code>npm install --save-dev less-loader</code><br>示範：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: <span class="regexp">/\.less$/</span>,</div><div class="line">  loader: <span class="string">'style!css?sourceMap!less?sourceMap'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>url-loader</strong><br>功能：自動將圖片轉成 Data URL<br>安裝：<code>npm install --save-dev url-loader</code><br>示範：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: <span class="regexp">/\.(jpe?g|JPE?G|png|PNG|gif|GIF|svg|SVG|woff|woff2|eot|ttf)(\?v=\d+\.\d+\.\d+)?$/</span>,</div><div class="line">  loader: <span class="string">'url?limit=1024&amp;name=[sha512:hash:base64:7].[ext]'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>plugins</p>
+<ul>
+<li><p><strong>HotModuleReplacementPlugin</strong><br>功能：<strong>Hot Module Replacement</strong>，詳細會在<a href="#Hot-Module-Replacement">底下</a>提到。<br>示範：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.HotModuleReplacementPlugin()</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>ProvidePlugin</strong><br>功能：幫你 require，<code>new webpack.ProvidePlugin({a: &#39;b&#39;})</code> =&gt; 程式碼有找到 a 字串就載入 b module，就不用手動 require<br>示範：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">new</span> webpack.ProvidePlugin(&#123;</div><div class="line">$: <span class="string">'jquery'</span>,</div><div class="line">   React: <span class="string">'react'</span>,</div><div class="line">   ReactDOM:<span class="string">'react-dom'</span></div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>webpack.config.js 配置範例</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line"></div><div class="line">  entry: [</div><div class="line">    <span class="comment">// necessary for hot reloading with IE:</span></div><div class="line">    <span class="string">'eventsource-polyfill'</span>,</div><div class="line">    <span class="comment">// listen to code updates emitted by hot middleware:</span></div><div class="line">    <span class="string">'webpack-hot-middleware/client'</span>,</div><div class="line">    <span class="comment">// your code's enrty:</span></div><div class="line">    <span class="string">'./src/main.jsx'</span></div><div class="line">  ],</div><div class="line"></div><div class="line">  output: &#123;</div><div class="line">    path: path.join(__dirname, <span class="string">'dist'</span>),</div><div class="line">    filename: <span class="string">'bundle.js'</span>,</div><div class="line">    publicPath: <span class="string">'/dist/'</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  resolve: &#123;</div><div class="line">    root: [</div><div class="line">      path.join(__dirname, <span class="string">'src'</span>)</div><div class="line">    ],</div><div class="line">    extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.jsx'</span>,<span class="string">'css'</span>, <span class="string">'.scss'</span>]</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="built_in">module</span>: &#123;</div><div class="line">    loaders: [&#123;</div><div class="line">      test: <span class="regexp">/\.(js|jsx)$/</span>,</div><div class="line">      loader: <span class="string">'babel'</span>,</div><div class="line">      exclude: <span class="regexp">/node_modules/</span></div><div class="line">    &#125;, &#123;</div><div class="line">      test: <span class="regexp">/\.css$/</span>,</div><div class="line">      loader: <span class="string">'style!css?sourceMap'</span></div><div class="line">    &#125;, &#123;</div><div class="line">      test: <span class="regexp">/\.scss$/</span>,</div><div class="line">      loader: <span class="string">'style!css?sourceMap!sass?sourceMap'</span></div><div class="line">    &#125;, &#123;</div><div class="line">      test: <span class="regexp">/\.(jpe?g|JPE?G|png|PNG|gif|GIF|svg|SVG|woff|woff2|eot|ttf)(\?v=\d+\.\d+\.\d+)?$/</span>,</div><div class="line">      loader: <span class="string">'url?limit=1024&amp;name=[sha512:hash:base64:7].[ext]'</span></div><div class="line">    &#125;]</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  devtool: <span class="string">'cheap-module-eval-source-map'</span>,</div><div class="line"></div><div class="line">  plugins: [</div><div class="line">    <span class="keyword">new</span> webpack.HotModuleReplacementPlugin(),</div><div class="line">    <span class="keyword">new</span> webpack.ProvidePlugin(&#123;</div><div class="line">	  $: <span class="string">'jquery'</span>,</div><div class="line">      React: <span class="string">'react'</span>,</div><div class="line">      ReactDOM:<span class="string">'react-dom'</span></div><div class="line">    &#125;)</div><div class="line">  ]</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><code>npm install --save-dev babel-preset-react-hmre</code></p>
+<h3 id="Hot-Module-Replacement"><a href="#Hot-Module-Replacement" class="headerlink" title="Hot Module Replacement"></a>Hot Module Replacement</h3><p>中文稱為熱置換，意思是你修改任意一個檔案並儲存後就會自行編譯打包 (webpack –watch)，然後更新瀏覽器畫面 (<a href="http://blog.qiji.tech/archives/2878#BrowsersyncWebpack" target="_blank" rel="external">Browsersync</a>)，而且只會 reload 更新的一部份而不會全部 reload，全部 reload 效率低，且會導致狀態的遺失。</p>
+<p>webpack –watch + Browsersync 還是無法避免全部 reload，無法做到 HMR，所以，我們得用 <strong>webpack-dev-server</strong> 或 <strong>webpack-hot-middleware</strong>。</p>
+<p>webpack-dev-server 本身是小型的 Express server，方便架設，但彈性較少。webpack-hot-middleware 則是 <strong>webpack-dev-middleware</strong> 的衍生套件，webpack-dev-middleware 可配合 Express 或其他的 server 框架，彈性較高。我個人是採用 webpack-hot-middleware。想用 webpack-dev-server 的可以參考下<a href="https://medium.com/html-test/webpack-%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B-585f2bc952b9#.to224y5m9" target="_blank" rel="external">這裡</a>。</p>
+<ul>
+<li>安裝<ul>
+<li><code>npm install --save-dev express webpack-dev-middleware webpack-hot-middleware</code></li>
+</ul>
+</li>
+</ul>
 <p><a href="#目錄">回目錄</a></p>
 <hr>
 <h1 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h1><h3 id="DOM-是什麼？"><a href="#DOM-是什麼？" class="headerlink" title="DOM 是什麼？"></a>DOM 是什麼？</h3><p>熟悉前端的工程師應該會知道 DOM，如果不知道也沒關係，<del>你總會知道的</del></p>
