@@ -233,7 +233,7 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-17T22:33:19.785Z</updated>
+    <updated>2016-08-17T22:42:47.503Z</updated>
     
     <content type="html"><![CDATA[<!-- excerpt -->
 <p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
@@ -317,30 +317,24 @@
 </ul>
 <h2 id="環境配置"><a href="#環境配置" class="headerlink" title="環境配置"></a>環境配置</h2><h3 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h3><p>首先，在 NPM 專案的根目錄建立一個名叫 <strong>webpack.config.js</strong> 的檔案，並輸入以下內容：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>所有設定將打在 module.exports 中輸出。</p>
-<ul>
-<li>entry<br>說明：Webpack 會將每個 entry 文件編譯打包。當然，其中 require 的文件 (js, css, img) 會一起被打包進來。<br>格式：字串或字串陣列 （一個檔案對應一個字串，為 JS 檔）</li>
-</ul>
+<h4 id="entry"><a href="#entry" class="headerlink" title="entry"></a>entry</h4><p>說明：Webpack 會將每個 entry 文件編譯打包。當然，其中 require 的文件 (js, css, img) 會一起被打包進來。<br>格式：字串或字串陣列 （一個檔案對應一個字串，為 JS 檔）</p>
 <p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">entry: [</div><div class="line">  <span class="string">'./src/main.jsx'</span></div><div class="line">]</div></pre></td></tr></table></figure></p>
+<h4 id="output"><a href="#output" class="headerlink" title="output"></a>output</h4><p>說明：打包後生成的檔案路徑。<br>格式：物件<br>屬性：</p>
 <ul>
-<li>output<br>說明：打包後生成的檔案路徑。<br>格式：物件<br>屬性：<ul>
 <li>path<br>說明：打包生成的目錄<br>格式：字串</li>
 <li>filename<br>說明：生成的 js 檔名<br>格式：字串</li>
 <li>publicPath<br>說明：CSS 打包時修改的引用檔案路徑<br>格式：字串</li>
 </ul>
-</li>
-</ul>
 <p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">  <span class="comment">// path.join =&gt; 兩個參數，依當前的作業系統幫你在中間加 '/' 或 '\'，然後串接</span></div><div class="line">  path: path.join(__dirname, <span class="string">'dist'</span>),</div><div class="line">  filename: <span class="string">'bundle.js'</span>,</div><div class="line">  publicPath: <span class="string">'/dist/'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="resolve"><a href="#resolve" class="headerlink" title="resolve"></a>resolve</h4><p>說明：require 相關設置。<br>格式：物件<br>屬性：</p>
 <ul>
-<li>resolve<br>說明：require 相關設置。<br>格式：物件<br>屬性：<ul>
 <li>root<br>說明：require 的根目錄 (模組的引用不受影響)<br>格式：字串或字串陣列</li>
 <li>extensions<br>說明：require 可省略的副檔名<br>格式：字串或字串陣列</li>
-<li>ailas<br>說明：屬性對應的值會形成 ailas 對應。<code>ailas: { a:&#39;b&#39; }</code> =&gt; <code>require(&#39;a&#39;)</code> 意同於 <code>require(&#39;b&#39;)</code><br>格式：物件</li>
-</ul>
-</li>
+<li>ailas<br>說明：屬性對應的值會形成 ailas 對應。<code>ailas: { a:&#39;b&#39; }</code> =&gt; <code>require(&#39;a&#39;)</code> 同於 <code>require(&#39;b&#39;)</code><br>格式：物件</li>
 </ul>
 <p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">resolve: &#123;</div><div class="line">  <span class="comment">// path.resolve 可以傳入任意數量的字串，會將他們以類似 cd 的方式一一執行，並回傳最後的絕對路徑</span></div><div class="line">  root: [path.resolve(__dirname, <span class="string">'src'</span>)],</div><div class="line">  extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.jsx'</span>,<span class="string">'css'</span>, <span class="string">'.scss'</span>],</div><div class="line">  ailas: &#123; a:<span class="string">'b'</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="module"><a href="#module" class="headerlink" title="module"></a>module</h4><p>格式：物件<br>屬性：</p>
 <ul>
-<li>module<br>格式：物件<br>屬性：<ul>
 <li>loaders<br>說明：entry 及 require 到的檔都會依此轉換成 JS，anything to JS<br>格式：物件陣列（由下往上依序轉換）<br>屬性：<ul>
 <li>test<br>說明：指定目標檔案的檔名<br>格式：<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F#.E5.9F.BA.E6.9C.AC.E8.AF.AD.E6.B3.95" target="_blank" rel="external">正則表達式</a></li>
 <li>loader<br>說明：指定使用的 loader<br>格式：字串或字串陣列 （loader 語法）（由右往左依序轉換）</li>
@@ -349,11 +343,9 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">  loaders: [&#123;</div><div class="line">    <span class="comment">// '/' 是 JS 正則表達式標記，'.' 是正則表達式關鍵字，所以前面要加個 '\' 讓正則表達式以字元方式處理，'|' 是 '或' 的意思，'$' 是字串結束符號</span></div><div class="line">    <span class="comment">// 整體意思是找檔名末尾是 .js 或 .jsx 的</span></div><div class="line">    test: <span class="regexp">/\.(js|jsx)$/</span>,</div><div class="line">    <span class="comment">// '-loader' 可省略，即 'babel'</span></div><div class="line">    loader: <span class="string">'babel-loader'</span>,</div><div class="line">	<span class="comment">// node_modules 的 JS 檔必定是瀏覽器原本就能吃的 ES5，不需要經過編譯，所以忽略以增加效率和避免錯誤</span></div><div class="line">    exclude: <span class="regexp">/node_modules/</span></div><div class="line">  &#125;, &#123;</div><div class="line">    test: <span class="regexp">/\.css$/</span>,</div><div class="line">    <span class="comment">// '-loader' 可省略，'!' 表示 loader 串聯順序（由右往左依序轉換），'？' 表示傳送請求參數（類似 get）來進階設定</span></div><div class="line">    <span class="comment">// loader 串聯亦可用陣列表示：</span></div><div class="line">    <span class="comment">// loader: [ 'style-loader' , 'css-loader?sourceMap' ]</span></div><div class="line">    loader: <span class="string">'style-loader!css-loader?sourceMap'</span></div><div class="line">  &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a>devtool</h4><p>說明：設置 eval 或 SourceMap 屬性，debug 用<br>格式：字串<br>種類：</p>
 <ul>
-<li>devtool<br>說明：設置 eval 或 SourceMap 屬性，debug 用<br>格式：字串<br>種類：<ul>
 <li><code>&#39;eval&#39;</code></li>
 <li><code>&#39;source-map&#39;</code></li>
 <li><code>&#39;hidden-source-map&#39;</code></li>
@@ -362,12 +354,8 @@
 <li><code>&#39;cheap-source-map&#39;</code></li>
 <li><code>&#39;cheap-module-source-map&#39;</code></li>
 </ul>
-</li>
-</ul>
 <p>可以混著用，個別的介紹請看<a href="https://segmentfault.com/a/1190000004280859" target="_blank" rel="external">這裡</a>，<del>我懶的打字</del><br>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devtool: <span class="string">'cheap-module-eval-source-map'</span></div></pre></td></tr></table></figure></p>
-<ul>
-<li>plugins<br>說明：插件配置<br>格式：物件或物件陣列，通常以 <code>new webpack.XXXPlugin()</code> 產生物件</li>
-</ul>
+<h4 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h4><p>說明：插件配置<br>格式：物件或物件陣列，通常以 <code>new webpack.XXXPlugin()</code> 產生物件</p>
 <p>EX：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">plugins: [</div><div class="line">  <span class="keyword">new</span> webpack.HotModuleReplacementPlugin(),</div><div class="line">  <span class="keyword">new</span> webpack.ProvidePlugin(&#123;</div><div class="line">    React: <span class="string">'react'</span>,</div><div class="line">    ReactDOM:<span class="string">'react-dom'</span></div><div class="line">  &#125;)</div><div class="line">]</div></pre></td></tr></table></figure></p>
 <p>嘛，大致上是這樣，如果對 Webpack 配置有興趣可看<a href="http://www.jianshu.com/p/271f93b8c051" target="_blank" rel="external">這裡</a>。</p>
 <h3 id="推薦配置"><a href="#推薦配置" class="headerlink" title="推薦配置"></a>推薦配置</h3><h4 id="loaders"><a href="#loaders" class="headerlink" title="loaders"></a>loaders</h4><p> 懶人包，<del>全裝下去 94 狂</del><br> <code>npm install --save-dev babel-loader style-loader css-loader sass-loader less-loader url-loader</code></p>
@@ -390,7 +378,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  test: <span class="regexp">/\.(jpe?g|JPE?G|png|PNG|gif|GIF|svg|SVG|woff|woff2|eot|ttf)(\?v=\d+\.\d+\.\d+)?$/</span>,</div><div class="line">  loader: <span class="string">'url?limit=1024&amp;name=[sha512:hash:base64:7].[ext]'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h4><ul>
+<h4 id="plugins-1"><a href="#plugins-1" class="headerlink" title="plugins"></a>plugins</h4><ul>
 <li><p><strong>HotModuleReplacementPlugin</strong><br>功能：<strong>Hot Module Replacement</strong>，詳細會在<a href="#Hot-Module-Replacement">底下</a>提到。<br>示範：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.HotModuleReplacementPlugin()</div></pre></td></tr></table></figure>
 </li>
