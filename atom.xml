@@ -46,10 +46,14 @@
     <link href="https://j6qup3.github.io/2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/"/>
     <id>https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/</id>
     <published>2016-08-09T17:14:20.000Z</published>
-    <updated>2016-08-17T05:53:27.187Z</updated>
+    <updated>2016-08-17T05:58:28.466Z</updated>
     
-    <content type="html"><![CDATA[<p>這篇就會開始打 code 囉。<br>不過首先先補充一些重要的概念。</p>
-<h2 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h2><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
+    <content type="html"><![CDATA[<!-- excerpt -->
+<p>這篇就會開始打 code 囉。<br>不過首先先補充一些重要的概念。</p>
+<hr>
+<!-- toc -->
+<hr>
+<h1 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h1><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
 <ul>
 <li>props：React 父子元件間溝通的橋樑。靜態（唯讀）。<br>父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。<br><strong>父元件傳入的 props 改變將造成子元件重繪。</strong></li>
 </ul>
@@ -63,7 +67,7 @@
 <p>setState<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(&#123;</div><div class="line">  users: list</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>state 初始化<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">UserList</span> <span class="attr">users</span>=<span class="string">&#123;this.state.users&#125;/</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>這兩個都是很常用到的東西。<del>不管黑貓白貓，能讓頁面重繪的就是好貓</del><br>能讓頁面重繪的其實還有一個函數：<code>this.forceUpdate()</code>，強制重繪，不過一般是 debug 才會用到，不推薦在其他情況使用。</p>
-<h2 id="Component-Lifecycle-元件的生命周期"><a href="#Component-Lifecycle-元件的生命周期" class="headerlink" title="Component Lifecycle - 元件的生命周期"></a>Component Lifecycle - 元件的生命周期</h2><p>這裡比較複雜，先來張圖片。<br>圖片就仁一下 <a href="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react" target="_blank" rel="external">IBM</a> 的：<br><img src="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png" alt=""><br>先看看右下角的三個生命周期說明。</p>
+<h1 id="Component-Lifecycle-元件的生命周期"><a href="#Component-Lifecycle-元件的生命周期" class="headerlink" title="Component Lifecycle - 元件的生命周期"></a>Component Lifecycle - 元件的生命周期</h1><p>這裡比較複雜，先來張圖片。<br>圖片就仁一下 <a href="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react" target="_blank" rel="external">IBM</a> 的：<br><img src="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png" alt=""><br>先看看右下角的三個生命周期說明。</p>
 <ul>
 <li>Mounting: 元件初始化</li>
 <li>Updating: 元件更新</li>
@@ -185,17 +189,25 @@
 </li>
 </ul>
 <p>看到這裡先冷靜一下，喝口水，千萬不要一時激動關掉網站啊~ 接下來真的要教 code 了，真心不騙</p>
-<h2 id="開始打-code-啦"><a href="#開始打-code-啦" class="headerlink" title="開始打 code 啦"></a>開始打 code 啦</h2><p>首先，我們來看個範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">UserPage</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
+<h1 id="開始打-code-啦"><a href="#開始打-code-啦" class="headerlink" title="開始打 code 啦"></a>開始打 code 啦</h1><p>首先，我們來看個範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">UserPage</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
 <p>雖然只有短短兩行，不過還是有些東西要講</p>
-<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p>雖說不建議直接操作實體 DOM，但有時候仍會碰到需要直接操作的情況。<br>這時可以設定<code>ref</code>屬性來存取實體 DOM：<br>若 ref 的值為字串，則可以透過<code>this.refs.字串值</code> 存取。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">React.findDOMNode(<span class="keyword">this</span>.refs.theInput).focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=<span class="string">"theInput"</span>&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p>雖說不建議直接操作實體 DOM，但有時候仍會碰到需要直接操作的情況。<br>這時可以設定<code>ref</code>屬性來存取實體 DOM：<br>若 ref 的值為字串，則可以透過<code>this.refs.字串值</code> 存取。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">React.findDOMNode(<span class="keyword">this</span>.refs.theInput).focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=<span class="string">"theInput"</span>&gt;</div></pre></td></tr></table></figure></p>
 <p>若 ref 的值為函數，則傳入的參數值為該元件本身。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.input.focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=&#123;(input) =&gt; <span class="keyword">this</span>.input = input&#125;&gt;</div></pre></td></tr></table></figure></p>
-<p>由於 React.findDOMNode() 傳回的是實體 DOM，所以必須確保實體 DOM 已經被渲染出來才能使用 (componentDidMount() 後面的才能用)</p>
-]]></content>
+<p>由於 React.findDOMNode() 傳回的是實體 DOM，所以必須確保實體 DOM 已經被渲染出來才能使用 (componentDidMount() 後面的才能用)</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;這篇就會開始打 code 囉。&lt;br&gt;不過首先先補充一些重要的概念。&lt;/p&gt;
-&lt;h2 id=&quot;props-amp-states&quot;&gt;&lt;a href=&quot;#props-amp-states&quot; class=&quot;headerlink&quot; title=&quot;props &amp;amp; states
+      &lt;p&gt;React 概念&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;React 特色&lt;/li&gt;
+&lt;li&gt;JSX&lt;/li&gt;
+&lt;li&gt;Virtual DOM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;環境配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NPM&lt;/li&gt;
+&lt;li&gt;Webpack&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -213,12 +225,13 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-17T05:26:50.235Z</updated>
+    <updated>2016-08-17T05:56:03.567Z</updated>
     
     <content type="html"><![CDATA[<!-- excerpt -->
 <p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
 <p>先聲明一下，本文所引用的資源和圖片會儘量以中文為主<del>（因為我英文很爛）</del>，有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~</p>
 <p>那我們就開始吧~</p>
+<hr>
 <!-- toc -->
 <hr>
 <h1 id="React-簡介"><a href="#React-簡介" class="headerlink" title="React 簡介"></a>React 簡介</h1><h2 id="下載-React"><a href="#下載-React" class="headerlink" title="下載 React"></a>下載 React</h2><p>首先，到 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React 官網</a> 下載 <a href="https://facebook.github.io/react/downloads.html" target="_blank" rel="external">React 最新版</a>。<br>在等待下載的同時來說明一下何為 React。</p>

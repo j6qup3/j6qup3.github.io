@@ -15,26 +15,44 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="這篇就會開始打 code 囉。不過首先先補充一些重要的概念。
-props &amp;amp; states在前一篇有稍微提到過 props。沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~
+    <meta name="description" content="React 概念
 
-props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。父元件傳入的 props">
+React 特色
+JSX
+Virtual DOM
+
+環境配置
+
+NPM
+Webpack">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="猴子也能看懂的 React 教學 - 2">
 <meta property="og:url" content="https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/index.html">
 <meta property="og:site_name" content="初雪的中二 & 爆肝工程師之路">
-<meta property="og:description" content="這篇就會開始打 code 囉。不過首先先補充一些重要的概念。
-props &amp;amp; states在前一篇有稍微提到過 props。沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~
+<meta property="og:description" content="React 概念
 
-props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。父元件傳入的 props">
+React 特色
+JSX
+Virtual DOM
+
+環境配置
+
+NPM
+Webpack">
 <meta property="og:image" content="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png">
-<meta property="og:updated_time" content="2016-08-17T05:53:27.187Z">
+<meta property="og:updated_time" content="2016-08-17T05:58:28.466Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猴子也能看懂的 React 教學 - 2">
-<meta name="twitter:description" content="這篇就會開始打 code 囉。不過首先先補充一些重要的概念。
-props &amp;amp; states在前一篇有稍微提到過 props。沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~
+<meta name="twitter:description" content="React 概念
 
-props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。父元件傳入的 props">
+React 特色
+JSX
+Virtual DOM
+
+環境配置
+
+NPM
+Webpack">
 <meta name="twitter:image" content="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png">
     
     
@@ -247,8 +265,12 @@ props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>這篇就會開始打 code 囉。<br>不過首先先補充一些重要的概念。</p>
-<h2 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h2><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
+            <!-- excerpt -->
+<p>這篇就會開始打 code 囉。<br>不過首先先補充一些重要的概念。</p>
+<hr>
+<h1 id="table-of-contents">目錄</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#props-amp-states"><span class="toc-text">props & states</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Component-Lifecycle-元件的生命周期"><span class="toc-text">Component Lifecycle - 元件的生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#開始打-code-啦"><span class="toc-text">開始打 code 啦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#refs"><span class="toc-text">refs</span></a></li></ol>
+<hr>
+<h1 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h1><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
 <ul>
 <li>props：React 父子元件間溝通的橋樑。靜態（唯讀）。<br>父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。<br><strong>父元件傳入的 props 改變將造成子元件重繪。</strong></li>
 </ul>
@@ -262,7 +284,7 @@ props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用
 <p>setState<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(&#123;</div><div class="line">  users: list</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>state 初始化<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">UserList</span> <span class="attr">users</span>=<span class="string">&#123;this.state.users&#125;/</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>這兩個都是很常用到的東西。<del>不管黑貓白貓，能讓頁面重繪的就是好貓</del><br>能讓頁面重繪的其實還有一個函數：<code>this.forceUpdate()</code>，強制重繪，不過一般是 debug 才會用到，不推薦在其他情況使用。</p>
-<h2 id="Component-Lifecycle-元件的生命周期"><a href="#Component-Lifecycle-元件的生命周期" class="headerlink" title="Component Lifecycle - 元件的生命周期"></a>Component Lifecycle - 元件的生命周期</h2><p>這裡比較複雜，先來張圖片。<br>圖片就仁一下 <a href="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react" target="_blank" rel="external">IBM</a> 的：<br><img src="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png" alt=""><br>先看看右下角的三個生命周期說明。</p>
+<h1 id="Component-Lifecycle-元件的生命周期"><a href="#Component-Lifecycle-元件的生命周期" class="headerlink" title="Component Lifecycle - 元件的生命周期"></a>Component Lifecycle - 元件的生命周期</h1><p>這裡比較複雜，先來張圖片。<br>圖片就仁一下 <a href="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react" target="_blank" rel="external">IBM</a> 的：<br><img src="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png" alt=""><br>先看看右下角的三個生命周期說明。</p>
 <ul>
 <li>Mounting: 元件初始化</li>
 <li>Updating: 元件更新</li>
@@ -384,12 +406,11 @@ props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用
 </li>
 </ul>
 <p>看到這裡先冷靜一下，喝口水，千萬不要一時激動關掉網站啊~ 接下來真的要教 code 了，真心不騙</p>
-<h2 id="開始打-code-啦"><a href="#開始打-code-啦" class="headerlink" title="開始打 code 啦"></a>開始打 code 啦</h2><p>首先，我們來看個範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">UserPage</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
+<h1 id="開始打-code-啦"><a href="#開始打-code-啦" class="headerlink" title="開始打 code 啦"></a>開始打 code 啦</h1><p>首先，我們來看個範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">UserPage</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
 <p>雖然只有短短兩行，不過還是有些東西要講</p>
-<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p>雖說不建議直接操作實體 DOM，但有時候仍會碰到需要直接操作的情況。<br>這時可以設定<code>ref</code>屬性來存取實體 DOM：<br>若 ref 的值為字串，則可以透過<code>this.refs.字串值</code> 存取。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">React.findDOMNode(<span class="keyword">this</span>.refs.theInput).focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=<span class="string">"theInput"</span>&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p>雖說不建議直接操作實體 DOM，但有時候仍會碰到需要直接操作的情況。<br>這時可以設定<code>ref</code>屬性來存取實體 DOM：<br>若 ref 的值為字串，則可以透過<code>this.refs.字串值</code> 存取。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">React.findDOMNode(<span class="keyword">this</span>.refs.theInput).focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=<span class="string">"theInput"</span>&gt;</div></pre></td></tr></table></figure></p>
 <p>若 ref 的值為函數，則傳入的參數值為該元件本身。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.input.focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=&#123;(input) =&gt; <span class="keyword">this</span>.input = input&#125;&gt;</div></pre></td></tr></table></figure></p>
 <p>由於 React.findDOMNode() 傳回的是實體 DOM，所以必須確保實體 DOM 已經被渲染出來才能使用 (componentDidMount() 後面的才能用)</p>
-
             
         </div>
     </div>
@@ -447,7 +468,7 @@ props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -518,7 +539,7 @@ props：React 父子元件間溝通的橋樑。靜態（唯讀）。父元件用
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
