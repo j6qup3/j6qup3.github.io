@@ -213,9 +213,12 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-17T04:11:50.017Z</updated>
+    <updated>2016-08-17T04:16:33.644Z</updated>
     
-    <content type="html"><![CDATA[<!-- excerpt --></p>
+    <content type="html"><![CDATA[<!-- excerpt -->
+<p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
+<p>先聲明一下，本文所引用的資源和圖片會儘量以中文為主<del>（因為我英文很爛）</del>，有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~</p>
+<p>那我們就開始吧~</p>
 <h1 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h1><ul>
 <li><a href="#React-簡介">React 簡介</a><ul>
 <li><a href="#下載-React">下載 React</a></li>
@@ -443,9 +446,17 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;del&gt;其實標題打錯了，是猴子&lt;strong&gt;才&lt;/strong&gt;能看懂。&lt;/del&gt;&lt;br&gt;看不懂就別怪我囉，至少可以證明你不是猴子(X&lt;/p&gt;
-&lt;p&gt;先聲明一下，本文所引用的資源和圖片會儘量以中文為主&lt;del&gt;（因為我英文很爛）&lt;/del&gt;，有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~&lt;/p&gt;
-&lt;p&gt;那我們就開始吧~&lt;br&gt;
+      &lt;p&gt;React 概念&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;React 特色&lt;/li&gt;
+&lt;li&gt;JSX&lt;/li&gt;
+&lt;li&gt;Virtual DOM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;環境配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NPM&lt;/li&gt;
+&lt;li&gt;Webpack&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
