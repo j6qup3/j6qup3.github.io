@@ -15,44 +15,23 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="React 概念
-
-React 特色
-JSX
-Virtual DOM
-
-環境配置
-
-NPM
-Webpack">
+    <meta name="description" content="其實標題打錯了，是猴子才能看懂。看不懂就別怪我囉，至少可以證明你不是猴子(X
+先聲明一下，本文所引用的資源和圖片會儘量以中文為主（因為我英文很爛），有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~
+那我們就開始吧~">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="猴子也能看懂的 React 教學 - 1 - React 概念 & 環境配置">
 <meta property="og:url" content="https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/index.html">
 <meta property="og:site_name" content="初雪的中二 & 爆肝工程師之路">
-<meta property="og:description" content="React 概念
-
-React 特色
-JSX
-Virtual DOM
-
-環境配置
-
-NPM
-Webpack">
+<meta property="og:description" content="其實標題打錯了，是猴子才能看懂。看不懂就別怪我囉，至少可以證明你不是猴子(X
+先聲明一下，本文所引用的資源和圖片會儘量以中文為主（因為我英文很爛），有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~
+那我們就開始吧~">
 <meta property="og:image" content="https://app.kxg.io/images/jiade/fb.jpg">
-<meta property="og:updated_time" content="2016-08-17T04:34:11.536Z">
+<meta property="og:updated_time" content="2016-08-17T04:38:22.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猴子也能看懂的 React 教學 - 1 - React 概念 & 環境配置">
-<meta name="twitter:description" content="React 概念
-
-React 特色
-JSX
-Virtual DOM
-
-環境配置
-
-NPM
-Webpack">
+<meta name="twitter:description" content="其實標題打錯了，是猴子才能看懂。看不懂就別怪我囉，至少可以證明你不是猴子(X
+先聲明一下，本文所引用的資源和圖片會儘量以中文為主（因為我英文很爛），有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~
+那我們就開始吧~">
 <meta name="twitter:image" content="https://app.kxg.io/images/jiade/fb.jpg">
     
     
@@ -252,10 +231,6 @@ Webpack">
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <!-- excerpt -->
-<p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
-<p>先聲明一下，本文所引用的資源和圖片會儘量以中文為主<del>（因為我英文很爛）</del>，有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~</p>
-<p>那我們就開始吧~</p>
-<h1 id="table-of-contents">目錄</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-簡介"><span class="toc-text">React 簡介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下載-React"><span class="toc-text">下載 React</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什麼是-React？"><span class="toc-text">什麼是 React？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-特色-–-為什麼我要用它？"><span class="toc-text">React 特色 – 為什麼我要用它？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NPM-環境建置"><span class="toc-text">NPM 環境建置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JSX"><span class="toc-text">JSX</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#為什麼要用-JSX？"><span class="toc-text">為什麼要用 JSX？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSX-怎麼寫？"><span class="toc-text">JSX 怎麼寫？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎麼編譯-JSX？"><span class="toc-text">怎麼編譯 JSX？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Babel-安裝-amp-配置"><span class="toc-text">Babel 安裝 & 配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Webpack"><span class="toc-text">Webpack</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安裝-Webpack"><span class="toc-text">安裝 Webpack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#為什麼要用-Webpack？"><span class="toc-text">為什麼要用 Webpack？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#環境配置"><span class="toc-text">環境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推薦配置"><span class="toc-text">推薦配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hot-Module-Replacement"><span class="toc-text">Hot Module Replacement</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Virtual-DOM"><span class="toc-text">Virtual DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM-是什麼？"><span class="toc-text">DOM 是什麼？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#為什麼要用-Virtual-DOM？"><span class="toc-text">為什麼要用 Virtual DOM？</span></a></li></ol></li></ol>
 <hr>
 <h1 id="React-簡介"><a href="#React-簡介" class="headerlink" title="React 簡介"></a>React 簡介</h1><h2 id="下載-React"><a href="#下載-React" class="headerlink" title="下載 React"></a>下載 React</h2><p>首先，到 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React 官網</a> 下載 <a href="https://facebook.github.io/react/downloads.html" target="_blank" rel="external">React 最新版</a>。<br>在等待下載的同時來說明一下何為 React。</p>
 <h2 id="什麼是-React？"><a href="#什麼是-React？" class="headerlink" title="什麼是 React？"></a>什麼是 React？</h2><p>React 是 facebook 開發的一個 JS 函式庫，負責產生與管理前端的 UI 。它<strong>並不是框架</strong>。</p>
@@ -511,7 +486,7 @@ Webpack">
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+                <a class="post-action-btn btn btn--default" href="#">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -582,7 +557,7 @@ Webpack">
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+                <a class="post-action-btn btn btn--default" href="#">
             
                 <i class="fa fa-list"></i>
             </a>
