@@ -213,38 +213,12 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-17T04:19:05.338Z</updated>
+    <updated>2016-08-17T04:21:22.143Z</updated>
     
     <content type="html"><![CDATA[<!-- excerpt -->
 <p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
 <p>先聲明一下，本文所引用的資源和圖片會儘量以中文為主<del>（因為我英文很爛）</del>，有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~</p>
 <p>那我們就開始吧~<br><!-- toc --></p>
-<h1 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h1><ul>
-<li><a href="#React-簡介">React 簡介</a><ul>
-<li><a href="#下載-React">下載 React</a></li>
-<li><a href="#什麼是-React？">什麼是 React？</a></li>
-<li><a href="#React-特色-–-為什麼我要用它？">React 特色 – 為什麼我要用它？</a></li>
-<li><a href="#NPM-環境建置">NPM 環境建置</a></li>
-</ul>
-</li>
-<li><a href="#JSX">JSX</a><ul>
-<li><a href="#為什麼要用-JSX？">為什麼要用 JSX？</a></li>
-<li><a href="#JSX-怎麼寫？">JSX 怎麼寫？</a></li>
-<li><a href="#怎麼編譯 JSX？">怎麼編譯 JSX？</a></li>
-<li><a href="#Babel-安裝-&amp;-配置">Babel 安裝 &amp; 配置</a></li>
-</ul>
-</li>
-<li><a href="#Webpack">Webpack</a><ul>
-<li><a href="#安裝-Webpack">安裝 Webpack</a></li>
-<li><a href="#為什麼要用-Webpack？">為什麼要用 Webpack？</a></li>
-</ul>
-</li>
-<li><a href="#Virtual-DOM">Virtual DOM</a><ul>
-<li><a href="#DOM-是什麼？">DOM 是什麼？</a></li>
-<li><a href="#為什麼要用-Virtual-DOM？">為什麼要用 Virtual DOM？</a></li>
-</ul>
-</li>
-</ul>
 <hr>
 <h1 id="React-簡介"><a href="#React-簡介" class="headerlink" title="React 簡介"></a>React 簡介</h1><h3 id="下載-React"><a href="#下載-React" class="headerlink" title="下載 React"></a>下載 React</h3><p>首先，到 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React 官網</a> 下載 <a href="https://facebook.github.io/react/downloads.html" target="_blank" rel="external">React 最新版</a>。<br>在等待下載的同時來說明一下何為 React。</p>
 <h3 id="什麼是-React？"><a href="#什麼是-React？" class="headerlink" title="什麼是 React？"></a>什麼是 React？</h3><p>React 是 facebook 開發的一個 JS 函式庫，負責產生與管理前端的 UI 。它<strong>並不是框架</strong>。</p>
