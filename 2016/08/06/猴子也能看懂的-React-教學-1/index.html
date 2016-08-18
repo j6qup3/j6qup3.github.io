@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="初雪的中二 &amp; 爆肝工程師之路">
-    <title>猴子也能看懂的 React 教學 - 1 - React 概念 &amp; 環境配置 - 初雪的中二 &amp; 爆肝工程師之路</title>
+    <title>猴子也能看懂的 React 教學 - 1 - React 概念 - 初雪的中二 &amp; 爆肝工程師之路</title>
     <meta name="author" content="Jacky Wu (Hatsuyuki Wu)">
     
     
@@ -18,41 +18,45 @@
     <meta name="description" content="React 概念
 
 React 特色
-JSX
 Virtual DOM
+JSX
+props &amp;amp; states
+Component Lifecycle
 
 環境配置
 
-NPM
-Webpack">
+NPM">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="猴子也能看懂的 React 教學 - 1 - React 概念 & 環境配置">
+<meta property="og:title" content="猴子也能看懂的 React 教學 - 1 - React 概念">
 <meta property="og:url" content="https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/index.html">
 <meta property="og:site_name" content="初雪的中二 & 爆肝工程師之路">
 <meta property="og:description" content="React 概念
 
 React 特色
-JSX
 Virtual DOM
+JSX
+props &amp;amp; states
+Component Lifecycle
 
 環境配置
 
-NPM
-Webpack">
+NPM">
 <meta property="og:image" content="https://app.kxg.io/images/jiade/fb.jpg">
-<meta property="og:updated_time" content="2016-08-18T04:52:29.804Z">
+<meta property="og:image" content="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png">
+<meta property="og:updated_time" content="2016-08-18T19:06:13.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="猴子也能看懂的 React 教學 - 1 - React 概念 & 環境配置">
+<meta name="twitter:title" content="猴子也能看懂的 React 教學 - 1 - React 概念">
 <meta name="twitter:description" content="React 概念
 
 React 特色
-JSX
 Virtual DOM
+JSX
+props &amp;amp; states
+Component Lifecycle
 
 環境配置
 
-NPM
-Webpack">
+NPM">
 <meta name="twitter:image" content="https://app.kxg.io/images/jiade/fb.jpg">
     
     
@@ -233,7 +237,7 @@ Webpack">
                 <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            猴子也能看懂的 React 教學 - 1 - React 概念 &amp; 環境配置
+            猴子也能看懂的 React 教學 - 1 - React 概念
         </h1>
     
     <div class="post-meta">
@@ -270,15 +274,15 @@ Webpack">
 <p>先聲明一下，本文所引用的資源和圖片會儘量以中文為主<del>（因為我英文很爛）</del>，有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~</p>
 <p>那我們就開始吧~</p>
 <hr>
-<h1 id="table-of-contents">目錄</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-簡介"><span class="toc-text">React 簡介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下載-React"><span class="toc-text">下載 React</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什麼是-React？"><span class="toc-text">什麼是 React？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-特色-–-為什麼我要用它？"><span class="toc-text">React 特色 – 為什麼我要用它？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用範例"><span class="toc-text">使用範例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NPM-環境初始建置"><span class="toc-text">NPM 環境初始建置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JSX"><span class="toc-text">JSX</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#為什麼要用-JSX？"><span class="toc-text">為什麼要用 JSX？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSX-怎麼寫？"><span class="toc-text">JSX 怎麼寫？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎麼編譯-JSX？"><span class="toc-text">怎麼編譯 JSX？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Babel-安裝-amp-配置"><span class="toc-text">Babel 安裝 & 配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Webpack"><span class="toc-text">Webpack</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安裝-Webpack"><span class="toc-text">安裝 Webpack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#為什麼要用-Webpack？"><span class="toc-text">為什麼要用 Webpack？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#環境配置"><span class="toc-text">環境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-config-js"><span class="toc-text">webpack.config.js</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#entry"><span class="toc-text">entry</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#output"><span class="toc-text">output</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#resolve"><span class="toc-text">resolve</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#module"><span class="toc-text">module</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#devtool"><span class="toc-text">devtool</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#plugins"><span class="toc-text">plugins</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推薦配置"><span class="toc-text">推薦配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#loaders"><span class="toc-text">loaders</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#plugins-1"><span class="toc-text">plugins</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#兼容-IE"><span class="toc-text">兼容 IE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack-config-js-配置範例"><span class="toc-text">webpack.config.js 配置範例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Webpack-Express"><span class="toc-text">Webpack + Express</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什麼是-Express？"><span class="toc-text">什麼是 Express？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什麼是-webpack-dev-middleware-amp-webpack-dev-server？"><span class="toc-text">什麼是 webpack-dev-middleware & webpack-dev-server？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安裝-Express-amp-webpack-dev-middleware"><span class="toc-text">安裝 Express & webpack-dev-middleware</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用配置"><span class="toc-text">使用配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hot-Module-Replacement"><span class="toc-text">Hot Module Replacement</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#這是神馬？"><span class="toc-text">這是神馬？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安裝"><span class="toc-text">安裝</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置"><span class="toc-text">配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#牛刀小試"><span class="toc-text">牛刀小試</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#index-html"><span class="toc-text">index.html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#src-main-jsx"><span class="toc-text">src/main.jsx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-建置"><span class="toc-text">webpack 建置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Virtual-DOM"><span class="toc-text">Virtual DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM-是什麼？"><span class="toc-text">DOM 是什麼？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#為什麼要用-Virtual-DOM？"><span class="toc-text">為什麼要用 Virtual DOM？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#總結"><span class="toc-text">總結</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#環境配置懶人包"><span class="toc-text">環境配置懶人包</span></a></li></ol></li></ol>
+<h1 id="table-of-contents">目錄</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-概述"><span class="toc-text">React 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下載-React"><span class="toc-text">下載 React</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什麼是-React？"><span class="toc-text">什麼是 React？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-特色-–-為什麼我要用它？"><span class="toc-text">React 特色 – 為什麼我要用它？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用範例"><span class="toc-text">使用範例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NPM-環境初始建置"><span class="toc-text">NPM 環境初始建置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Virtual-DOM"><span class="toc-text">Virtual DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM-是什麼？"><span class="toc-text">DOM 是什麼？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#為什麼要用-Virtual-DOM？"><span class="toc-text">為什麼要用 Virtual DOM？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JSX"><span class="toc-text">JSX</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#為什麼要用-JSX？"><span class="toc-text">為什麼要用 JSX？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSX-怎麼寫？"><span class="toc-text">JSX 怎麼寫？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎麼編譯-JSX？"><span class="toc-text">怎麼編譯 JSX？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Babel-安裝-amp-配置"><span class="toc-text">Babel 安裝 & 配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#props-amp-states"><span class="toc-text">props & states</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#props"><span class="toc-text">props</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#states"><span class="toc-text">states</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Component-Lifecycle-元件的生命周期"><span class="toc-text">Component Lifecycle - 元件的生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Webpack"><span class="toc-text">Webpack</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安裝-Webpack"><span class="toc-text">安裝 Webpack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#為什麼要用-Webpack？"><span class="toc-text">為什麼要用 Webpack？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#環境配置"><span class="toc-text">環境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-config-js"><span class="toc-text">webpack.config.js</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#entry"><span class="toc-text">entry</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#output"><span class="toc-text">output</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#resolve"><span class="toc-text">resolve</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#module"><span class="toc-text">module</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#devtool"><span class="toc-text">devtool</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#plugins"><span class="toc-text">plugins</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#推薦配置"><span class="toc-text">推薦配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#loaders"><span class="toc-text">loaders</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#plugins-1"><span class="toc-text">plugins</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#兼容-IE"><span class="toc-text">兼容 IE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack-config-js-配置範例"><span class="toc-text">webpack.config.js 配置範例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Webpack-Express"><span class="toc-text">Webpack + Express</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什麼是-Express？"><span class="toc-text">什麼是 Express？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什麼是-webpack-dev-middleware-amp-webpack-dev-server？"><span class="toc-text">什麼是 webpack-dev-middleware & webpack-dev-server？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安裝-Express-amp-webpack-dev-middleware"><span class="toc-text">安裝 Express & webpack-dev-middleware</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用配置"><span class="toc-text">使用配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hot-Module-Replacement"><span class="toc-text">Hot Module Replacement</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#這是神馬？"><span class="toc-text">這是神馬？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安裝"><span class="toc-text">安裝</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置"><span class="toc-text">配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#牛刀小試"><span class="toc-text">牛刀小試</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#index-html"><span class="toc-text">index.html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#src-main-jsx"><span class="toc-text">src/main.jsx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-建置"><span class="toc-text">webpack 建置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#總結"><span class="toc-text">總結</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#環境配置懶人包"><span class="toc-text">環境配置懶人包</span></a></li></ol></li></ol>
 <hr>
-<h1 id="React-簡介"><a href="#React-簡介" class="headerlink" title="React 簡介"></a>React 簡介</h1><h2 id="下載-React"><a href="#下載-React" class="headerlink" title="下載 React"></a>下載 React</h2><p>首先，到 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React 官網</a> 下載 <a href="https://facebook.github.io/react/downloads.html" target="_blank" rel="external">React 最新版</a>。<br>在等待下載的同時來說明一下何為 React。</p>
+<h1 id="React-概述"><a href="#React-概述" class="headerlink" title="React 概述"></a>React 概述</h1><h2 id="下載-React"><a href="#下載-React" class="headerlink" title="下載 React"></a>下載 React</h2><p>首先，到 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React 官網</a> 下載 <a href="https://facebook.github.io/react/downloads.html" target="_blank" rel="external">React 最新版</a>。<br>在等待下載的同時來說明一下何為 React。</p>
 <h2 id="什麼是-React？"><a href="#什麼是-React？" class="headerlink" title="什麼是 React？"></a>什麼是 React？</h2><p>React 是 facebook 開發的一個 JS 函式庫，負責產生與管理前端的 UI 。它<strong>並不是框架</strong>。</p>
 <h2 id="React-特色-–-為什麼我要用它？"><a href="#React-特色-–-為什麼我要用它？" class="headerlink" title="React 特色 – 為什麼我要用它？"></a>React 特色 – 為什麼我要用它？</h2><ol>
 <li>用純 JS 在前端產生 HTML （一般來說是在後端產生 HTML 送到前端）</li>
-<li>使用虛擬 DOM，重繪時效率高</li>
+<li>使用 <strong>Virtual DOM</strong>，重繪時效率高</li>
 <li>自定義 <strong>Component</strong>，方便開發</li>
-<li>父子 <strong>Component</strong> 可透過 <strong>props</strong> 通訊</li>
+<li>父子 Component 可透過 <strong>props</strong> 通訊</li>
 <li>只負責 MVC 的 View 部份，所以不算框架，彈性高</li>
 <li>因為完全是 JS 操作 UI 的關係，使得它可以跟後端分離，達到即時互動、自動更新的效果</li>
 <li>只是一個 JS 函式庫，所以容量小易移植</li>
@@ -286,11 +290,29 @@ Webpack">
 <p>這樣對 React 有沒有比較明白了呢？</p>
 <h2 id="使用範例"><a href="#使用範例" class="headerlink" title="使用範例"></a>使用範例</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello React!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/babel-core@5.8.38/browser.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span><span class="xml"></span></div><div class="line">      ReactDOM.render(</div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>,</div><div class="line">        document.getElementById('example')</div><div class="line">      );</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>這是官網的例子，<del>被我仁了</del><br>我假設各位都知道 HTML 的語法，這裡不再贅述。<br>首先，要用 React 的話，必須先引入 React 函式庫，你可以在你剛下載的 React 資料夾中找到。如第 6 行、第 7 行。<br>第 8 行引入的是 <strong>babel</strong> 函式庫，用來編譯 JSX 成 JS，至於什麼是 JSX <a href="#JSX">稍後</a>會解釋。<br>12 行 ~ 17 行是<strong>重點</strong>，用 React 在 id 為 example 的元件內渲染出 h1 tag。</p>
-<h2 id="NPM-環境初始建置"><a href="#NPM-環境初始建置" class="headerlink" title="NPM 環境初始建置"></a>NPM 環境初始建置</h2><p>NPM 是 Node.js 套件管理器，至今已經變成前後端的開發利器，我就不多解釋了，想了解的可以請教萬能的 <a href="https://www.google.com.tw/search?q=npm" target="_blank" rel="external">Google 大神</a>。<br>沒 NPM 的可以去 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js 官網</a>下載。<br>首先先建個 <strong>package.json</strong><br><code>npm init</code><br>你執行時所在的目錄就是 <strong>NPM 專案的根目錄</strong></p>
+<h2 id="NPM-環境初始建置"><a href="#NPM-環境初始建置" class="headerlink" title="NPM 環境初始建置"></a>NPM 環境初始建置</h2><p>NPM 原本是 Node.js 套件管理器，至今已經變成前後端的開發利器，我就不多解釋了，想了解的可以請教萬能的 <a href="https://www.google.com.tw/search?q=npm" target="_blank" rel="external">Google 大神</a>。<br>沒 NPM 的可以去 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js 官網</a>下載。<br>首先先建個 <strong>package.json</strong><br><code>npm init</code><br>你執行時所在的目錄就是 <strong>NPM 專案的根目錄</strong></p>
 <p>填完配置之後裝個 React<br><code>npm install --save react react-dom</code><br>下載的就是你剛剛去 React 官網下載的東西，只不過使用套件管理系統比較方便開發及使用。<del>所以大家可以把官網下載的刪了</del></p>
-<p><a href="#table-of-contents">回目錄</a></p>
+<h2 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h2><h3 id="DOM-是什麼？"><a href="#DOM-是什麼？" class="headerlink" title="DOM 是什麼？"></a>DOM 是什麼？</h3><p>熟悉前端的工程師應該會知道 DOM，如果不知道也沒關係，<del>你總會知道的</del></p>
+<p>但我的手業障重，不想打字 QQ，只好請教萬能的維基大神。</p>
+<blockquote>
+<p>文件物件模型（英語：Document Object Model，縮寫DOM），是W3C組織推薦的處理可延伸標示語言的標準程式介面。 </p>
+<p>– 仁自 <a href="https://zh.wikipedia.org/wiki/%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B" target="_blank" rel="external">維基</a></p>
+</blockquote>
+<p>什麼？看不懂？沒關係，我也看不懂。你不是一個人(X<br>這麼簡陋真的是維基而不是偽基嗎？<br>看來只好請教開源大溼 mozilla。</p>
+<blockquote>
+<p>文件物件模型（Document Object Model, DOM）是 HTML、XML 和 SVG 文件的程式介面。它提供了一個文件（樹）的結構化表示法，並定義讓程式可以存取並改變文件架構、風格和內容的方法。DOM 提供了文件以擁有屬性與函式的節點與物件組成的結構化表示。節點也可以附加事件處理程序，一旦觸發事件就會執行處理程序。 本質上，它將網頁與腳本或程式語言連結在一起。 </p>
+<p>– 仁自 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document_Object_Model" target="_blank" rel="external">MDN</a></p>
+</blockquote>
+<p>簡單來說 DOM 就是用以定義 HTML、XML 和 SVG 的規範，使得各瀏覽器依此進行實作。這樣一來，標準就統一了，<del>工程師又能繼續爆肝了</del>。</p>
+<h3 id="為什麼要用-Virtual-DOM？"><a href="#為什麼要用-Virtual-DOM？" class="headerlink" title="為什麼要用 Virtual DOM？"></a>為什麼要用 Virtual DOM？</h3><p>什麼是 Virtual DOM？<br>從字面上看，是虛擬 DOM。<br>而實際上，就是虛擬 DOM！<br>沒錯，就是<strong>假的</strong>。<del>DOM 業障重</del><br><img src="https://app.kxg.io/images/jiade/fb.jpg" alt="假的"></p>
+<p>首先先來說說 DOM 的問題。<br>它<strong>很慢</strong>。實在是太慢了，慢到 JS 比他快很多倍。如果要用 JS 在前端即時改變 UI 的話，哪怕只是增加了一點小東西，也要重繪！加三個元件就要重繪三次，如果大量操作元件的話效能很不好。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">  a.innerHTML = arr[i];</div><div class="line">  div.appendChild(a);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的範例每次 appendChild 時就會重繪一次，總共重繪了 10 次。</p>
+<p>為了解決這個問題，React 做了一個 Virtual DOM。<br>Virtual DOM 是用 JS 打造的<strong>虛擬中界層</strong>，每當重繪時，就會先在 Virtual DOM 中重繪，再用 diff 演算法比對它跟實際的 DOM 有什麼不同，只要修改不同的地方就好，而且只重繪一次。<br>因為 JS 速度遠比實際 DOM 快，在 Virtual DOM 中重繪的時間跟 DOM 操作的時間相比可以忽略不計。<br>關於 diff 演算法和 Virtual DOM 內部結構可以看看<a href="https://github.com/livoras/blog/issues/13" target="_blank" rel="external">這裡</a>。</p>
+<p>JS 中有個類似的東西叫 DocumentFragment，是一個用 JS 打造的虛擬元件，用以合併處理 DOM，像上面的範例就可以改成：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> frag = <span class="built_in">document</span>.createDocumentFragment();</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">  a.innerHTML = arr[i];</div><div class="line">  frag.appendChild(a);</div><div class="line">&#125;</div><div class="line"></div><div class="line">div.appendChild(frag);</div></pre></td></tr></table></figure></p>
+<p>這樣就只要重繪一次！<br>但是這是手動的方式，何況若改變的元件不在同個父元件底下的話還是得重繪多次。<br>但 Virtual DOM 是全自動，而且沒有以上的限制！</p>
+<p>所以 JSX 描述的那些元件都不是實際的 DOM，React 會先在 Virtual DOM 上模擬後再改動實際的 DOM，也就是說，你不可能，也不應該直接操作實體 DOM。</p>
 <hr>
-<p>在講 React 之前先說說 JSX 吧。若已經會或者不想用 JSX 的話可以先跳到<a href="#Webpack">下一段</a>。不過之後的範例會以 JSX 為主。</p>
+<p>先說說 JSX 吧。若已經會或者不想用 JSX 的話可以先跳到<a href="#Webpack">下一段</a>。不過之後的範例會以 JSX 為主。</p>
 <hr>
 <h1 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h1><h2 id="為什麼要用-JSX？"><a href="#為什麼要用-JSX？" class="headerlink" title="為什麼要用 JSX？"></a>為什麼要用 JSX？</h2><p>前面說過，React 是用純 JS 在前端產生 HTML 的，用原生 JS 寫起來會很麻煩 （一堆 createElement），因此，我們可以使用 <strong>JSX</strong>，它是 JS / ECMAScript 對 XML 的擴充語法，以 XML-like 的語法表達 JS 產生元件的函數，簡單來說就是語法糖 (Syntatic Sugar)。使用的話有助於精簡程式碼，而且對於大多數前端工程師來說 XML 的格式比較直觀，易於閱讀。</p>
 <p>JSX<br><code>&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;Hello!&lt;/a&gt;</code></p>
@@ -332,7 +354,140 @@ Webpack">
 <p>同樣的 .babelrc 改一下設定：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"presets"</span>: [</div><div class="line">    <span class="string">"es2015"</span>,</div><div class="line">    <span class="string">"react"</span></div><div class="line">  ],</div><div class="line">  <span class="string">"env"</span>: &#123;</div><div class="line">   <span class="string">"development"</span>: &#123;</div><div class="line">     <span class="string">"presets"</span>: [<span class="string">"react-hmre"</span>]</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>PS. env.development.presets 是代表說開發的時候才會用到的，正式放到 server 上時不會使用。</p>
 <p>如果對 Babel 還有興趣可看<a href="https://github.com/thejameskyle/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md#toc-setting-up-babel" target="_blank" rel="external">這裡</a>。<br>但是這樣的話要手動一個一個編譯，像我這種懶人只好用一些 bundle 工具了。<br>於是我找到了 <strong>Webpack</strong>。</p>
-<p><a href="#table-of-contents">回目錄</a></p>
+<p>PS. 關於 Webpack 我會在下一篇詳細介紹。</p>
+<hr>
+<h1 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h1><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
+<h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><p>props 是 React 父子元件間溝通的橋樑。靜態（唯讀）。<br>父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。<br><strong>父元件傳入的 props 改變將造成子元件重繪。</strong></p>
+<p>EX：<br>父元件內<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">Fuck</span> <span class="attr">fuck</span>=<span class="string">"?"</span>/&gt;</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>子元件<code>Fuck</code>內<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>&#123;this.props.fuck&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>因為父元件傳入<code>?</code>，所以這裡會顯示<code>?</code></p>
+<h2 id="states"><a href="#states" class="headerlink" title="states"></a>states</h2><p>states 是元件內部狀態。動態（可用 <strong>setState</strong> 改值）。<br>與一般變數不同的是，它無法直接修改（初始化例外），只能用 this.setState() 修改。<br><strong>每次使用 this.setState() 修改 state 都會造成元件重繪。</strong></p>
+<p>EX：<br>state 初始化<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.state = &#123;</div><div class="line">  users: []</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>setState<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(&#123;</div><div class="line">  users: list</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>state 初始化<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">UserList</span> <span class="attr">users</span>=<span class="string">&#123;this.state.users&#125;/</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>這兩個都是很常用到的東西。<del>不管黑貓白貓，能讓頁面重繪的就是好貓</del><br>能讓頁面重繪的其實還有一個函數：<code>this.forceUpdate()</code>，強制重繪，不過一般是 debug 才會用到，不推薦在其他情況使用。</p>
+<hr>
+<h1 id="Component-Lifecycle-元件的生命周期"><a href="#Component-Lifecycle-元件的生命周期" class="headerlink" title="Component Lifecycle - 元件的生命周期"></a>Component Lifecycle - 元件的生命周期</h1><p>這裡比較複雜，先來張圖片。<br>圖片就仁一下 <a href="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react" target="_blank" rel="external">IBM</a> 的：<br><img src="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png" alt=""><br>先看看右下角的三個生命周期說明。</p>
+<ul>
+<li>Mounting: 元件初始化</li>
+<li>Updating: 元件更新</li>
+<li>Unmounting: 元件卸載</li>
+</ul>
+<p>Mounting 跟 Updating 都會觸發元件內的函數 render()<br>componentWill 和 componentDid 分別是 render 前和後會觸發的函數。<br>Unmounting 不會觸發 render，也沒有 componentDid 函數，但有 componentWill 函數。</p>
+<p>如果要細講的話，可以分成五種情況詳細討論：</p>
+<ul>
+<li><p>Mounting：元件初始化 (React.createClass)</p>
+<ol>
+<li><p>getDefaultProps()</p>
+<ul>
+<li><code>React.createClass</code>時觸發（早於 constructor）</li>
+<li>只會在 Mounting 時呼叫一次</li>
+<li>不能使用 setState() （尚未初始化）</li>
+<li>回傳的值將設為 props 的<strong>預設值</strong> （若回傳物件，是傳址）</li>
+</ul>
+</li>
+<li><p>getInitialState()</p>
+<ul>
+<li><code>React.createElement</code>時觸發 （渲染前觸發）</li>
+<li>只會在 Mounting 時呼叫一次</li>
+<li>不能使用 setState() （尚未初始化）</li>
+<li>回傳的值將設為 state 的<strong>初始值</strong> （回傳物件或<code>null</code>）</li>
+</ul>
+</li>
+<li><p>componentWillMount()</p>
+<ul>
+<li>只會在 Mounting 時呼叫一次</li>
+<li>使用 setState 不會再觸發一次 render，會立即更新</li>
+</ul>
+</li>
+<li><p>render()</p>
+<ul>
+<li>不能使用 setState() （無限遞迴）</li>
+<li>一定要改寫，必須且只能回傳一個頂層 JSX Component 或是 <code>null</code>/<code>false</code> （不渲染）</li>
+<li>結束後會造成子元件的 Mounting，意即，子元件的生命周期由此開始</li>
+</ul>
+</li>
+<li><p>componentDidMount()</p>
+<ul>
+<li>只會在 Mounting 時呼叫一次</li>
+<li>子元件 Mounting 完後才觸發</li>
+<li>適合存取 DOM</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Updating：元件接收的 props 改變時</p>
+<ol>
+<li><p>componentWillReceiveProps(nextProps)</p>
+<ul>
+<li>使用 setState 不會再觸發一次 render，會立即更新</li>
+<li>若該元件有傳入的 props，則父元件 Updating-render 時會觸發（因為會重傳 props）</li>
+<li>若沒有 props，此函數將不會被觸發</li>
+</ul>
+</li>
+<li><p>shouldComponentUpdate(nextProps, nextState)</p>
+<ul>
+<li>不能使用 setState() （無限遞迴）</li>
+<li>回傳<code>false</code>的話這次更新直接結束</li>
+<li>優化效能用的</li>
+</ul>
+</li>
+<li><p>componentWillUpdate(nextProps, nextState)</p>
+<ul>
+<li>不能使用 setState() （無限遞迴）</li>
+</ul>
+</li>
+<li><p>render()</p>
+<ul>
+<li>詳見 Mounting - 4.</li>
+<li>結束後會造成子元件的 Mounting、Updating、Unmounting</li>
+</ul>
+</li>
+<li><p>componentDidUpdate(prevProps, prevState)</p>
+<ul>
+<li>子元件 Mounting、Updating、Unmounting 完後才觸發</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Updating：元件內部的 state 改變時 (setState) (在這裡任何地方使用 setState 都會造成無限遞迴，除了 componentDidUpdate)<br>同 Update-props 之 2 ~ 5，不再贅述</p>
+<ol>
+<li>shouldComponentUpdate(nextProps, nextState)</li>
+<li>componentWillUpdate(nextProps, nextState)</li>
+<li>render()</li>
+<li>componentDidUpdate(prevProps, prevState)</li>
+</ol>
+</li>
+<li><p>Updating：使用 forceUpdate 時 (setState)<br>同 Update-props 之 3 ~ 5，不再贅述</p>
+<ol>
+<li>componentWillUpdate(nextProps, nextState)</li>
+<li>render()</li>
+<li>componentDidUpdate(prevProps, prevState)</li>
+</ol>
+</li>
+<li><p>Unmount：元件卸載時 </p>
+<ol>
+<li>componentWillUnmount()</li>
+</ol>
+</li>
+</ul>
+<p>上面的資料太多，可能一時間難以消化，沒關係，目前記住 render() 就夠了。<br>下面我再做一些整理：</p>
+<ul>
+<li><p>使用 setState 不會再觸發一次 render，會立即更新</p>
+<ol>
+<li>componentWillMount()</li>
+<li>componentWillReceiveProps()</li>
+</ol>
+</li>
+<li><p>有回傳值</p>
+<ol>
+<li>getDefaultProps()：props 的預設值</li>
+<li>getInitialState()：state 的初始值</li>
+<li>render()：一個頂層 JSX Component 或是 <code>null</code>/<code>false</code> （不渲染）</li>
+<li>shouldComponentUpdate()：<code>true</code>/<code>false</code>，<code>false</code>則這次更新直接結束</li>
+</ol>
+</li>
+</ul>
 <hr>
 <p>Webpack 的部份蠻長的，如果不想使用的話，可以<a href="#Virtual-Dom">跳過</a>。</p>
 <hr>
@@ -464,28 +619,6 @@ Webpack">
 </li>
 </ul>
 <p>然後只要讓瀏覽器連到 index.html 就可以看到 JSX 自動編譯，即時變更網頁內容了！</p>
-<p><a href="#table-of-contents">回目錄</a></p>
-<hr>
-<h1 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h1><h2 id="DOM-是什麼？"><a href="#DOM-是什麼？" class="headerlink" title="DOM 是什麼？"></a>DOM 是什麼？</h2><p>熟悉前端的工程師應該會知道 DOM，如果不知道也沒關係，<del>你總會知道的</del></p>
-<p>但我的手業障重，不想打字 QQ，只好請教萬能的維基大神。</p>
-<blockquote>
-<p>文件物件模型（英語：Document Object Model，縮寫DOM），是W3C組織推薦的處理可延伸標示語言的標準程式介面。 </p>
-<p>– 仁自 <a href="https://zh.wikipedia.org/wiki/%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B" target="_blank" rel="external">維基</a></p>
-</blockquote>
-<p>什麼？看不懂？沒關係，我也看不懂。你不是一個人(X<br>這麼簡陋真的是維基而不是偽基嗎？<br>看來只好請教開源大溼 mozilla。</p>
-<blockquote>
-<p>文件物件模型（Document Object Model, DOM）是 HTML、XML 和 SVG 文件的程式介面。它提供了一個文件（樹）的結構化表示法，並定義讓程式可以存取並改變文件架構、風格和內容的方法。DOM 提供了文件以擁有屬性與函式的節點與物件組成的結構化表示。節點也可以附加事件處理程序，一旦觸發事件就會執行處理程序。 本質上，它將網頁與腳本或程式語言連結在一起。 </p>
-<p>– 仁自 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document_Object_Model" target="_blank" rel="external">MDN</a></p>
-</blockquote>
-<p>簡單來說 DOM 就是用以定義 HTML、XML 和 SVG 的規範，使得各瀏覽器依此進行實作。這樣一來，標準就統一了，<del>工程師又能繼續爆肝了</del>。</p>
-<h2 id="為什麼要用-Virtual-DOM？"><a href="#為什麼要用-Virtual-DOM？" class="headerlink" title="為什麼要用 Virtual DOM？"></a>為什麼要用 Virtual DOM？</h2><p>什麼是 Virtual DOM？<br>從字面上看，是虛擬 DOM。<br>而實際上，就是虛擬 DOM！<br>沒錯，就是<strong>假的</strong>。<del>DOM 業障重</del><br><img src="https://app.kxg.io/images/jiade/fb.jpg" alt="假的"></p>
-<p>首先先來說說 DOM 的問題。<br>它<strong>很慢</strong>。實在是太慢了，慢到 JS 比他快很多倍。如果要用 JS 在前端即時改變 UI 的話，哪怕只是增加了一點小東西，也要重繪！加三個元件就要重繪三次，如果大量操作元件的話效能很不好。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">  a.innerHTML = arr[i];</div><div class="line">  div.appendChild(a);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>上面的範例每次 appendChild 時就會重繪一次，總共重繪了 10 次。</p>
-<p>為了解決這個問題，React 做了一個 Virtual DOM。<br>Virtual DOM 是用 JS 打造的<strong>虛擬中界層</strong>，每當重繪時，就會先在 Virtual DOM 中重繪，再用 diff 演算法比對它跟實際的 DOM 有什麼不同，只要修改不同的地方就好，而且只重繪一次。<br>因為 JS 速度遠比實際 DOM 快，在 Virtual DOM 中重繪的時間跟 DOM 操作的時間相比可以忽略不計。<br>關於 diff 演算法和 Virtual DOM 內部結構可以看看<a href="https://github.com/livoras/blog/issues/13" target="_blank" rel="external">這裡</a>。</p>
-<p>JS 中有個類似的東西叫 DocumentFragment，是一個用 JS 打造的虛擬元件，用以合併處理 DOM，像上面的範例就可以改成：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> frag = <span class="built_in">document</span>.createDocumentFragment();</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">  a.innerHTML = arr[i];</div><div class="line">  frag.appendChild(a);</div><div class="line">&#125;</div><div class="line"></div><div class="line">div.appendChild(frag);</div></pre></td></tr></table></figure></p>
-<p>這樣就只要重繪一次！<br>但是這是手動的方式，何況若改變的元件不在同個父元件底下的話還是得重繪多次。<br>但 Virtual DOM 是全自動，而且沒有以上的限制！</p>
-<p>所以 JSX 描述的那些元件都不是實際的 DOM，React 會先在 Virtual DOM 上模擬後再改動實際的 DOM，也就是說，你不可能，也不應該直接操作實體 DOM。</p>
-<p><a href="#table-of-contents">回目錄</a></p>
 <hr>
 <h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><h2 id="環境配置懶人包"><a href="#環境配置懶人包" class="headerlink" title="環境配置懶人包"></a>環境配置懶人包</h2><ul>
 <li><code>npm init</code> NPM 專案初始化</li>

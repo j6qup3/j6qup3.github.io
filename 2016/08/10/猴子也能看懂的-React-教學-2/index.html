@@ -40,7 +40,7 @@ Virtual DOM
 NPM
 Webpack">
 <meta property="og:image" content="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png">
-<meta property="og:updated_time" content="2016-08-17T05:58:28.466Z">
+<meta property="og:updated_time" content="2016-08-18T18:51:13.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猴子也能看懂的 React 教學 - 2">
 <meta name="twitter:description" content="React 概念
@@ -268,18 +268,14 @@ Webpack">
             <!-- excerpt -->
 <p>這篇就會開始打 code 囉。<br>不過首先先補充一些重要的概念。</p>
 <hr>
-<h1 id="table-of-contents">目錄</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#props-amp-states"><span class="toc-text">props & states</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Component-Lifecycle-元件的生命周期"><span class="toc-text">Component Lifecycle - 元件的生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#開始打-code-啦"><span class="toc-text">開始打 code 啦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#refs"><span class="toc-text">refs</span></a></li></ol>
+<h1 id="table-of-contents">目錄</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#props-amp-states"><span class="toc-text">props & states</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#props"><span class="toc-text">props</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#states"><span class="toc-text">states</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Component-Lifecycle-元件的生命周期"><span class="toc-text">Component Lifecycle - 元件的生命周期</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#開始打-code-啦"><span class="toc-text">開始打 code 啦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#refs"><span class="toc-text">refs</span></a></li></ol>
 <hr>
 <h1 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h1><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
-<ul>
-<li>props：React 父子元件間溝通的橋樑。靜態（唯讀）。<br>父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。<br><strong>父元件傳入的 props 改變將造成子元件重繪。</strong></li>
-</ul>
+<h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><p>props 是 React 父子元件間溝通的橋樑。靜態（唯讀）。<br>父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。<br><strong>父元件傳入的 props 改變將造成子元件重繪。</strong></p>
 <p>EX：<br>父元件內<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">Fuck</span> <span class="attr">fuck</span>=<span class="string">"?"</span>/&gt;</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
 <p>子元件<code>Fuck</code>內<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>&#123;this.props.fuck&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
 <p>因為父元件傳入<code>?</code>，所以這裡會顯示<code>?</code></p>
-<ul>
-<li>states：元件內部狀態。動態（可用 <strong>setState</strong> 改值）。<br>與一般變數不同的是，它無法直接修改（初始化例外），只能用 this.setState() 修改。<br><strong>每次使用 this.setState() 修改 state 都會造成元件重繪。</strong></li>
-</ul>
+<h2 id="states"><a href="#states" class="headerlink" title="states"></a>states</h2><p>states 是元件內部狀態。動態（可用 <strong>setState</strong> 改值）。<br>與一般變數不同的是，它無法直接修改（初始化例外），只能用 this.setState() 修改。<br><strong>每次使用 this.setState() 修改 state 都會造成元件重繪。</strong></p>
 <p>EX：<br>state 初始化<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.state = &#123;</div><div class="line">  users: []</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>setState<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(&#123;</div><div class="line">  users: list</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>state 初始化<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">UserList</span> <span class="attr">users</span>=<span class="string">&#123;this.state.users&#125;/</span>&gt;</span></div></pre></td></tr></table></figure></p>
@@ -436,7 +432,7 @@ Webpack">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/06/猴子也能看懂的-React-教學-1/" data-tooltip="猴子也能看懂的 React 教學 - 1 - React 概念 &amp; 環境配置">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/06/猴子也能看懂的-React-教學-1/" data-tooltip="猴子也能看懂的 React 教學 - 1 - React 概念">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -517,7 +513,7 @@ Webpack">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/06/猴子也能看懂的-React-教學-1/" data-tooltip="猴子也能看懂的 React 教學 - 1 - React 概念 &amp; 環境配置">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/06/猴子也能看懂的-React-教學-1/" data-tooltip="猴子也能看懂的 React 教學 - 1 - React 概念">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
