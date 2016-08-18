@@ -259,9 +259,15 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-18T23:14:16.979Z</updated>
+    <updated>2016-08-18T23:37:13.460Z</updated>
     
     <content type="html"><![CDATA[<!-- excerpt -->
+<blockquote>
+<p>讓一隻猴子在打字機上隨機地按鍵，當按鍵時間達到無窮時，幾乎必然能夠打出任何給定的文字，比如莎士比亞的全套著作。</p>
+<p>– 《<a href="https://zh.wikipedia.org/wiki/%E7%84%A1%E9%99%90%E7%8C%B4%E5%AD%90%E5%AE%9A%E7%90%86" target="_blank" rel="external">無限猴子定理</a>》- <a href="https://zh.wikipedia.org/wiki/%E5%9F%83%E7%B1%B3%E5%B0%94%C2%B7%E5%8D%9A%E9%9B%B7%E5%B0%94" target="_blank" rel="external">埃米爾·博雷爾</a></p>
+<p>讓一隻猴子看這篇文章，一直看，一直看，當閱讀時間達到無窮時，幾乎必然能夠理解這篇文章。</p>
+<p>– 《真 ● 無限猴子定理》- 初雪</p>
+</blockquote>
 <p><del>其實標題打錯了，是猴子<strong>才</strong>能看懂。</del><br>看不懂就別怪我囉，至少可以證明你不是猴子(X</p>
 <p>先聲明一下，本文所引用的資源和圖片會儘量以中文為主<del>（因為我英文很爛）</del>，有些資源是簡體中文，看不習慣的觀眾可以跳過該部份，還請見諒~</p>
 <p>那我們就開始吧~</p>
@@ -304,7 +310,7 @@
 <p>這樣就只要重繪一次！<br>但是這是手動的方式，何況若改變的元件不在同個父元件底下的話還是得重繪多次。<br>但 Virtual DOM 是全自動，而且沒有以上的限制！</p>
 <p>所以 JSX 描述的那些元件都不是實際的 DOM，React 會先在 Virtual DOM 上模擬後再改動實際的 DOM，也就是說，你不可能，也不應該直接操作實體 DOM。</p>
 <hr>
-<p>先說說 JSX 吧。若已經會或者不想用 JSX 的話可以先跳到<a href="#Webpack">下一段</a>。不過之後的範例會以 JSX 為主。</p>
+<p>先說說 JSX 吧。若已經會或者不想用 JSX 的話可以先跳到<a href="#props-&amp;-states">下一段</a>。不過之後的範例會以 JSX 為主。</p>
 <hr>
 <h1 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h1><h2 id="為什麼要用-JSX？"><a href="#為什麼要用-JSX？" class="headerlink" title="為什麼要用 JSX？"></a>為什麼要用 JSX？</h2><p>前面說過，React 是用純 JS 在前端產生 HTML 的，用原生 JS 寫起來會很麻煩 （一堆 createElement），因此，我們可以使用 <strong>JSX</strong>，它是 JS / ECMAScript 對 XML 的擴充語法，以 XML-like 的語法表達 JS 產生元件的函數，簡單來說就是語法糖 (Syntatic Sugar)。使用的話有助於精簡程式碼，而且對於大多數前端工程師來說 XML 的格式比較直觀，易於閱讀。</p>
 <p>JSX<br><code>&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;Hello!&lt;/a&gt;</code></p>
