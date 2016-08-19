@@ -225,15 +225,19 @@
     <link href="https://j6qup3.github.io/2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/"/>
     <id>https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/</id>
     <published>2016-08-09T17:14:20.000Z</published>
-    <updated>2016-08-18T23:44:33.537Z</updated>
+    <updated>2016-08-19T01:51:05.676Z</updated>
     
     <content type="html"><![CDATA[<!-- excerpt -->
 <p>這篇就會開始打 code 囉。<br>不過首先先補充一些重要的概念。</p>
 <hr>
 <!-- toc -->
 <hr>
-<h1 id="開始打-code-啦"><a href="#開始打-code-啦" class="headerlink" title="開始打 code 啦"></a>開始打 code 啦</h1><p>首先，我們來看個範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(&lt;UserPage/&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
+<h1 id="開始打-code-啦"><a href="#開始打-code-啦" class="headerlink" title="開始打 code 啦"></a>開始打 code 啦</h1><p>首先，我們來看個範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">UserPage</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
 <p>雖然只有短短兩行，不過還是有些東西要講</p>
+<hr>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p>雖說不建議直接操作實體 DOM，但有時候仍會碰到需要直接操作的情況。<br>這時可以設定<code>ref</code>屬性來存取實體 DOM：<br>若 ref 的值為字串，則可以透過<code>this.refs.字串值</code> 存取。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">React.findDOMNode(<span class="keyword">this</span>.refs.theInput).focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=<span class="string">"theInput"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>若 ref 的值為函數，則傳入的參數值為該元件本身。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.input.focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=&#123;(input) =&gt; <span class="keyword">this</span>.input = input&#125;&gt;</div></pre></td></tr></table></figure></p>
+<p>由於 React.findDOMNode() 傳回的是實體 DOM，所以必須確保實體 DOM 已經被渲染出來才能使用 (componentDidMount() 後面的才能用)</p>
 <hr>
 <p>我們下篇再見~</p>]]></content>
     
@@ -257,7 +261,7 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-18T23:44:25.821Z</updated>
+    <updated>2016-08-19T01:50:53.138Z</updated>
     
     <content type="html"><![CDATA[<!-- excerpt -->
 <blockquote>
@@ -284,7 +288,7 @@
 <li>只是一個 JS 函式庫，所以容量小易移植</li>
 </ol>
 <p>這樣對 React 有沒有比較明白了呢？</p>
-<h2 id="使用範例"><a href="#使用範例" class="headerlink" title="使用範例"></a>使用範例</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello React!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/babel-core@5.8.38/browser.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span><span class="javascript"></span></div><div class="line">      ReactDOM.render(</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>,</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>)</div><div class="line">      );</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="使用範例"><a href="#使用範例" class="headerlink" title="使用範例"></a>使用範例</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello React!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/babel-core@5.8.38/browser.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span><span class="xml"></span></div><div class="line">      ReactDOM.render(</div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>,</div><div class="line">        document.getElementById('example')</div><div class="line">      );</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>這是官網的例子，<del>被我仁了</del><br>我假設各位都知道 HTML 的語法，這裡不再贅述。<br>首先，要用 React 的話，必須先引入 React 函式庫，你可以在你剛下載的 React 資料夾中找到。如第 6 行、第 7 行。<br>第 8 行引入的是 <strong>babel</strong> 函式庫，用來編譯 JSX 成 JS，至於什麼是 JSX <a href="#JSX">稍後</a>會解釋。<br>12 行 ~ 17 行是<strong>重點</strong>，用 React 在 id 為 example 的元件內渲染出 h1 tag。</p>
 <h2 id="NPM-環境初始建置"><a href="#NPM-環境初始建置" class="headerlink" title="NPM 環境初始建置"></a>NPM 環境初始建置</h2><p>NPM 原本是 Node.js 套件管理器，至今已經變成前後端的開發利器，我就不多解釋了，想了解的可以請教萬能的 <a href="https://www.google.com.tw/search?q=npm" target="_blank" rel="external">Google 大神</a>。<br>沒 NPM 的可以去 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js 官網</a>下載。<br>首先先建個 <strong>package.json</strong><br><code>npm init</code><br>你執行時所在的目錄就是 <strong>NPM 專案的根目錄</strong></p>
 <p>填完配置之後裝個 React<br><code>npm install --save react react-dom</code><br>下載的就是你剛剛去 React 官網下載的東西，只不過使用套件管理系統比較方便開發及使用。<del>所以大家可以把官網下載的刪了</del></p>
@@ -350,7 +354,7 @@
 <p>同樣的 .babelrc 改一下設定：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"presets"</span>: [</div><div class="line">    <span class="string">"es2015"</span>,</div><div class="line">    <span class="string">"react"</span></div><div class="line">  ],</div><div class="line">  <span class="string">"env"</span>: &#123;</div><div class="line">   <span class="string">"development"</span>: &#123;</div><div class="line">     <span class="string">"presets"</span>: [<span class="string">"react-hmre"</span>]</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>PS. env.development.presets 是代表說開發的時候才會用到的，正式放到 server 上時不會使用。</p>
 <p>如果對 Babel 還有興趣可看<a href="https://github.com/thejameskyle/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md#toc-setting-up-babel" target="_blank" rel="external">這裡</a>。<br>但是這樣的話要手動一個一個編譯，像我這種懶人只好用一些 bundle 工具了。<br>於是我找到了 <strong>Webpack</strong>。</p>
-<p>PS. 關於 Webpack 我會在第三篇詳細介紹。</p>
+<p>PS. 關於 Webpack 我會在<a href="2016/08/15/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-3/">第三篇</a>詳細介紹。</p>
 <hr>
 <h1 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h1><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
 <h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><p>props 是 React 父子元件間溝通的橋樑。靜態（唯讀）。<br>父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。<br><strong>父元件傳入的 props 改變將造成子元件重繪。</strong></p>
@@ -454,7 +458,7 @@
 <li>componentDidUpdate(prevProps, prevState)</li>
 </ol>
 </li>
-<li><p>Updating：使用 forceUpdate 時 (setState)<br>同 Update-props 之 3 ~ 5，不再贅述</p>
+<li><p>Updating：使用 forceUpdate 時<br>同 Update-props 之 3 ~ 5，不再贅述</p>
 <ol>
 <li>componentWillUpdate(nextProps, nextState)</li>
 <li>render()</li>
@@ -485,17 +489,13 @@
 </li>
 </ul>
 <hr>
-<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p>雖說不建議直接操作實體 DOM，但有時候仍會碰到需要直接操作的情況。<br>這時可以設定<code>ref</code>屬性來存取實體 DOM：<br>若 ref 的值為字串，則可以透過<code>this.refs.字串值</code> 存取。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">React.findDOMNode(<span class="keyword">this</span>.refs.theInput).focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=<span class="string">"theInput"</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>若 ref 的值為函數，則傳入的參數值為該元件本身。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.input.focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=&#123;(input) =&gt; <span class="keyword">this</span>.input = input&#125;&gt;</div></pre></td></tr></table></figure></p>
-<p>由於 React.findDOMNode() 傳回的是實體 DOM，所以必須確保實體 DOM 已經被渲染出來才能使用 (componentDidMount() 後面的才能用)</p>
-<hr>
 <h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><h2 id="環境配置懶人包"><a href="#環境配置懶人包" class="headerlink" title="環境配置懶人包"></a>環境配置懶人包</h2><ul>
 <li><code>npm init</code> NPM 專案初始化</li>
 <li><code>npm install --save react react-dom</code> 安裝 React</li>
-<li><code>npm install --save-dev babel-preset-es2015 babel-preset-react</code> babel - ES6 &amp; JSX</li>
+<li><code>npm install --save-dev babel-preset-es2015 babel-preset-react babel-preset-react-hmre</code> babel - ES6 &amp; JSX &amp; babel-preset-react-hmre</li>
 </ul>
 <hr>
-<p>先講到這，這篇講的以概念居多，<a href="2016/08/10/猴子也能看懂的-React-教學-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續看喔~</p>
+<p>先講到這，這篇講的以概念居多，<a href="2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續看喔~</p>
 <p>我們下篇再見~</p>]]></content>
     
     <summary type="html">

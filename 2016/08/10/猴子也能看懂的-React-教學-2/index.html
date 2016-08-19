@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/index.html">
 <meta property="og:site_name" content="初雪的中二 & 爆肝工程師之路">
 <meta property="og:description" content="XXX">
-<meta property="og:updated_time" content="2016-08-18T23:44:33.537Z">
+<meta property="og:updated_time" content="2016-08-19T01:51:05.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猴子也能看懂的 React 教學 - 2">
 <meta name="twitter:description" content="XXX">
@@ -236,10 +236,14 @@
             <!-- excerpt -->
 <p>這篇就會開始打 code 囉。<br>不過首先先補充一些重要的概念。</p>
 <hr>
-<h1 id="table-of-contents">目錄</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#開始打-code-啦"><span class="toc-text">開始打 code 啦</span></a></li></ol>
+<h1 id="table-of-contents">目錄</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#開始打-code-啦"><span class="toc-text">開始打 code 啦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#refs"><span class="toc-text">refs</span></a></li></ol>
 <hr>
-<h1 id="開始打-code-啦"><a href="#開始打-code-啦" class="headerlink" title="開始打 code 啦"></a>開始打 code 啦</h1><p>首先，我們來看個範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(&lt;UserPage/&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
+<h1 id="開始打-code-啦"><a href="#開始打-code-啦" class="headerlink" title="開始打 code 啦"></a>開始打 code 啦</h1><p>首先，我們來看個範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">UserPage</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
 <p>雖然只有短短兩行，不過還是有些東西要講</p>
+<hr>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p>雖說不建議直接操作實體 DOM，但有時候仍會碰到需要直接操作的情況。<br>這時可以設定<code>ref</code>屬性來存取實體 DOM：<br>若 ref 的值為字串，則可以透過<code>this.refs.字串值</code> 存取。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">React.findDOMNode(<span class="keyword">this</span>.refs.theInput).focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=<span class="string">"theInput"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>若 ref 的值為函數，則傳入的參數值為該元件本身。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.input.focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=&#123;(input) =&gt; <span class="keyword">this</span>.input = input&#125;&gt;</div></pre></td></tr></table></figure></p>
+<p>由於 React.findDOMNode() 傳回的是實體 DOM，所以必須確保實體 DOM 已經被渲染出來才能使用 (componentDidMount() 後面的才能用)</p>
 <hr>
 <p>我們下篇再見~</p>
             
