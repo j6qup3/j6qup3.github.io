@@ -25,7 +25,7 @@ Webpack">
 <meta property="og:description" content="環境配置
 
 Webpack">
-<meta property="og:updated_time" content="2016-08-18T23:12:13.309Z">
+<meta property="og:updated_time" content="2016-08-19T00:00:08.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猴子也能看懂的 React 教學 - 3 - Webpack 建置指南">
 <meta name="twitter:description" content="環境配置
@@ -360,9 +360,9 @@ Webpack">
 <h1 id="牛刀小試"><a href="#牛刀小試" class="headerlink" title="牛刀小試"></a>牛刀小試</h1><p>Webpack 搞了這麼久，趕快體驗一下他帶來的方便吧！</p>
 <p>不過接下來至少還要建兩個檔才能開始測試 webpack。</p>
 <h2 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h2><p>這個檔必須是你用的 server 能讀取到的檔案<br>(若你是用 Express + webpack-dev-middleware 並實作了 server.js，那應該可在 server.js 內看到 sendFile 的對象，像我剛剛是在 server.js 中打 index.html)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span> C8763 <span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./dist/bundle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>有沒有覺得 <code>dist/bundle.js</code> 這路徑很熟悉？<br>沒錯，它就是 <strong>webpack.config.js</strong> 中 output 設定的 bundle 輸出路徑。也就是說，載入這個 js 就好啦！</p>
-<h2 id="src-main-jsx"><a href="#src-main-jsx" class="headerlink" title="src/main.jsx"></a>src/main.jsx</h2><p>有沒有覺得 <code>src/main.jsx</code> 這路徑也很熟悉？<br>沒錯，它就是 <strong>webpack.config.js</strong> 中 entry 設定的 bundle 進入點。<br>可以開始寫 JSX 囉。<br>以下只是範例<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">UserPage</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
-<p>這兩行意思之後會教。<del>如果在這教 React 的話跳過 webpack 部份沒看的觀眾就會錯過</del></p>
+<p>有沒有覺得 <code>dist/bundle.js</code> 這路徑很熟悉？<br>沒錯，它就是 <strong>webpack.config.js</strong> 中 output 設定的 bundle 輸出路徑。也就是說，載入這個 js 就好啦！<br>第七行 div 是讓 JSX 插入用的，id 可以自取。</p>
+<h2 id="src-main-jsx"><a href="#src-main-jsx" class="headerlink" title="src/main.jsx"></a>src/main.jsx</h2><p>有沒有覺得 <code>src/main.jsx</code> 這路徑也很熟悉？<br>沒錯，它就是 <strong>webpack.config.js</strong> 中 entry 設定的 bundle 進入點。<br>可以開始寫 JSX 囉。<br>以下只是範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">UserPage</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
+<p>這兩行是第二章的 code，忘記的可以回去複習一下。<br>document.getElementById(‘root’) 的 id 必須和 index.html 中 div 的 id 一致。</p>
 <h2 id="webpack-建置"><a href="#webpack-建置" class="headerlink" title="webpack 建置"></a>webpack 建置</h2><ul>
 <li><p>如果你是用 Express + webpack-dev-middleware 並實作了 server.js：<br><code>node server.js</code></p>
 </li>
@@ -374,20 +374,17 @@ Webpack">
 <p>然後只要讓瀏覽器連到 index.html 就可以看到 JSX 自動編譯，即時變更網頁內容了！</p>
 <hr>
 <h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><h2 id="環境配置懶人包"><a href="#環境配置懶人包" class="headerlink" title="環境配置懶人包"></a>環境配置懶人包</h2><ul>
-<li><code>npm init</code> NPM 專案初始化</li>
-<li><code>npm install --save react react-dom</code> 安裝 React</li>
-<li><code>npm install --save-dev babel-preset-es2015 babel-preset-react webpack babel-loader css-loader style-loader sass-loader url-loader express webpack-dev-middleware webpack-hot-middleware</code><ul>
-<li><code>npm install --save-dev babel-preset-es2015 babel-preset-react</code> babel - ES6 &amp; JSX</li>
-<li><code>npm install --save-dev babel-loader css-loader style-loader sass-loader url-loader</code> webpack-loader</li>
-<li><code>npm install --save-dev express webpack-dev-middleware webpack-hot-middleware</code> webpack-HMR</li>
-<li><code>npm install --save-dev</code></li>
-<li><code>npm install --save-dev</code></li>
-<li><code>npm install --save-dev</code></li>
+<li><code>npm install --save-dev webpack babel-loader css-loader style-loader sass-loader less-loader url-loader express webpack-dev-middleware webpack-hot-middleware</code><ul>
+<li><code>npm install --save-dev babel-loader css-loader style-loader sass-loader less-loader url-loader</code> loaders</li>
+<li><code>npm install --save express</code> Express</li>
+<li><code>npm install --save-dev webpack-dev-middleware</code> webpack-dev-middleware</li>
+<li><code>npm install --save-dev webpack-hot-middleware</code> HMR - webpack-dev-middleware</li>
+<li><code>npm install --save-dev react-hot-loader</code> HMR - webpack-dev-server</li>
 </ul>
 </li>
 </ul>
 <hr>
-<p>那我們下次再見~</p>
+<p>Webpack 篇就這樣告一段落囉，我們下篇再見~</p>
             
         </div>
     </div>
