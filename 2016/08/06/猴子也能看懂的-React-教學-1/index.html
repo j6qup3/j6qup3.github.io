@@ -43,7 +43,7 @@ Component Lifecycle
 NPM">
 <meta property="og:image" content="https://app.kxg.io/images/jiade/fb.jpg">
 <meta property="og:image" content="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png">
-<meta property="og:updated_time" content="2016-08-19T01:52:18.063Z">
+<meta property="og:updated_time" content="2016-08-19T01:52:58.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猴子也能看懂的 React 教學 - 1 - React 概念">
 <meta name="twitter:description" content="React 概念
@@ -360,7 +360,7 @@ NPM">
 <p>同樣的 .babelrc 改一下設定：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"presets"</span>: [</div><div class="line">    <span class="string">"es2015"</span>,</div><div class="line">    <span class="string">"react"</span></div><div class="line">  ],</div><div class="line">  <span class="string">"env"</span>: &#123;</div><div class="line">   <span class="string">"development"</span>: &#123;</div><div class="line">     <span class="string">"presets"</span>: [<span class="string">"react-hmre"</span>]</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>PS. env.development.presets 是代表說開發的時候才會用到的，正式放到 server 上時不會使用。</p>
 <p>如果對 Babel 還有興趣可看<a href="https://github.com/thejameskyle/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md#toc-setting-up-babel" target="_blank" rel="external">這裡</a>。<br>但是這樣的話要手動一個一個編譯，像我這種懶人只好用一些 bundle 工具了。<br>於是我找到了 <strong>Webpack</strong>。</p>
-<p>PS. 關於 Webpack 我會在<a href="2016/08/15/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-3/">第三篇</a>詳細介紹。</p>
+<p>PS. 關於 Webpack 我會在<a href="/2016/08/15/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-3/">第三篇</a>詳細介紹。</p>
 <hr>
 <h1 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h1><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
 <h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><p>props 是 React 父子元件間溝通的橋樑。靜態（唯讀）。<br>父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。<br><strong>父元件傳入的 props 改變將造成子元件重繪。</strong></p>
