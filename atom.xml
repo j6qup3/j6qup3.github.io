@@ -261,7 +261,7 @@
     <link href="https://j6qup3.github.io/2016/08/06/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-1/"/>
     <id>https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/</id>
     <published>2016-08-06T08:44:42.000Z</published>
-    <updated>2016-08-19T01:50:53.138Z</updated>
+    <updated>2016-08-19T01:52:18.063Z</updated>
     
     <content type="html"><![CDATA[<!-- excerpt -->
 <blockquote>
@@ -495,7 +495,7 @@
 <li><code>npm install --save-dev babel-preset-es2015 babel-preset-react babel-preset-react-hmre</code> babel - ES6 &amp; JSX &amp; babel-preset-react-hmre</li>
 </ul>
 <hr>
-<p>先講到這，這篇講的以概念居多，<a href="2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續看喔~</p>
+<p>先講到這，這篇講的以概念居多，<a href="/2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續看喔~</p>
 <p>我們下篇再見~</p>]]></content>
     
     <summary type="html">
