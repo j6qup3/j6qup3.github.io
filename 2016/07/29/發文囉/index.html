@@ -36,7 +36,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-nuvue6sithwirecbhvw3dkaobiojqvtadsnhguwi7k04xklybw5djl1smadp.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     
@@ -47,11 +50,11 @@
             <!-- Define author's picture -->
 
 
-<header id="header" data-behavior="3">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
+    <div class="header-title">
         <a class="header-title-link" href="/ ">初雪的中二 &amp; 爆肝工程師之路</a>
-    </h1>
+    </div>
     
         
             <a  class="header-right-icon "
@@ -71,125 +74,131 @@
         
     
 
-<nav id="sidebar" data-behavior="3">
-    
-        <div class="sidebar-profile">
-            <a href="/#about">
-                    <img class="sidebar-profile-picture" src="/assets/images/header.jpg"/>
-            </a>
-            <span class="sidebar-profile-name">Jacky Wu (Hatsuyuki Wu)</span>
-        </div>
-    
-    
-        <ul class="sidebar-buttons">
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
         
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/ "
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">首頁</span>
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/header.jpg" alt="作者的圖片"/>
                 </a>
-        </li>
+                <h4 class="sidebar-profile-name">Jacky Wu (Hatsuyuki Wu)</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>簡單來說，一個字<br></p>
+<h1 id="宅"><a href="#宅" class="headerlink" title="宅"></a>宅</h1></h5>
+                
+            </div>
         
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/all-categories"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                    <span class="sidebar-button-desc">分類</span>
-                </a>
-        </li>
         
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/all-tags/"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                    <span class="sidebar-button-desc">標籤</span>
-                </a>
-        </li>
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc">首頁</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                        <span class="sidebar-button-desc">分類</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags/"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc">標籤</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                        <span class="sidebar-button-desc">所有文章</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                        <span class="sidebar-button-desc">搜尋</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc">關於</span>
+                    </a>
+            </li>
+            
+        </ul>
         
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/all-archives"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">所有文章</span>
-                </a>
-        </li>
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/j6qup3" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
         
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link open-algolia-search"
-                         href="#search"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">搜尋</span>
-                </a>
-        </li>
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                        <span class="sidebar-button-desc">Atom</span>
+                    </a>
+            </li>
+            
+        </ul>
         
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="#about"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">關於</span>
-                </a>
-        </li>
-        
-    </ul>
-    
-        <ul class="sidebar-buttons">
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link " href="https://github.com/j6qup3" target="_blank">
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
-                    <span class="sidebar-button-desc">GitHub</span>
-                </a>
-        </li>
-        
-    </ul>
-    
-        <ul class="sidebar-buttons">
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/atom.xml"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
-                    <span class="sidebar-button-desc">Atom</span>
-                </a>
-        </li>
-        
-    </ul>
-    
+    </div>
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
@@ -316,7 +325,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -378,11 +387,11 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://j6qup3.github.io/2016/07/29/發文囉/">
-                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+                <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
@@ -398,6 +407,7 @@
     </ul>
 </div>
 <div id="share-options-mask" class="share-options-mask"></div>
+
             
         </div>
         
@@ -413,30 +423,199 @@
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="/assets/images/header.jpg"/>
+            <img id="about-card-picture" src="/assets/images/header.jpg" alt="作者的圖片"/>
         
             <h4 id="about-card-name">Jacky Wu (Hatsuyuki Wu)</h4>
         
-            <h5 id="about-card-bio"><p>簡單來說，一個字<br></p>
-<h1 id="宅"><a href="#宅" class="headerlink" title="宅"></a>宅</h1></h5>
+            <div id="about-card-bio"><p>簡單來說，一個字<br></p>
+<h1 id="宅"><a href="#宅" class="headerlink" title="宅"></a>宅</h1></div>
         
         
-            <h5 id="about-card-job">
+            <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
                 <p><code>NULL</code></p>
 
-            </h5>
+            </div>
         
         
     </div>
 </div>
 
+        <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-close"></i></span>
+            <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    autofocus="autofocus"/>
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">沒有找到文章</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://j6qup3.github.io/2016/07/29/發文囉/">
+                            <h3 class="media-heading">發文囉</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2016年7月29日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/">
+                            <img class="media-image" src="https://app.kxg.io/images/jiade/fb.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/">
+                            <h3 class="media-heading">猴子也能看懂的 React 教學 - 1 - React 概念</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2016年8月6日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>React 概念</p>
+<ul>
+<li>React 特色</li>
+<li>Virtual DOM</li>
+<li>JSX</li>
+<li>props &amp; states</li>
+<li>Component Lifecycle</li>
+</ul>
+<p>環境配置</p>
+<ul>
+<li>NPM</li>
+</ul></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/">
+                            <img class="media-image" src="https://j6qup3.github.io/assets/images/58005272_p0_master1200.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/">
+                            <h3 class="media-heading">猴子也能看懂的 React 教學 - 2</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2016年8月10日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>XXX</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/15/猴子也能看懂的-React-教學-3/">
+                            <img class="media-image" src="http://i0.hdslb.com/bfs/archive/7a88ed5f1307295a8ac2624749cffd8b75cfc978.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/15/猴子也能看懂的-React-教學-3/">
+                            <h3 class="media-heading">猴子也能看懂的 React 教學 - 3 - Webpack 建置指南</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2016年8月15日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>環境配置</p>
+<ul>
+<li>Webpack</li>
+</ul></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/19/猴子也能看懂的-React-教學-4/">
+                            <img class="media-image" src="https://j6qup3.github.io/assets/images/52031649_p0_master1200.jpg" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/19/猴子也能看懂的-React-教學-4/">
+                            <h3 class="media-heading">猴子也能看懂的 React 教學 - 4 - 從前端走向後端</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2016年8月19日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>XXX</p>
+<ul>
+<li>XXX</li>
+</ul></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="沒有找到文章"
+                data-message-one="找到 1 篇文章"
+                data-message-other="找到 {n} 篇文章">
+                找到 5 篇文章
+            </p>
+        </div>
+    </div>
+</div>
         
 <div id="cover" style="background-image:url('/assets/images/初雪櫻.jpg');"></div>
-    </body>
-    <!--SCRIPTS-->
-<script src="/assets/js/script-i4qo6jx6jji9fg0dftpya6ivemizsbow4fhow76d8dwpm7m1wbvi378ssumx.min.js"></script>
+        <!--SCRIPTS-->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     
@@ -445,7 +624,7 @@
                  this.page.url = 'https://j6qup3.github.io/2016/07/29/發文囉/';
                  
                     this.page.identifier = '2016/07/29/發文囉/';
-                                  
+                 
              };
             (function() {
                 var d = document, s = d.createElement('script');
@@ -460,4 +639,5 @@
 
 
 
+    </body>
 </html>
