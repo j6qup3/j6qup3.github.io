@@ -10,8 +10,6 @@
     <meta name="author" content="Jacky Wu (Hatsuyuki Wu)">
     
     
-        <link rel="icon" href="https://j6qup3.github.io/assets/images/header.jpg">
-    
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
@@ -63,8 +61,6 @@ NPM">
         
     
     
-        <meta property="og:image" content="https://j6qup3.github.io/assets/images/header.jpg"/>
-    
     
         <meta property="og:image" content="https://app.kxg.io/images/jiade/fb.jpg"/>
         <meta class="swiftype" name="image" data-type="enum" content="https://app.kxg.io/images/jiade/fb.jpg" />
@@ -89,6 +85,8 @@ NPM">
             <!-- Define author's picture -->
 
 
+    
+
 <header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
@@ -96,11 +94,9 @@ NPM">
     </div>
     
         
-            <a  class="header-right-icon "
+            <a  class="header-right-picture "
                 href="#about">
         
-        
-            <i class="fa fa-lg fa-question"></i>
         
         </a>
     
@@ -109,23 +105,8 @@ NPM">
             <!-- Define author's picture -->
 
 
-
-        
-    
-
 <nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
-        
-            <div class="sidebar-profile">
-                <a href="/#about">
-                    <img class="sidebar-profile-picture" src="/assets/images/header.jpg" alt="Author&#39;s picture"/>
-                </a>
-                <h4 class="sidebar-profile-name">Jacky Wu (Hatsuyuki Wu)</h4>
-                
-                    <h5 class="sidebar-profile-bio"><p>簡單來說，一個字<br></p>
-<h1 id="宅"><a href="#宅" class="headerlink" title="宅"></a>宅</h1></h5>
-                
-            </div>
         
         
             <ul class="sidebar-buttons">
@@ -157,7 +138,7 @@ NPM">
                 <li class="sidebar-button">
                     
                         <a  class="sidebar-button-link "
-                             href="/all-tags/"
+                             href="/all-tags"
                             
                         >
                     
@@ -205,15 +186,6 @@ NPM">
         </ul>
         
             <ul class="sidebar-buttons">
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link " href="https://github.com/j6qup3" target="_blank">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
-                        <span class="sidebar-button-desc">GitHub</span>
-                    </a>
-            </li>
             
         </ul>
         
@@ -303,7 +275,7 @@ NPM">
 <li>只是一個 JS 函式庫，所以容量小易移植</li>
 </ol>
 <p>這樣對 React 有沒有比較明白了呢？</p>
-<h2 id="使用範例"><a href="#使用範例" class="headerlink" title="使用範例"></a>使用範例</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello React!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/babel-core@5.8.38/browser.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span><span class="xml"></span></div><div class="line">      ReactDOM.render(</div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>,</div><div class="line">        document.getElementById('example')</div><div class="line">      );</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="使用範例"><a href="#使用範例" class="headerlink" title="使用範例"></a>使用範例</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello React!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"build/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/babel-core@5.8.38/browser.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span><span class="javascript"></span></div><div class="line">      ReactDOM.render(</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>,</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>)</div><div class="line">      );</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>這是官網的例子，<del>被我仁了</del><br>我假設各位都知道 HTML 的語法，這裡不再贅述。<br>首先，要用 React 的話，必須先引入 React 函式庫，你可以在你剛下載的 React 資料夾中找到。如第 6 行、第 7 行。<br>第 8 行引入的是 <strong>babel</strong> 函式庫，用來編譯 JSX 成 JS，至於什麼是 JSX <a href="#JSX">稍後</a>會解釋。<br>12 行 ~ 17 行是<strong>重點</strong>，用 React 在 id 為 example 的元件內渲染出 h1 tag。</p>
 <h2 id="NPM-環境初始建置"><a href="#NPM-環境初始建置" class="headerlink" title="NPM 環境初始建置"></a>NPM 環境初始建置</h2><p>NPM 原本是 Node.js 套件管理器，至今已經變成前後端的開發利器，我就不多解釋了，想了解的可以請教萬能的 <a href="https://www.google.com.tw/search?q=npm" target="_blank" rel="external">Google 大神</a>。<br>沒 NPM 的可以去 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js 官網</a>下載。<br>首先先建個 <strong>package.json</strong><br><code>npm init</code><br>你執行時所在的目錄就是 <strong>NPM 專案的根目錄</strong></p>
 <p>填完配置之後裝個 React<br><code>npm install --save react react-dom</code><br>下載的就是你剛剛去 React 官網下載的東西，只不過使用套件管理系統比較方便開發及使用。<del>所以大家可以把官網下載的刪了</del></p>
@@ -567,12 +539,6 @@ NPM">
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
-        
         <li class="post-action">
             
                 <a class="post-action-btn btn btn--default" href="#table-of-contents">
@@ -585,10 +551,6 @@ NPM">
 
 
         
-            
-                <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
             
         
     </div>
@@ -648,12 +610,6 @@ NPM">
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
-        
         <li class="post-action">
             
                 <a class="post-action-btn btn btn--default" href="#table-of-contents">
@@ -692,28 +648,22 @@ NPM">
         
 
 
-    
-        
-    
-
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="/assets/images/header.jpg" alt="Author&#39;s picture"/>
-        
             <h4 id="about-card-name">Jacky Wu (Hatsuyuki Wu)</h4>
         
-            <div id="about-card-bio"><p>簡單來說，一個字<br></p>
-<h1 id="宅"><a href="#宅" class="headerlink" title="宅"></a>宅</h1></div>
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
         
         
             <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p><code>NULL</code></p>
+                <p>author.job</p>
 
             </div>
         
@@ -799,7 +749,7 @@ NPM">
                     
                     <div class="media-left">
                         <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/">
-                            <img class="media-image" src="https://j6qup3.github.io/assets/images/58005272_p0.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://j6qup3.github.io/assets/images/58005272_p0.png" width="90" height="90"/>
                         </a>
                     </div>
                     
@@ -852,7 +802,7 @@ NPM">
                     
                     <div class="media-left">
                         <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/19/猴子也能看懂的-React-教學-4/">
-                            <img class="media-image" src="https://j6qup3.github.io/assets/images/52031649_p0.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://j6qup3.github.io/assets/images/52031649_p0.png" width="90" height="90"/>
                         </a>
                     </div>
                     
@@ -889,7 +839,7 @@ NPM">
     </div>
 </div>
         
-<div id="cover" style="background-image:url('/assets/images/初雪櫻.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
         <!--SCRIPTS-->
 <script src="/assets/js/jquery.js"></script>
 <script src="/assets/js/jquery.fancybox.js"></script>
@@ -897,23 +847,6 @@ NPM">
 <script src="/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
-    
-        <script>
-             var disqus_config = function () {
-                 this.page.url = 'https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/';
-                 
-                    this.page.identifier = '2016/08/06/猴子也能看懂的-React-教學-1/';
-                 
-             };
-            (function() {
-                var d = document, s = d.createElement('script');
-                var disqus_shortname = 'chu-xue-de-zhong-er-bao-gan-gong-cheng-shi-zhi-lu';
-                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
     
 
 

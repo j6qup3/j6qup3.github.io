@@ -10,8 +10,6 @@
     <meta name="author" content="Jacky Wu (Hatsuyuki Wu)">
     
     
-        <link rel="icon" href="https://j6qup3.github.io/assets/images/header.jpg">
-    
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
@@ -21,7 +19,7 @@
 <meta property="og:url" content="https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/index.html">
 <meta property="og:site_name" content="初雪的中二 & 爆肝工程師之路">
 <meta property="og:description" content="XXX">
-<meta property="og:updated_time" content="2016-08-21T00:32:05.881Z">
+<meta property="og:updated_time" content="2016-08-21T00:44:38.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猴子也能看懂的 React 教學 - 2">
 <meta name="twitter:description" content="XXX">
@@ -30,12 +28,10 @@
         
     
     
-        <meta property="og:image" content="https://j6qup3.github.io/assets/images/header.jpg"/>
     
     
-    
-        <meta property="og:image" content="https://j6qup3.github.io/assets/images/58005272_p0.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://j6qup3.github.io/assets/images/58005272_p0.jpg" />
+        <meta property="og:image" content="https://j6qup3.github.io/assets/images/58005272_p0.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://j6qup3.github.io/assets/images/58005272_p0.png" />
     
     
     <!--STYLES-->
@@ -53,6 +49,8 @@
             <!-- Define author's picture -->
 
 
+    
+
 <header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
@@ -60,11 +58,9 @@
     </div>
     
         
-            <a  class="header-right-icon "
+            <a  class="header-right-picture "
                 href="#about">
         
-        
-            <i class="fa fa-lg fa-question"></i>
         
         </a>
     
@@ -73,23 +69,8 @@
             <!-- Define author's picture -->
 
 
-
-        
-    
-
 <nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
-        
-            <div class="sidebar-profile">
-                <a href="/#about">
-                    <img class="sidebar-profile-picture" src="/assets/images/header.jpg" alt="Author&#39;s picture"/>
-                </a>
-                <h4 class="sidebar-profile-name">Jacky Wu (Hatsuyuki Wu)</h4>
-                
-                    <h5 class="sidebar-profile-bio"><p>簡單來說，一個字<br></p>
-<h1 id="宅"><a href="#宅" class="headerlink" title="宅"></a>宅</h1></h5>
-                
-            </div>
         
         
             <ul class="sidebar-buttons">
@@ -121,7 +102,7 @@
                 <li class="sidebar-button">
                     
                         <a  class="sidebar-button-link "
-                             href="/all-tags/"
+                             href="/all-tags"
                             
                         >
                     
@@ -170,15 +151,6 @@
         
             <ul class="sidebar-buttons">
             
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link " href="https://github.com/j6qup3" target="_blank">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
-                        <span class="sidebar-button-desc">GitHub</span>
-                    </a>
-            </li>
-            
         </ul>
         
             <ul class="sidebar-buttons">
@@ -204,7 +176,7 @@
         <div class="post-header-cover
                     text-left
                     "
-             style="background-image:url('https://j6qup3.github.io/assets/images/58005272_p0.jpg');"
+             style="background-image:url('https://j6qup3.github.io/assets/images/58005272_p0.png');"
              data-behavior="4">
             
                 <div class="post-header main-content-wrap text-left">
@@ -247,7 +219,7 @@
 <hr>
 <h1 id="table-of-contents">目錄</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#開始打-code-啦"><span class="toc-text">開始打 code 啦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#refs"><span class="toc-text">refs</span></a></li></ol>
 <hr>
-<h1 id="開始打-code-啦"><a href="#開始打-code-啦" class="headerlink" title="開始打 code 啦"></a>開始打 code 啦</h1><p>首先，我們來看個範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">UserPage</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
+<h1 id="開始打-code-啦"><a href="#開始打-code-啦" class="headerlink" title="開始打 code 啦"></a>開始打 code 啦</h1><p>首先，我們來看個範例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserPage = <span class="built_in">require</span>(<span class="string">'User/UserPage.jsx'</span>);</div><div class="line">ReactDOM.render(&lt;UserPage/&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</div></pre></td></tr></table></figure></p>
 <p>雖然只有短短兩行，不過還是有些東西要講</p>
 <hr>
 <h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p>雖說不建議直接操作實體 DOM，但有時候仍會碰到需要直接操作的情況。<br>這時可以設定<code>ref</code>屬性來存取實體 DOM：<br>若 ref 的值為字串，則可以透過<code>this.refs.字串值</code> 存取。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">React.findDOMNode(<span class="keyword">this</span>.refs.theInput).focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=<span class="string">"theInput"</span>&gt;</div></pre></td></tr></table></figure></p>
@@ -310,12 +282,6 @@
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
-        
         <li class="post-action">
             
                 <a class="post-action-btn btn btn--default" href="#table-of-contents">
@@ -328,10 +294,6 @@
 
 
         
-            
-                <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
             
         
     </div>
@@ -391,12 +353,6 @@
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
-        
         <li class="post-action">
             
                 <a class="post-action-btn btn btn--default" href="#table-of-contents">
@@ -435,28 +391,22 @@
         
 
 
-    
-        
-    
-
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
-            <img id="about-card-picture" src="/assets/images/header.jpg" alt="Author&#39;s picture"/>
-        
             <h4 id="about-card-name">Jacky Wu (Hatsuyuki Wu)</h4>
         
-            <div id="about-card-bio"><p>簡單來說，一個字<br></p>
-<h1 id="宅"><a href="#宅" class="headerlink" title="宅"></a>宅</h1></div>
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
         
         
             <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p><code>NULL</code></p>
+                <p>author.job</p>
 
             </div>
         
@@ -542,7 +492,7 @@
                     
                     <div class="media-left">
                         <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/">
-                            <img class="media-image" src="https://j6qup3.github.io/assets/images/58005272_p0.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://j6qup3.github.io/assets/images/58005272_p0.png" width="90" height="90"/>
                         </a>
                     </div>
                     
@@ -595,7 +545,7 @@
                     
                     <div class="media-left">
                         <a class="link-unstyled" href="https://j6qup3.github.io/2016/08/19/猴子也能看懂的-React-教學-4/">
-                            <img class="media-image" src="https://j6qup3.github.io/assets/images/52031649_p0.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://j6qup3.github.io/assets/images/52031649_p0.png" width="90" height="90"/>
                         </a>
                     </div>
                     
@@ -632,7 +582,7 @@
     </div>
 </div>
         
-<div id="cover" style="background-image:url('/assets/images/初雪櫻.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
         <!--SCRIPTS-->
 <script src="/assets/js/jquery.js"></script>
 <script src="/assets/js/jquery.fancybox.js"></script>
@@ -640,23 +590,6 @@
 <script src="/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
-    
-        <script>
-             var disqus_config = function () {
-                 this.page.url = 'https://j6qup3.github.io/2016/08/10/猴子也能看懂的-React-教學-2/';
-                 
-                    this.page.identifier = '2016/08/10/猴子也能看懂的-React-教學-2/';
-                 
-             };
-            (function() {
-                var d = document, s = d.createElement('script');
-                var disqus_shortname = 'chu-xue-de-zhong-er-bao-gan-gong-cheng-shi-zhi-lu';
-                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
     
 
 
