@@ -10,6 +10,8 @@
     <meta name="author" content="Jacky Wu (Hatsuyuki Wu)">
     
     
+        <link rel="icon" href="https://j6qup3.github.io/assets/images/header.jpg">
+    
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
@@ -61,6 +63,8 @@ NPM">
         
     
     
+        <meta property="og:image" content="https://j6qup3.github.io/assets/images/header.jpg"/>
+    
     
         <meta property="og:image" content="https://app.kxg.io/images/jiade/fb.jpg"/>
         <meta class="swiftype" name="image" data-type="enum" content="https://app.kxg.io/images/jiade/fb.jpg" />
@@ -85,8 +89,6 @@ NPM">
             <!-- Define author's picture -->
 
 
-    
-
 <header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
@@ -94,9 +96,11 @@ NPM">
     </div>
     
         
-            <a  class="header-right-picture "
+            <a  class="header-right-icon "
                 href="#about">
         
+        
+            <i class="fa fa-lg fa-question"></i>
         
         </a>
     
@@ -105,8 +109,23 @@ NPM">
             <!-- Define author's picture -->
 
 
+
+        
+    
+
 <nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/header.jpg" alt="作者的圖片"/>
+                </a>
+                <h4 class="sidebar-profile-name">Jacky Wu (Hatsuyuki Wu)</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>簡單來說，一個字<br></p>
+<h1 id="宅"><a href="#宅" class="headerlink" title="宅"></a>宅</h1></h5>
+                
+            </div>
         
         
             <ul class="sidebar-buttons">
@@ -138,7 +157,7 @@ NPM">
                 <li class="sidebar-button">
                     
                         <a  class="sidebar-button-link "
-                             href="/all-tags"
+                             href="/all-tags/"
                             
                         >
                     
@@ -186,6 +205,15 @@ NPM">
         </ul>
         
             <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/j6qup3" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
             
         </ul>
         
@@ -539,6 +567,12 @@ NPM">
             </a>
         </li>
         
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
         <li class="post-action">
             
                 <a class="post-action-btn btn btn--default" href="#table-of-contents">
@@ -551,6 +585,10 @@ NPM">
 
 
         
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
             
         
     </div>
@@ -610,6 +648,12 @@ NPM">
             </a>
         </li>
         
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
         <li class="post-action">
             
                 <a class="post-action-btn btn btn--default" href="#table-of-contents">
@@ -648,22 +692,28 @@ NPM">
         
 
 
+    
+        
+    
+
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
         
+            <img id="about-card-picture" src="/assets/images/header.jpg" alt="作者的圖片"/>
+        
             <h4 id="about-card-name">Jacky Wu (Hatsuyuki Wu)</h4>
         
-            <div id="about-card-bio"><p>author.bio</p>
-</div>
+            <div id="about-card-bio"><p>簡單來說，一個字<br></p>
+<h1 id="宅"><a href="#宅" class="headerlink" title="宅"></a>宅</h1></div>
         
         
             <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>author.job</p>
+                <p><code>NULL</code></p>
 
             </div>
         
@@ -839,7 +889,7 @@ NPM">
     </div>
 </div>
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/初雪櫻.jpg');"></div>
         <!--SCRIPTS-->
 <script src="/assets/js/jquery.js"></script>
 <script src="/assets/js/jquery.fancybox.js"></script>
@@ -847,6 +897,23 @@ NPM">
 <script src="/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://j6qup3.github.io/2016/08/06/猴子也能看懂的-React-教學-1/';
+                 
+                    this.page.identifier = '2016/08/06/猴子也能看懂的-React-教學-1/';
+                 
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'chu-xue-de-zhong-er-bao-gan-gong-cheng-shi-zhi-lu';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
     
 
 
