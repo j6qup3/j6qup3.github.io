@@ -22,18 +22,13 @@
     <published>2016-08-18T19:17:59.000Z</published>
     <updated>2016-08-21T00:44:34.035Z</updated>
     
-    <content type="html"><![CDATA[<p>XXX</p>
-<ul>
-<li>XXX</li>
-</ul>
-<!-- excerpt -->
+    <content type="html"><![CDATA[<!-- excerpt -->
 <p>XXX</p>
 <hr>
 <!-- toc -->
 <hr>
 <h1 id="React-Router"><a href="#React-Router" class="headerlink" title="React Router"></a>React Router</h1><hr>
-<p>我們下篇再見~</p>
-]]></content>
+<p>我們下篇再見~</p>]]></content>
     
     <summary type="html">
     
@@ -41,12 +36,6 @@
 &lt;ul&gt;
 &lt;li&gt;XXX&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- excerpt --&gt;
-&lt;p&gt;XXX&lt;/p&gt;
-&lt;hr&gt;
-&lt;!-- toc --&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;React-Router&quot;&gt;&lt;a href=&quot;#React-Router&quot; class=&quot;h
     
     </summary>
     
@@ -66,11 +55,7 @@
     <published>2016-08-14T20:13:23.000Z</published>
     <updated>2016-08-19T00:00:08.408Z</updated>
     
-    <content type="html"><![CDATA[<p>環境配置</p>
-<ul>
-<li>Webpack</li>
-</ul>
-<!-- excerpt -->
+    <content type="html"><![CDATA[<!-- excerpt -->
 <p>這篇會講</p>
 <hr>
 <!-- toc -->
@@ -215,8 +200,7 @@
 </li>
 </ul>
 <hr>
-<p>Webpack 篇就這樣告一段落囉，我們下篇再見~</p>
-]]></content>
+<p>Webpack 篇就這樣告一段落囉，我們下篇再見~</p>]]></content>
     
     <summary type="html">
     
@@ -224,12 +208,6 @@
 &lt;ul&gt;
 &lt;li&gt;Webpack&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- excerpt --&gt;
-&lt;p&gt;這篇會講&lt;/p&gt;
-&lt;hr&gt;
-&lt;!-- toc --&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;安裝-Webpack&quot;&gt;&lt;a href=&quot;#安裝-Webpack&quot; class=
     
     </summary>
     
@@ -249,8 +227,7 @@
     <published>2016-08-09T17:14:20.000Z</published>
     <updated>2016-08-21T00:44:38.480Z</updated>
     
-    <content type="html"><![CDATA[<p>XXX</p>
-<!-- excerpt -->
+    <content type="html"><![CDATA[<!-- excerpt -->
 <p>這篇就會開始打 code 囉。<br>不過首先先補充一些重要的概念。</p>
 <hr>
 <!-- toc -->
@@ -262,18 +239,11 @@
 <p>若 ref 的值為函數，則傳入的參數值為該元件本身。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.input.focus();</div><div class="line">... (render 內)</div><div class="line">&lt;input ref=&#123;(input) =&gt; <span class="keyword">this</span>.input = input&#125;&gt;</div></pre></td></tr></table></figure></p>
 <p>由於 React.findDOMNode() 傳回的是實體 DOM，所以必須確保實體 DOM 已經被渲染出來才能使用 (componentDidMount() 後面的才能用)</p>
 <hr>
-<p>我們下篇再見~</p>
-]]></content>
+<p>我們下篇再見~</p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;XXX&lt;/p&gt;
-&lt;!-- excerpt --&gt;
-&lt;p&gt;這篇就會開始打 code 囉。&lt;br&gt;不過首先先補充一些重要的概念。&lt;/p&gt;
-&lt;hr&gt;
-&lt;!-- toc --&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;開始打-code-啦&quot;&gt;&lt;a href=&quot;#開始打-code-啦&quot; class
     
     </summary>
     
@@ -293,19 +263,7 @@
     <published>2016-08-06T08:44:42.000Z</published>
     <updated>2016-08-19T01:52:58.224Z</updated>
     
-    <content type="html"><![CDATA[<p>React 概念</p>
-<ul>
-<li>React 特色</li>
-<li>Virtual DOM</li>
-<li>JSX</li>
-<li>props &amp; states</li>
-<li>Component Lifecycle</li>
-</ul>
-<p>環境配置</p>
-<ul>
-<li>NPM</li>
-</ul>
-<!-- excerpt -->
+    <content type="html"><![CDATA[<!-- excerpt -->
 <blockquote>
 <p>讓一隻猴子在打字機上隨機地按鍵，當按鍵時間達到無窮時，幾乎必然能夠打出任何給定的文字，比如莎士比亞的全套著作。</p>
 <p>– 《<a href="https://zh.wikipedia.org/wiki/%E7%84%A1%E9%99%90%E7%8C%B4%E5%AD%90%E5%AE%9A%E7%90%86" target="_blank" rel="external">無限猴子定理</a>》- <a href="https://zh.wikipedia.org/wiki/%E5%9F%83%E7%B1%B3%E5%B0%94%C2%B7%E5%8D%9A%E9%9B%B7%E5%B0%94" target="_blank" rel="external">埃米爾·博雷爾</a></p>
@@ -538,8 +496,7 @@
 </ul>
 <hr>
 <p>先講到這，這篇講的以概念居多，<a href="/2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續看喔~</p>
-<p>我們下篇再見~</p>
-]]></content>
+<p>我們下篇再見~</p>]]></content>
     
     <summary type="html">
     
@@ -551,7 +508,10 @@
 &lt;li&gt;props &amp;amp; states&lt;/li&gt;
 &lt;li&gt;Component Lifecycle&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;環
+&lt;p&gt;環境配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NPM&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
