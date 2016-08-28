@@ -43,7 +43,7 @@ Component Lifecycle
 NPM">
 <meta property="og:image" content="https://app.kxg.io/images/jiade/fb.jpg">
 <meta property="og:image" content="http://www.ibm.com/developerworks/cn/web/1509_dongyue_react/index5341.png">
-<meta property="og:updated_time" content="2016-08-19T01:52:58.224Z">
+<meta property="og:updated_time" content="2016-08-28T13:30:41.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猴子也能看懂的 React 教學 - 1 - React 概念">
 <meta name="twitter:description" content="React 概念
@@ -127,7 +127,7 @@ NPM">
                 </a>
                 <h4 class="sidebar-profile-name">Jacky Wu (Hatsuyuki Wu)</h4>
                 
-                    <h5 class="sidebar-profile-bio"><p>我在巨人的肩膀上拋下這條繩索，爬上來吧！<strong>你將佇立在我的肩膀上。</strong></p>
+                    <h5 class="sidebar-profile-bio"><p>我在巨人的肩膀上拋下這條繩索，爬上來吧！<br><strong>你將佇立在我的肩膀上。</strong></p>
 </h5>
                 
             </div>
@@ -392,7 +392,7 @@ NPM">
 <h2 id="怎麼編譯-JSX？"><a href="#怎麼編譯-JSX？" class="headerlink" title="怎麼編譯 JSX？"></a>怎麼編譯 JSX？</h2><p>JSX 可以像上面的例子一樣被包在 HTML 的 <code>&lt;script type=&quot;text/babel&quot;&gt;&lt;/script&gt;</code> 中，引入 JSX 編譯器 babel，直接在 Client 端解析，但我們一般會將 JSX 分成獨立檔案以便維護以及增加載入效率，然後用 babel 編譯成 JS （現在幾乎都會使用 <strong>CommonJS bundler</strong>）。<br>EX：<code>&lt;script type=&quot;text/jsx&quot; src=&quot;main.jsx&quot;&gt;&lt;/script&gt;</code></p>
 <h2 id="Babel-安裝-amp-配置"><a href="#Babel-安裝-amp-配置" class="headerlink" title="Babel 安裝 &amp; 配置"></a>Babel 安裝 &amp; 配置</h2><p><code>npm install --save-dev babel-cli</code><br>安裝完就可以用指令 <code>babel</code> 來編譯檔案了。<br>EX：<code>babel uncompile.js -o compiled.js</code><br>意思就是說將 uncompile.js 編譯成 compiled.js。<br>但要是你真的輸入這個指令，你會發現 compiled.js 的內容一模一樣，顯然沒有進行編譯。<br>沒編譯是因為你尚未和 Babel 說你到底要編譯什麼。<br>那麼，要怎麼告訴它呢？</p>
 <p>首先，在 NPM 專案的根目錄建立一個名叫 <strong>.babelrc</strong> 的檔案，並輸入以下內容：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"presets"</span>: []</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>因為不是所有瀏覽器都支援 ES6 (或稱 ES015) 語法，我們需要把 ES6 轉成 ES5<br><code>npm install --save-dev babel-preset-es2015</code></p>
+<p>ECMAScript 是所有瀏覽器實作 JS 所參考的標準模型，其第六版簡稱為 <strong>ES6 / ES2015</strong>，因為篇幅有限，在<a href="/2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/">下一篇</a>才會講解 ES6 和 ES5 的寫法差異。<br>總之，使用 ES6 對於開發上會比較方便，但不是所有瀏覽器都支援 ES6 語法，因此我們要把 ES6 轉成 ES5 。<br><code>npm install --save-dev babel-preset-es2015</code></p>
 <p>然後 .babelrc 改一下設定：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"presets"</span>: [</div><div class="line">    <span class="string">"es2015"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>這樣 Babel 就可以編譯 ES6 了！但還是不能編譯 JSX。<br>如果我們想編譯 JSX 的話：<br><code>npm install --save-dev babel-preset-react</code></p>
 <p>然後 .babelrc 改一下設定：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"presets"</span>: [</div><div class="line">    <span class="string">"es2015"</span>,</div><div class="line">    <span class="string">"react"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -403,7 +403,7 @@ NPM">
 <p>如果對 Babel 還有興趣可看<a href="https://github.com/thejameskyle/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md#toc-setting-up-babel" target="_blank" rel="external">這裡</a>。<br>但是這樣的話要手動一個一個編譯，像我這種懶人只好用一些 bundle 工具了。<br>於是我找到了 <strong>Webpack</strong>。</p>
 <p>PS. 關於 Webpack 我會在<a href="/2016/08/15/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-3/">第三篇</a>詳細介紹。</p>
 <hr>
-<h1 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h1><p>在前一篇有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
+<h1 id="props-amp-states"><a href="#props-amp-states" class="headerlink" title="props &amp; states"></a>props &amp; states</h1><p>前面有稍微提到過 props。<br>沒錯，只有提到一次而已，而且我講的很含糊。等等，別打我，我接下來就要講了啦~</p>
 <h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><p>props 是 React 父子元件間溝通的橋樑。靜態（唯讀）。<br>父元件用屬性賦值的方式傳給子元件，子元件用 this.props 讀取。但不應於子元件內變動 （唯讀）。<br><strong>父元件傳入的 props 改變將造成子元件重繪。</strong></p>
 <p>EX：<br>父元件內<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">Fuck</span> <span class="attr">fuck</span>=<span class="string">"?"</span>/&gt;</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
 <p>子元件<code>Fuck</code>內<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>&#123;this.props.fuck&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
@@ -539,11 +539,11 @@ NPM">
 <h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><h2 id="環境配置懶人包"><a href="#環境配置懶人包" class="headerlink" title="環境配置懶人包"></a>環境配置懶人包</h2><ul>
 <li><code>npm init</code> NPM 專案初始化</li>
 <li><code>npm install --save react react-dom</code> 安裝 React</li>
-<li><code>npm install --save-dev babel-preset-es2015 babel-preset-react babel-preset-react-hmre</code> babel - ES6 &amp; JSX &amp; babel-preset-react-hmre</li>
+<li><code>npm install --save-dev babel-cli babel-preset-es2015 babel-preset-react babel-preset-react-hmre</code> babel - cli &amp; ES6 &amp; JSX &amp; babel-preset-react-hmre</li>
 </ul>
 <hr>
-<p>先講到這，這篇講的以概念居多，<a href="/2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續看喔~</p>
-<p>我們下篇再見~</p>
+<p>先講到這，這篇講的以概念居多，<a href="/2016/08/10/%E7%8C%B4%E5%AD%90%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84-React-%E6%95%99%E5%AD%B8-2/">下篇</a> 就會講 React 寫法了。如果有興趣可以繼續收看喔~</p>
+<p>這篇會不定期更新，如果有打錯或有任何疑問都歡迎留言告知喔~<br>我們下篇再見~</p>
             
         </div>
     </div>
@@ -738,7 +738,7 @@ NPM">
         
             <h4 id="about-card-name">Jacky Wu (Hatsuyuki Wu)</h4>
         
-            <div id="about-card-bio"><p>我在巨人的肩膀上拋下這條繩索，爬上來吧！<strong>你將佇立在我的肩膀上。</strong></p>
+            <div id="about-card-bio"><p>我在巨人的肩膀上拋下這條繩索，爬上來吧！<br><strong>你將佇立在我的肩膀上。</strong></p>
 </div>
         
         
@@ -846,7 +846,11 @@ NPM">
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"><p>XXX</p></div>
+                        <div class="media-content hide-xs font-merryweather"><ul>
+<li>ES5 VS ES6</li>
+<li>Component</li>
+<li>refs</li>
+</ul></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
